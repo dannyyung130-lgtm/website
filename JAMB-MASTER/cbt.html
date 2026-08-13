@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>CBT Practice - AceJAMB</title>
+        <link rel="stylesheet" href="cbt.css">
+    </head>
+
+    <body>
+
+      <header class="topbar">
+    <div class="logo">
+        <h2>AceJAMB</h2>
+        <p>CBT Practice</p>
+    </div>
+
+    <div class="timer">
+        ⏰ Time Left: <span id="time">02:00:00</span>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="question-panel">
+
+        <h3>Question <span id="question-number">1</span> of 60</h3>
+
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+
+        <h2 id="question">
+            Loading Question...
+        </h2>
+
+        <div class="answers">
+            <button class="option">A.</button>
+            <button class="option">B.</button>
+            <button class="option">C.</button>
+            <button class="option">D.</button>
+        </div>
+
+        <div class="buttons">
+            <button id="prev">Previous</button>
+            <button id="next">Next</button>
+        </div>
+
+    </div>
+
+    <aside class="sidebar">
+
+        <h3>Questions</h3>
+
+        <div class="question-grid">
+
+        </div>
+
+        <button class="submit-btn">
+            Submit Exam
+        </button>
+
+    </aside>
+
+</div>
+        <script src="script.js"></script>
+    </body>
+</html>
