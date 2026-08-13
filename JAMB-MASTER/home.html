@@ -1,147 +1,699 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-    content="width=device-width,initial-scale=1.0">
-        <title>AceJAMB</title>
-        <link rel="stylesheet" href="home.css">
-    </head>
 
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AceJAMB - Excel in JAMB</title>
+
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="home.html" class="logo">
+
+                <div class="logo-icon">
+                    🎓
+                </div>
+
+                <div class="logo-text">
+                    <h2>Ace<span>JAMB</span></h2>
+                    <p>Excel in JAMB. Secure Your Future.</p>
+                </div>
+
+            </a>
 
 
-       <header class="navbar">
-        <div class="logo">
-            <img src="images/logo.png"
-            alt="AceJAMB">
-            <div>
-                <h2>Ace<span>JAMB</span></h2>
-                <p>Excel in JAMB. Secure Your Future.</p>
-            </div>
-        </div>
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
 
-            <nav>
-                <a href="home.html"
-                class="active">Home</a>
-                <a href="cbt.html">CBT Practice</a>
-                <a href="past-questions.html">Past Questions</a>
-                <a href="subjects.html">Subjects</a>
-                <a href="premium.html">Premium</a>
-                <a href="news.html">News</a>
+
+            <nav class="nav-links" id="navLinks">
+
+                <a href="home.html" class="active">
+                    Home
+                </a>
+
+                <a href="cbt.html">
+                    CBT Practice
+                </a>
+
+                <a href="past-questions.html">
+                    Past Questions
+                </a>
+
+                <a href="subjects.html">
+                    Subjects
+                </a>
+
+                <a href="premium.html" class="premium-link">
+                    Premium
+                </a>
+
+                <a href="news.html">
+                    News
+                </a>
+
+                <a href="index.html" class="login-btn">
+                    Login
+                </a>
+
             </nav>
 
-            <a href="index.html"
-            class="login-btn">Login</a>
-       </header>
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
         <section class="hero">
-            <h2>Pass Jamb with Confidence</h2>
 
-            <p>
-                Practice CBT Questions, study past questions, and stay updated with the latest JAMB news-all in one place.
-            </p>
+            <div class="hero-content">
 
-            <a href="cbt.html" class="btn">Start Practicing</a>
-        </section>
+                <div class="hero-badge">
+                    🎯 Prepare Smarter. Score Higher.
+                </div>
 
-        <section class="search-section">
-            <h2>Find What You Need</h2>
+                <h1>
+                    Pass JAMB
+                    <span>With Confidence</span>
+                </h1>
 
-            <div class="search-box">
-                <input type="text" placeholder="Search for subjects, past questions or news...">
-                <button>Search</button>
+                <p>
+                    Practice CBT questions, study past questions,
+                    learn your subjects and prepare for JAMB
+                    all in one place.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="cbt.html" class="primary-btn">
+                        Start Practicing →
+                    </a>
+
+                    <a href="past-questions.html" class="secondary-btn">
+                        Explore Questions
+                    </a>
+
+                </div>
+
             </div>
+
+
+            <div class="hero-card">
+
+                <div class="hero-card-top">
+                    <span>📚</span>
+                    <span>JAMB Preparation</span>
+                </div>
+
+                <h3>
+                    Your JAMB journey starts here.
+                </h3>
+
+                <p>
+                    Practice consistently and track your
+                    preparation as your exam gets closer.
+                </p>
+
+
+                <div class="mini-progress">
+
+                    <div class="progress-label">
+                        <span>Preparation</span>
+                        <strong>Ready to start</strong>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div></div>
+                    </div>
+
+                </div>
+
+            </div>
+
         </section>
 
-        <section class="countdown">
 
-            <h2>JAMB 2027 Countdown</h2>
 
-            <p id="countdown">Loading...</p>
-            
+        <!-- ================= COUNTDOWN ================= -->
+
+        <section class="countdown-section">
+
+            <div class="countdown-container">
+
+                <div class="countdown-title">
+
+                    <span class="countdown-icon">
+                        ⏰
+                    </span>
+
+                    <div>
+                        <h2>JAMB Countdown</h2>
+
+                        <p>
+                            Keep preparing. Your exam is getting closer.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="countdown" id="countdown">
+
+                    <div class="time-box">
+                        <strong id="days">00</strong>
+                        <span>Days</span>
+                    </div>
+
+                    <div class="time-box">
+                        <strong id="hours">00</strong>
+                        <span>Hours</span>
+                    </div>
+
+                    <div class="time-box">
+                        <strong id="minutes">00</strong>
+                        <span>Minutes</span>
+                    </div>
+
+                    <div class="time-box">
+                        <strong id="seconds">00</strong>
+                        <span>Seconds</span>
+                    </div>
+
+                </div>
+
+            </div>
+
         </section>
 
-        <section class="subjects">
-    <h2>Popular Subjects</h2>
 
-    <div class="subject-grid">
 
-        <div class="subject-card">
-            <h3>📘 English</h3>
+        <!-- ================= QUICK ACCESS ================= -->
+
+        <section class="quick-section">
+
+            <div class="section-heading">
+
+                <span>GET STARTED</span>
+
+                <h2>
+                    Everything You Need To Prepare
+                </h2>
+
+                <p>
+                    Choose how you want to prepare today.
+                </p>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+
+                <!-- CBT -->
+
+                <a href="cbt.html" class="feature-card blue-card">
+
+                    <div class="feature-icon">
+                        🖥️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            CBT Practice
+                        </h3>
+
+                        <p>
+                            Take realistic CBT practice tests
+                            and test your knowledge.
+                        </p>
+
+                        <span class="card-link">
+                            Start Practice →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- PAST QUESTIONS -->
+
+                <a href="past-questions.html" class="feature-card purple-card">
+
+                    <div class="feature-icon">
+                        📖
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Past Questions
+                        </h3>
+
+                        <p>
+                            Study previous JAMB questions
+                            and understand common patterns.
+                        </p>
+
+                        <span class="card-link">
+                            View Questions →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- SUBJECTS -->
+
+                <a href="subjects.html" class="feature-card green-card">
+
+                    <div class="feature-icon">
+                        📚
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Subjects
+                        </h3>
+
+                        <p>
+                            Explore JAMB subjects and prepare
+                            your study plan.
+                        </p>
+
+                        <span class="card-link">
+                            Explore Subjects →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- PREMIUM -->
+
+                <a href="premium.html" class="feature-card gold-card">
+
+                    <div class="feature-icon">
+                        💎
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            AceJAMB Premium
+                        </h3>
+
+                        <p>
+                            Unlock extra features designed
+                            to improve your preparation.
+                        </p>
+
+                        <span class="card-link">
+                            Explore Premium →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= STATS ================= -->
+
+        <section class="stats-section">
+
+            <div class="stats-container">
+
+                <div class="stat">
+
+                    <strong>
+                        60+
+                    </strong>
+
+                    <span>
+                        CBT Questions
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        4+
+                    </strong>
+
+                    <span>
+                        JAMB Subjects
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        24/7
+                    </strong>
+
+                    <span>
+                        Practice Access
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        100%
+                    </strong>
+
+                    <span>
+                        Focused on JAMB
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= WHY ACEJAMB ================= -->
+
+        <section class="why-section">
+
+            <div class="section-heading">
+
+                <span>WHY ACEJAMB?</span>
+
+                <h2>
+                    Prepare With A Purpose
+                </h2>
+
+                <p>
+                    AceJAMB is built to make your JAMB preparation
+                    simpler, smarter and more organized.
+                </p>
+
+            </div>
+
+
+            <div class="why-grid">
+
+
+                <div class="why-card">
+
+                    <div class="why-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Practice Anytime
+                    </h3>
+
+                    <p>
+                        Access your practice materials whenever
+                        you have time to study.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card">
+
+                    <div class="why-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Know Your Strength
+                    </h3>
+
+                    <p>
+                        Practice questions can help you discover
+                        areas where you need more preparation.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card">
+
+                    <div class="why-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Stay Updated
+                    </h3>
+
+                    <p>
+                        Keep up with important JAMB-related
+                        information through our news section.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="cta-section">
+
+            <div class="cta-content">
+
+                <span>
+                    🚀 YOUR JAMB JOURNEY STARTS NOW
+                </span>
+
+                <h2>
+                    Ready To Start Practicing?
+                </h2>
+
+                <p>
+                    Don't wait until the exam is close.
+                    Start preparing today.
+                </p>
+
+                <a href="cbt.html" class="cta-btn">
+                    Start CBT Practice →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    Ace<span>JAMB</span>
+                </h2>
+
+                <p>
+                    Excel in JAMB. Secure Your Future.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="home.html">
+                    Home
+                </a>
+
+                <a href="cbt.html">
+                    CBT Practice
+                </a>
+
+                <a href="past-questions.html">
+                    Past Questions
+                </a>
+
+                <a href="premium.html">
+                    Premium
+                </a>
+
+            </div>
+
+
         </div>
 
-        <div class="subject-card">
-            <h3>➗ Mathematics</h3>
+
+        <div class="copyright">
+
+            © 2026 AceJAMB. All rights reserved.
+
         </div>
 
-        <div class="subject-card">
-            <h3>⚛️ Physics</h3>
-        </div>
+    </footer>
 
-        <div class="subject-card">
-            <h3>🧪 Chemistry</h3>
-        </div>
 
-        <div class="subject-card">
-            <h3>🧬 Biology</h3>
-        </div>
 
-        <div class="subject-card">
-            <h3>💰 Economics</h3>
-        </div>
+    <!-- ================= JAVASCRIPT ================= -->
 
-    </div>
-</section>
+    <script>
 
-        
-<section class="stats">
+        /* ================= MOBILE MENU ================= */
 
-    <div class="stat">
-        <h2>20+</h2>
-        <p>Years of Past Questions</p>
-    </div>
+        const menuBtn = document.getElementById("menuBtn");
 
-    <div class="stat">
-        <h2>50,000+</h2>
-        <p>Practice Questions</p>
-    </div>
+        const navLinks = document.getElementById("navLinks");
 
-    <div class="stat">
-        <h2>15+</h2>
-        <p>JAMB Subjects</p>
-    </div>
 
-</section>
-       <section class="news">
-    <h2>Latest JAMB News</h2>
+        menuBtn.addEventListener("click", function () {
 
-    <div class="news-grid">
+            navLinks.classList.toggle("show");
 
-        <div class="news-card">
-            <h3>2027 JAMB Registration</h3>
-            <p>Get the latest updates on registration dates, requirements and important announcements.</p>
-            <a href="#">Read More</a>
-        </div>
+        });
 
-        <div class="news-card">
-            <h3>Mock Examination</h3>
-            <p>Stay informed about admission news, cut-off marks and school updates.</p>
-            <a href="#">Read More</a>
-        </div>
 
-    </div>
-</section>
+        /* CLOSE MENU WHEN LINK IS CLICKED */
 
-        <footer>
+        document.querySelectorAll(".nav-links a").forEach(link => {
 
-            <h2>AceJAMB</h2>
+            link.addEventListener("click", function () {
 
-            <p>Your trusted for JAMB successs.</p>
+                navLinks.classList.remove("show");
 
-            <p>&copy; 2026 AceJAMB. All Rights Reserved.</p>
+            });
 
-        </footer>
-    </body>
+        });
 
-    <script src="script.js"></script>
-</html>  
+
+
+        /* ================= JAMB COUNTDOWN ================= */
+
+        const examDate =
+            new Date("April 25, 2027 08:00:00").getTime();
+
+
+        function updateCountdown() {
+
+            const now =
+                new Date().getTime();
+
+            const distance =
+                examDate - now;
+
+
+            if (distance <= 0) {
+
+                document.getElementById("days").innerHTML = "00";
+
+                document.getElementById("hours").innerHTML = "00";
+
+                document.getElementById("minutes").innerHTML = "00";
+
+                document.getElementById("seconds").innerHTML = "00";
+
+                return;
+
+            }
+
+
+            const days =
+                Math.floor(
+                    distance /
+                    (1000 * 60 * 60 * 24)
+                );
+
+
+            const hours =
+                Math.floor(
+                    (distance %
+                        (1000 * 60 * 60 * 24)) /
+                    (1000 * 60 * 60)
+                );
+
+
+            const minutes =
+                Math.floor(
+                    (distance %
+                        (1000 * 60 * 60)) /
+                    (1000 * 60)
+                );
+
+
+            const seconds =
+                Math.floor(
+                    (distance %
+                        (1000 * 60)) /
+                    1000
+                );
+
+
+            document.getElementById("days").innerHTML =
+                String(days).padStart(2, "0");
+
+
+            document.getElementById("hours").innerHTML =
+                String(hours).padStart(2, "0");
+
+
+            document.getElementById("minutes").innerHTML =
+                String(minutes).padStart(2, "0");
+
+
+            document.getElementById("seconds").innerHTML =
+                String(seconds).padStart(2, "0");
+
+        }
+
+
+        updateCountdown();
+
+        setInterval(updateCountdown, 1000);
+
+    </script>
+
+
+</body>
+
+</html>
