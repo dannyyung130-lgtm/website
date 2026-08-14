@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Check Application | Chaos Crew</title>
+
+    <link rel="stylesheet" href="guild.css">
+
+    <style>
+
+        .check-container {
+            max-width: 650px;
+            margin: 80px auto;
+            padding: 20px;
+        }
+
+        .check-box {
+            background: #121212;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .check-box h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .check-box h1 span {
+            color: #ff6500;
+        }
+
+        .check-box p {
+            color: #999;
+            line-height: 1.7;
+        }
+
+        .application-input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 16px;
+            margin-top: 25px;
+            background: #080808;
+            color: white;
+            border: 1px solid #333;
+            border-radius: 7px;
+            outline: none;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .application-input:focus {
+            border-color: #ff6500;
+        }
+
+        .check-button {
+            width: 100%;
+            padding: 16px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 7px;
+            background: #ff6500;
+            color: white;
+            font-size: 15px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .check-button:hover {
+            opacity: 0.9;
+        }
+
+        .check-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        #result {
+            margin-top: 30px;
+        }
+
+        .result-card {
+            padding: 25px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .pending {
+            background: #302a0d;
+            border: 1px solid #756719;
+        }
+
+        .approved {
+            background: #0d3018;
+            border: 1px solid #1e7738;
+        }
+
+        .rejected {
+            background: #351010;
+            border: 1px solid #782020;
+        }
+
+        .result-card h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .result-details {
+            margin-top: 20px;
+            line-height: 2;
+            color: #ddd;
+        }
+
+        .telegram-button {
+            display: block;
+            margin-top: 25px;
+            padding: 16px;
+            background: #229ED9;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 7px;
+            font-weight: 800;
+        }
+
+        .telegram-button:hover {
+            opacity: 0.9;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 25px;
+            color: #999;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: white;
+        }
+
+        .small-title {
+            color: #ff6500 !important;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="logo">
+        🔥 YUNG GAMING HUB
+    </div>
+
+
+    <nav>
+
+        <a href="home.html">Home</a>
+
+        <a href="news.html">News</a>
+
+        <a href="tournament.html">Tournaments</a>
+
+        <a href="community.html">Community</a>
+
+        <a href="guild.html">Guild</a>
+
+    </nav>
+
+
+    <a href="login.html" class="login-btn">
+        Login
+    </a>
+
+</header>
+
+
+
+<main class="check-container">
+
+
+    <div class="check-box">
+
+        <p class="small-title">
+            CHAOS CREW
+        </p>
+
+
+        <h1>
+            CHECK <span>APPLICATION</span>
+        </h1>
+
+
+        <p>
+            Enter the Application ID you received
+            after submitting your Chaos Crew application.
+        </p>
+
+
+        <input
+            type="text"
+            id="applicationCode"
+            class="application-input"
+            placeholder="Example: CC-U005EI"
+            autocomplete="off"
+        >
+
+
+        <button
+            id="checkButton"
+            class="check-button"
+        >
+            CHECK STATUS
+        </button>
+
+
+        <div id="result"></div>
+
+
+        <a
+            href="guild.html"
+            class="back-link"
+        >
+            ← Back to Chaos Crew
+        </a>
+
+    </div>
+
+
+</main>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase.js"></script>
+
+
+
+<script>
+
+const codeInput =
+    document.getElementById("applicationCode");
+
+const checkButton =
+    document.getElementById("checkButton");
+
+const result =
+    document.getElementById("result");
+
+
+
+async function checkApplication() {
+
+    let code =
+        codeInput.value
+        .trim()
+        .toUpperCase();
+
+
+    if (!code) {
+
+        result.innerHTML = `
+
+            <div class="result-card rejected">
+
+                <h2>⚠️ Enter your Application ID</h2>
+
+                <p>
+                    Enter the ID you received
+                    after submitting your application.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    checkButton.disabled = true;
+
+    checkButton.textContent =
+        "CHECKING...";
+
+    result.innerHTML = "";
+
+
+    const { data, error } =
+        await supabaseClient
+
+        .from("guild_applications")
+
+        .select(
+            "application_code, ff_name, rank, status"
+        )
+
+        .eq(
+            "application_code",
+            code
+        )
+
+        .maybeSingle();
+
+
+    checkButton.disabled = false;
+
+    checkButton.textContent =
+        "CHECK STATUS";
+
+
+    if (error) {
+
+        console.error(
+            "CHECK ERROR:",
+            error
+        );
+
+
+        result.innerHTML = `
+
+            <div class="result-card rejected">
+
+                <h2>❌ Something went wrong</h2>
+
+                <p>
+                    ${escapeHTML(error.message)}
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    if (!data) {
+
+        result.innerHTML = `
+
+            <div class="result-card rejected">
+
+                <h2>❌ APPLICATION NOT FOUND</h2>
+
+                <p>
+                    We couldn't find an application
+                    with that Application ID.
+                </p>
+
+                <p>
+                    Check the ID carefully and try again.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    if (data.status === "pending") {
+
+        result.innerHTML = `
+
+            <div class="result-card pending">
+
+                <h2>
+                    ⏳ APPLICATION PENDING
+                </h2>
+
+                <p>
+                    Your Chaos Crew application has
+                    been received and is currently
+                    being reviewed.
+                </p>
+
+                <div class="result-details">
+
+                    <strong>Free Fire Name:</strong>
+                    ${escapeHTML(data.ff_name)}
+
+                    <br>
+
+                    <strong>Rank:</strong>
+                    ${escapeHTML(data.rank)}
+
+                    <br>
+
+                    <strong>Status:</strong>
+                    Pending
+
+                </div>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    if (data.status === "approved") {
+
+        result.innerHTML = `
+
+            <div class="result-card approved">
+
+                <h2>
+                    🎉 YOU HAVE BEEN ACCEPTED!
+                </h2>
+
+                <p>
+                    Congratulations!
+                    Your Chaos Crew application
+                    has been approved.
+                </p>
+
+                <div class="result-details">
+
+                    <strong>Free Fire Name:</strong>
+                    ${escapeHTML(data.ff_name)}
+
+                    <br>
+
+                    <strong>Rank:</strong>
+                    ${escapeHTML(data.rank)}
+
+                    <br>
+
+                    <strong>Status:</strong>
+                    Approved
+
+                </div>
+
+
+                <a
+                    href="YOUR_TELEGRAM_LINK_HERE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="telegram-button"
+                >
+                    🚀 JOIN CHAOS CREW ON TELEGRAM
+                </a>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    if (data.status === "rejected") {
+
+        result.innerHTML = `
+
+            <div class="result-card rejected">
+
+                <h2>
+                    ❌ APPLICATION NOT ACCEPTED
+                </h2>
+
+                <p>
+                    Unfortunately, your application
+                    was not accepted this time.
+                </p>
+
+                <p>
+                    Keep improving your skills and
+                    you can apply again in the future.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+}
+
+
+
+function escapeHTML(value) {
+
+    if (!value) {
+        return "";
+    }
+
+    return String(value)
+
+        .replace(/&/g, "&amp;")
+
+        .replace(/</g, "&lt;")
+
+        .replace(/>/g, "&gt;")
+
+        .replace(/"/g, "&quot;")
+
+        .replace(/'/g, "&#039;");
+
+}
+
+
+
+checkButton.addEventListener(
+    "click",
+    checkApplication
+);
+
+
+codeInput.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+
+            checkApplication();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

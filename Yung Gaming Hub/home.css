@@ -1,0 +1,1430 @@
+/* ========================================
+   YUNG GAMING HUB
+   HOME PAGE STYLES
+======================================== */
+
+
+/* ========================================
+   GENERAL RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+    width: 100%;
+    min-height: 75px;
+    background: #0d0d0d;
+    border-bottom: 1px solid #222;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 6%;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #ff7a00;
+}
+
+.logo strong {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #ffffff;
+}
+
+
+/* NAVIGATION */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #cccccc;
+
+    transition: 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ff7a00;
+}
+
+.navbar a.active {
+    color: #ff7a00;
+}
+
+
+/* HEADER BUTTONS */
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-btn,
+.register-btn {
+    padding: 9px 16px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.login-btn {
+    border: 1px solid #333;
+    color: #ffffff;
+}
+
+.login-btn:hover {
+    border-color: #ff7a00;
+    color: #ff7a00;
+}
+
+.register-btn {
+    background: #ff7a00;
+    color: #000000;
+}
+
+.register-btn:hover {
+    background: #ff941f;
+}
+
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.78) 45%,
+            rgba(0, 0, 0, 0.3) 100%
+        ),
+        linear-gradient(
+            135deg,
+            #151515,
+            #080808
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Decorative background */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    right: -150px;
+    top: 80px;
+
+    background: #ff7a00;
+
+    opacity: 0.08;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+}
+
+
+.hero-content {
+    max-width: 750px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-small-title {
+    color: #ff7a00;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(50px, 7vw, 90px);
+    line-height: 0.95;
+    font-weight: 900;
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    color: #ff7a00;
+    display: block;
+}
+
+.hero-description {
+    max-width: 600px;
+    color: #bcbcbc;
+    font-size: 17px;
+    margin-top: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+
+    padding: 13px 22px;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+.primary-btn {
+    background: #ff7a00;
+    color: #000000;
+}
+
+.primary-btn:hover {
+    background: #ff941f;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    border: 1px solid #444;
+    color: #ffffff;
+}
+
+.secondary-btn:hover {
+    border-color: #ff7a00;
+    color: #ff7a00;
+}
+
+
+/* ========================================
+   STATS SECTION
+======================================== */
+
+.stats-section {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 1px;
+
+    background: #222;
+
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.stat-box {
+    background: #0d0d0d;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+.stat-box:hover {
+    background: #131313;
+}
+
+.stat-icon {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.stat-box h3 {
+    font-size: 15px;
+}
+
+.stat-box p {
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* ========================================
+   GENERAL SECTION
+======================================== */
+
+section {
+    padding: 90px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+
+    margin: 0 auto 50px;
+}
+
+.section-label {
+    color: #ff7a00;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-size: 42px;
+
+    line-height: 1.1;
+
+    font-weight: 900;
+}
+
+.section-heading h2 span {
+    color: #ff7a00;
+}
+
+.section-heading > p:last-child {
+    color: #888;
+
+    margin-top: 15px;
+
+    font-size: 15px;
+}
+
+
+/* ========================================
+   WELCOME SECTION
+======================================== */
+
+.welcome-section {
+    background: #080808;
+}
+
+.welcome-content {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+.welcome-text p {
+    color: #aaa;
+
+    margin-bottom: 20px;
+
+    font-size: 16px;
+}
+
+.welcome-text .primary-btn {
+    margin-top: 10px;
+}
+
+.welcome-card {
+    background: #111;
+
+    border: 1px solid #242424;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    border-radius: 8px;
+
+    transition: 0.3s ease;
+}
+
+.welcome-card:hover {
+    border-color: #ff7a00;
+
+    transform: translateY(-5px);
+}
+
+.welcome-card-icon {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+.welcome-card h3 {
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+.welcome-card p {
+    color: #888;
+}
+
+
+/* ========================================
+   NEWS SECTION
+======================================== */
+
+.news-section {
+    background: #0d0d0d;
+}
+
+.news-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.news-card {
+    background: #121212;
+
+    border: 1px solid #242424;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    transition: 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #ff7a00;
+}
+
+.news-image {
+    height: 180px;
+
+    background: #191919;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 60px;
+}
+
+.news-content {
+    padding: 25px;
+}
+
+.news-category {
+    color: #ff7a00;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.news-content h3 {
+    margin: 10px 0;
+
+    font-size: 20px;
+}
+
+.news-content p {
+    color: #888;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+.news-content a {
+    color: #ff7a00;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.center-button {
+    text-align: center;
+
+    margin-top: 40px;
+}
+
+
+/* ========================================
+   WEAPONS SECTION
+======================================== */
+
+.weapons-section {
+    background: #080808;
+}
+
+.weapon-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.weapon-card {
+    background: #111;
+
+    border: 1px solid #242424;
+
+    padding: 30px 20px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+.weapon-card:hover {
+    border-color: #ff7a00;
+
+    transform: translateY(-6px);
+}
+
+.weapon-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.weapon-card h3 {
+    margin-bottom: 10px;
+}
+
+.weapon-card p {
+    color: #888;
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+.weapon-card a {
+    color: #ff7a00;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   CHARACTERS
+======================================== */
+
+.characters-section {
+    background: #0d0d0d;
+}
+
+.character-grid {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.character-card {
+    background: #121212;
+
+    border: 1px solid #242424;
+
+    padding: 35px 25px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+.character-card:hover {
+    border-color: #ff7a00;
+
+    transform: translateY(-6px);
+}
+
+.character-avatar {
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #1d1d1d;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 40px;
+}
+
+.character-card h3 {
+    margin-bottom: 10px;
+}
+
+.character-card p {
+    color: #888;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+.character-card a {
+    color: #ff7a00;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   MAPS
+======================================== */
+
+.maps-section {
+    background: #080808;
+}
+
+.map-grid {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.map-card {
+    background: #111;
+
+    border: 1px solid #242424;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    transition: 0.3s ease;
+}
+
+.map-card:hover {
+    border-color: #ff7a00;
+
+    transform: translateY(-5px);
+}
+
+.map-image {
+    height: 220px;
+
+    background: #191919;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 70px;
+}
+
+.map-content {
+    padding: 25px;
+}
+
+.map-content h3 {
+    margin-bottom: 10px;
+}
+
+.map-content p {
+    color: #888;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+.map-content a {
+    color: #ff7a00;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   QUIZ SECTION
+======================================== */
+
+.quiz-section {
+    background:
+        linear-gradient(
+            135deg,
+            #151515,
+            #080808
+        );
+
+    text-align: center;
+
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.quiz-content {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.quiz-content h2 {
+    font-size: 45px;
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+.quiz-content h2 span {
+    color: #ff7a00;
+    display: block;
+}
+
+.quiz-content > p:not(.section-label) {
+    color: #999;
+
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+}
+
+.quiz-features {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    margin-bottom: 35px;
+}
+
+.quiz-features div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    color: #aaa;
+
+    font-size: 13px;
+}
+
+.quiz-features div:first-letter {
+    font-size: 25px;
+}
+
+
+/* ========================================
+   TOURNAMENT
+======================================== */
+
+.tournament-section {
+    background: #0d0d0d;
+}
+
+.tournament-card {
+    max-width: 1000px;
+
+    margin: auto;
+
+    background: #121212;
+
+    border: 1px solid #292929;
+
+    border-radius: 8px;
+
+    padding: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    transition: 0.3s ease;
+}
+
+.tournament-card:hover {
+    border-color: #ff7a00;
+}
+
+.tournament-icon {
+    font-size: 65px;
+}
+
+.tournament-info {
+    flex: 1;
+}
+
+.tournament-status {
+    color: #ff7a00;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.tournament-info h3 {
+    font-size: 24px;
+
+    margin: 5px 0;
+}
+
+.tournament-info p {
+    color: #888;
+
+    font-size: 14px;
+}
+
+.tournament-details {
+    display: flex;
+
+    gap: 20px;
+
+    margin-top: 15px;
+
+    color: #aaa;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   EVENTS
+======================================== */
+
+.events-section {
+    background: #080808;
+}
+
+.event-grid {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.event-card {
+    background: #111;
+
+    border: 1px solid #242424;
+
+    border-radius: 8px;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+.event-card:hover {
+    border-color: #ff7a00;
+
+    transform: translateY(-6px);
+}
+
+.event-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.event-card h3 {
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    color: #888;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+.event-card a {
+    color: #ff7a00;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   COMMUNITY SECTION
+======================================== */
+
+.community-section {
+    background:
+        linear-gradient(
+            135deg,
+            #ff7a00,
+            #c45100
+        );
+
+    color: #000;
+
+    text-align: center;
+}
+
+.community-content {
+    max-width: 750px;
+
+    margin: auto;
+}
+
+.community-section .section-label {
+    color: #000;
+}
+
+.community-content h2 {
+    font-size: 45px;
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+.community-content h2 span {
+    display: block;
+}
+
+.community-content > p:not(.section-label) {
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+
+    font-size: 16px;
+}
+
+.community-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.community-section .primary-btn {
+    background: #000;
+
+    color: #ffffff;
+}
+
+.community-section .secondary-btn {
+    border-color: #000;
+
+    color: #000;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+    background: #050505;
+
+    padding: 70px 8% 20px;
+
+    border-top: 1px solid #222;
+}
+
+.footer-container {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    gap: 50px;
+}
+
+.footer-about p {
+    color: #777;
+
+    max-width: 300px;
+
+    font-size: 13px;
+
+    margin-top: 15px;
+}
+
+.footer-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.footer-links h3 {
+    color: #ffffff;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #777;
+
+    font-size: 13px;
+
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ff7a00;
+}
+
+.footer-bottom {
+    max-width: 1100px;
+
+    margin: 50px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #1c1c1c;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.footer-bottom p {
+    color: #555;
+
+    font-size: 11px;
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+
+/* TABLETS */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        gap: 15px;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
+
+    .header-buttons {
+        display: none;
+    }
+
+    .weapon-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .event-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 15px 5%;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .navbar {
+        width: 100%;
+
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        padding-bottom: 5px;
+
+        gap: 20px;
+    }
+
+    .navbar a {
+        white-space: nowrap;
+    }
+
+
+    .hero {
+        min-height: 600px;
+
+        padding: 70px 6%;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .stats-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    section {
+        padding: 70px 6%;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+
+    .welcome-content {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .weapon-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .character-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .map-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .quiz-content h2 {
+        font-size: 34px;
+    }
+
+    .quiz-features {
+        gap: 15px;
+    }
+
+
+    .tournament-card {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 30px 20px;
+    }
+
+    .tournament-details {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .community-content h2 {
+        font-size: 34px;
+    }
+
+    .community-buttons {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 35px;
+    }
+
+    .footer-about {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+}
+
+
+/* SMALL PHONES */
+
+@media (max-width: 400px) {
+
+    .logo span {
+        font-size: 20px;
+    }
+
+    .logo strong {
+        font-size: 10px;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* ==============================
+   CHAOS CREW HOMEPAGE PROMO
+============================== */
+
+.guild-promo {
+    padding: 90px 20px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #321505,
+            #0b0b0f 70%
+        );
+
+    border-top: 1px solid #292930;
+
+    border-bottom: 1px solid #292930;
+}
+
+
+.guild-promo-content {
+    max-width: 750px;
+
+    margin: auto;
+}
+
+
+.guild-promo-content > p:first-child {
+    color: #ff5c00;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+
+.guild-promo h2 {
+    font-size: clamp(35px, 6vw, 60px);
+
+    margin-bottom: 5px;
+}
+
+
+.guild-promo h3 {
+    color: #ff5c00;
+
+    margin-bottom: 15px;
+}
+
+
+.guild-promo-content p {
+    color: #9999a3;
+
+    margin-bottom: 25px;
+}
+
+
+.guild-promo a {
+    display: inline-block;
+
+    background: #ff5c00;
+
+    color: white;
+
+    padding: 14px 25px;
+
+    border-radius: 6px;
+
+    font-weight: 800;
+
+    transition: 0.3s;
+}
+
+
+.guild-promo a:hover {
+    background: #ff751f;
+
+    transform: translateY(-3px);
+}

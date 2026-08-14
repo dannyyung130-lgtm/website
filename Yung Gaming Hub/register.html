@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | Yung Gaming Hub</title>
+
+    <meta name="description"
+        content="Create your Yung Gaming Hub account and join the gaming community.">
+
+    <link rel="stylesheet" href="register.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         HEADER
+    =========================================== -->
+
+    <header class="header">
+
+        <a href="home.html" class="logo">
+
+            <span>YUNG</span>
+
+            <strong>GAMING HUB</strong>
+
+        </a>
+
+
+        <nav class="navbar">
+
+            <a href="home.html">
+                Home
+            </a>
+
+            <a href="news.html">
+                News
+            </a>
+
+            <a href="weapons.html">
+                Weapons
+            </a>
+
+            <a href="characters.html">
+                Characters
+            </a>
+
+            <a href="maps.html">
+                Maps
+            </a>
+
+            <a href="quiz.html">
+                Quiz
+            </a>
+
+            <a href="tournaments.html">
+                Tournaments
+            </a>
+
+        </nav>
+
+
+        <div class="header-buttons">
+
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         MAIN REGISTRATION AREA
+    =========================================== -->
+
+    <main class="register-page">
+
+
+        <!-- LEFT SIDE -->
+
+        <section class="register-intro">
+
+
+            <div class="intro-content">
+
+
+                <p class="intro-label">
+                    YUNG GAMING HUB
+                </p>
+
+
+                <h1>
+                    JOIN THE
+                    <span>COMMUNITY.</span>
+                </h1>
+
+
+                <p class="intro-description">
+
+                    Create your account and become part of
+                    a growing gaming community built for
+                    players who want to play, learn and compete.
+
+                </p>
+
+
+                <div class="intro-features">
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            🎮
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Gaming Community
+                            </h3>
+
+                            <p>
+                                Connect with other players.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            🏆
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Tournaments
+                            </h3>
+
+                            <p>
+                                Compete when tournaments open.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            🧠
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Challenges & Quizzes
+                            </h3>
+
+                            <p>
+                                Test your gaming knowledge.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            📊
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Player Progress
+                            </h3>
+
+                            <p>
+                                Track your activity and achievements.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- RIGHT SIDE -->
+
+        <section class="register-section">
+
+
+            <div class="register-card">
+
+
+                <div class="form-heading">
+
+                    <p class="form-label">
+                        CREATE ACCOUNT
+                    </p>
+
+                    <h2>
+                        LET'S GET
+                        <span>STARTED.</span>
+                    </h2>
+
+                    <p>
+                        Fill in your details below to create
+                        your Yung Gaming Hub account.
+                    </p>
+
+                </div>
+
+
+
+                <!-- ======================================
+                     REGISTRATION FORM
+                ======================================= -->
+
+                <form id="registerForm" novalidate>
+
+
+                    <!-- USERNAME -->
+
+                    <div class="form-group">
+
+                        <label for="username">
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter your username"
+                            minlength="3"
+                            maxlength="20"
+                            required
+                        >
+
+                        <small class="error-message"
+                            id="usernameError"></small>
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+
+                        <small class="error-message"
+                            id="emailError"></small>
+
+                    </div>
+
+
+
+                    <!-- FREE FIRE UID -->
+
+                    <div class="form-group">
+
+                        <label for="uid">
+
+                            Free Fire UID
+
+                            <span class="optional">
+                                Optional
+                            </span>
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="uid"
+                            name="uid"
+                            placeholder="Enter your Free Fire UID"
+                            maxlength="20"
+                        >
+
+                        <small class="input-hint">
+                            You can add this later from your profile.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Create a password"
+                                minlength="8"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="show-password"
+                                id="togglePassword"
+                                aria-label="Show password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+
+                        <div class="password-strength">
+
+                            <div
+                                class="strength-bar"
+                                id="strengthBar">
+                            </div>
+
+                        </div>
+
+
+                        <small
+                            class="password-text"
+                            id="passwordText">
+                        </small>
+
+
+                        <small
+                            class="error-message"
+                            id="passwordError">
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- CONFIRM PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Confirm your password"
+                            required
+                        >
+
+                        <small
+                            class="error-message"
+                            id="confirmPasswordError">
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- AGE -->
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="age">
+                                Age
+                            </label>
+
+                            <input
+                                type="number"
+                                id="age"
+                                name="age"
+                                min="13"
+                                max="100"
+                                placeholder="Age"
+                                required
+                            >
+
+                            <small
+                                class="error-message"
+                                id="ageError">
+                            </small>
+
+                        </div>
+
+
+
+                        <!-- COUNTRY -->
+
+                        <div class="form-group">
+
+                            <label for="country">
+                                Country
+                            </label>
+
+                            <select
+                                id="country"
+                                name="country"
+                                required
+                            >
+
+                                <option value="">
+                                    Select country
+                                </option>
+
+                                <option value="Nigeria">
+                                    Nigeria
+                                </option>
+
+                                <option value="Ghana">
+                                    Ghana
+                                </option>
+
+                                <option value="Kenya">
+                                    Kenya
+                                </option>
+
+                                <option value="South Africa">
+                                    South Africa
+                                </option>
+
+                                <option value="United Kingdom">
+                                    United Kingdom
+                                </option>
+
+                                <option value="United States">
+                                    United States
+                                </option>
+
+                                <option value="Canada">
+                                    Canada
+                                </option>
+
+                                <option value="Germany">
+                                    Germany
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                            <small
+                                class="error-message"
+                                id="countryError">
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PLAYER TYPE -->
+
+                    <div class="form-group">
+
+                        <label>
+                            What type of player are you?
+                        </label>
+
+
+                        <div class="player-types">
+
+
+                            <label class="player-option">
+
+                                <input
+                                    type="radio"
+                                    name="playerType"
+                                    value="Casual"
+                                >
+
+                                <span>
+                                    🎮 Casual
+                                </span>
+
+                            </label>
+
+
+
+                            <label class="player-option">
+
+                                <input
+                                    type="radio"
+                                    name="playerType"
+                                    value="Competitive"
+                                >
+
+                                <span>
+                                    🏆 Competitive
+                                </span>
+
+                            </label>
+
+
+
+                            <label class="player-option">
+
+                                <input
+                                    type="radio"
+                                    name="playerType"
+                                    value="Both"
+                                >
+
+                                <span>
+                                    🔥 Both
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- TERMS -->
+
+                    <div class="terms-group">
+
+                        <label class="checkbox-label">
+
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                name="terms"
+                                required
+                            >
+
+                            <span>
+                                I agree to the
+                                <a href="#">
+                                    Terms of Use
+                                </a>
+                                and
+                                <a href="#">
+                                    Community Rules
+                                </a>.
+                            </span>
+
+                        </label>
+
+
+                        <small
+                            class="error-message"
+                            id="termsError">
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="register-submit"
+                    >
+
+                        CREATE ACCOUNT
+
+                    </button>
+
+
+
+                    <!-- SUCCESS MESSAGE -->
+
+                    <div
+                        class="success-message"
+                        id="successMessage"
+                    >
+
+                        <div class="success-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Account form completed!
+                            </strong>
+
+                            <p>
+                                Your account details passed
+                                the front-end validation.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </form>
+
+
+
+                <!-- LOGIN -->
+
+                <div class="login-prompt">
+
+                    Already have an account?
+
+                    <a href="login.html">
+                        Login here
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <div class="footer-about">
+
+                <a href="home.html" class="logo">
+
+                    <span>YUNG</span>
+
+                    <strong>
+                        GAMING HUB
+                    </strong>
+
+                </a>
+
+
+                <p>
+                    A gaming community created for players
+                    who want to play, learn and compete.
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Explore
+                </h3>
+
+                <a href="home.html">
+                    Home
+                </a>
+
+                <a href="news.html">
+                    News
+                </a>
+
+                <a href="weapons.html">
+                    Weapons
+                </a>
+
+                <a href="characters.html">
+                    Characters
+                </a>
+
+                <a href="maps.html">
+                    Maps
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Community
+                </h3>
+
+                <a href="quiz.html">
+                    Quiz
+                </a>
+
+                <a href="tournaments.html">
+                    Tournaments
+                </a>
+
+                <a href="events.html">
+                    Events
+                </a>
+
+                <a href="leaderboard.html">
+                    Leaderboard
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Account
+                </h3>
+
+                <a href="register.html">
+                    Register
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Yung Gaming Hub. All rights reserved.
+            </p>
+
+            <p>
+                Independent fan/community project.
+                Not affiliated with Garena.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script>
+
+        const form = document.getElementById("registerForm");
+
+        const username = document.getElementById("username");
+
+        const email = document.getElementById("email");
+
+        const password = document.getElementById("password");
+
+        const confirmPassword =
+            document.getElementById("confirmPassword");
+
+        const age = document.getElementById("age");
+
+        const country = document.getElementById("country");
+
+        const terms = document.getElementById("terms");
+
+        const togglePassword =
+            document.getElementById("togglePassword");
+
+        const successMessage =
+            document.getElementById("successMessage");
+
+
+
+        /* ======================================
+           SHOW / HIDE PASSWORD
+        ====================================== */
+
+        togglePassword.addEventListener("click", function () {
+
+            if (password.type === "password") {
+
+                password.type = "text";
+
+                togglePassword.textContent = "Hide";
+
+            } else {
+
+                password.type = "password";
+
+                togglePassword.textContent = "Show";
+
+            }
+
+        });
+
+
+
+        /* ======================================
+           PASSWORD STRENGTH
+        ====================================== */
+
+        const strengthBar =
+            document.getElementById("strengthBar");
+
+        const passwordText =
+            document.getElementById("passwordText");
+
+
+        password.addEventListener("input", function () {
+
+            const value = password.value;
+
+            let strength = 0;
+
+
+            if (value.length >= 8) {
+                strength++;
+            }
+
+            if (/[A-Z]/.test(value)) {
+                strength++;
+            }
+
+            if (/[0-9]/.test(value)) {
+                strength++;
+            }
+
+            if (/[^A-Za-z0-9]/.test(value)) {
+                strength++;
+            }
+
+
+            if (value.length === 0) {
+
+                strengthBar.style.width = "0%";
+
+                passwordText.textContent = "";
+
+            }
+
+            else if (strength <= 1) {
+
+                strengthBar.style.width = "25%";
+
+                passwordText.textContent =
+                    "Weak password";
+
+            }
+
+            else if (strength === 2) {
+
+                strengthBar.style.width = "50%";
+
+                passwordText.textContent =
+                    "Fair password";
+
+            }
+
+            else if (strength === 3) {
+
+                strengthBar.style.width = "75%";
+
+                passwordText.textContent =
+                    "Good password";
+
+            }
+
+            else {
+
+                strengthBar.style.width = "100%";
+
+                passwordText.textContent =
+                    "Strong password";
+
+            }
+
+        });
+
+
+
+        /* ======================================
+           ERROR FUNCTION
+        ====================================== */
+
+        function showError(id, message) {
+
+            const element =
+                document.getElementById(id);
+
+            element.textContent = message;
+
+        }
+
+
+
+        function clearErrors() {
+
+            const errors =
+                document.querySelectorAll(".error-message");
+
+            errors.forEach(function (error) {
+
+                error.textContent = "";
+
+            });
+
+        }
+
+
+
+        /* ======================================
+           FORM SUBMISSION
+        ====================================== */
+
+        form.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            clearErrors();
+
+            successMessage.style.display = "none";
+
+
+            let valid = true;
+
+
+
+            /* USERNAME */
+
+            if (username.value.trim().length < 3) {
+
+                showError(
+                    "usernameError",
+                    "Username must be at least 3 characters."
+                );
+
+                valid = false;
+
+            }
+
+
+
+            /* EMAIL */
+
+            const emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+            if (!emailPattern.test(email.value.trim())) {
+
+                showError(
+                    "emailError",
+                    "Enter a valid email address."
+                );
+
+                valid = false;
+
+            }
+
+
+
+            /* PASSWORD */
+
+            if (password.value.length < 8) {
+
+                showError(
+                    "passwordError",
+                    "Password must be at least 8 characters."
+                );
+
+                valid = false;
+
+            }
+
+
+
+            /* CONFIRM PASSWORD */
+
+            if (
+                confirmPassword.value !==
+                password.value
+            ) {
+
+                showError(
+                    "confirmPasswordError",
+                    "Passwords do not match."
+                );
+
+                valid = false;
+
+            }
+
+
+
+            /* AGE */
+
+            if (
+                age.value < 13 ||
+                age.value > 100 ||
+                age.value === ""
+            ) {
+
+                showError(
+                    "ageError",
+                    "Enter a valid age."
+                );
+
+                valid = false;
+
+            }
+
+
+
+            /* COUNTRY */
+
+            if (country.value === "") {
+
+                showError(
+                    "countryError",
+                    "Please select your country."
+                );
+
+                valid = false;
+
+            }
+
+
+
+            /* TERMS */
+
+            if (!terms.checked) {
+
+                showError(
+                    "termsError",
+                    "You must agree before creating an account."
+                );
+
+                valid = false;
+
+            }
+
+
+
+            /* SUCCESS */
+
+            if (valid) {
+
+                successMessage.style.display =
+                    "flex";
+
+                form.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+
+                /*
+                    IMPORTANT:
+
+                    This is currently only
+                    front-end validation.
+
+                    Later we will connect
+                    this form to a database.
+                */
+
+                console.log(
+                    "Registration form passed validation."
+                );
+
+            }
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>

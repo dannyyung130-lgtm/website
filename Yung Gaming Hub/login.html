@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Yung Gaming Hub</title>
+
+    <meta
+        name="description"
+        content="Login to your Yung Gaming Hub account."
+    >
+
+    <link rel="stylesheet" href="login.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         HEADER
+    =========================================== -->
+
+    <header class="header">
+
+        <a href="home.html" class="logo">
+
+            <span>YUNG</span>
+
+            <strong>GAMING HUB</strong>
+
+        </a>
+
+
+        <nav class="navbar">
+
+            <a href="home.html">
+                Home
+            </a>
+
+            <a href="news.html">
+                News
+            </a>
+
+            <a href="weapons.html">
+                Weapons
+            </a>
+
+            <a href="characters.html">
+                Characters
+            </a>
+
+            <a href="maps.html">
+                Maps
+            </a>
+
+            <a href="quiz.html">
+                Quiz
+            </a>
+
+            <a href="tournaments.html">
+                Tournaments
+            </a>
+
+        </nav>
+
+
+        <div class="header-buttons">
+
+            <a href="register.html" class="register-btn">
+                Register
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         LOGIN PAGE
+    =========================================== -->
+
+    <main class="login-page">
+
+
+        <!-- ======================================
+             LEFT SIDE
+        ======================================= -->
+
+        <section class="login-intro">
+
+
+            <div class="intro-content">
+
+
+                <p class="intro-label">
+                    WELCOME BACK
+                </p>
+
+
+                <h1>
+                    READY TO
+                    <span>PLAY?</span>
+                </h1>
+
+
+                <p class="intro-description">
+
+                    Login to your Yung Gaming Hub account
+                    and continue your journey through the
+                    community.
+
+                </p>
+
+
+
+                <!-- FEATURES -->
+
+                <div class="intro-features">
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            🎮
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Your Gaming Profile
+                            </h3>
+
+                            <p>
+                                Keep your gaming identity in one place.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            🏆
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Tournaments
+                            </h3>
+
+                            <p>
+                                Join competitions and track your results.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            🥇
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Leaderboards
+                            </h3>
+
+                            <p>
+                                See how you rank against other players.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            🔥
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Community
+                            </h3>
+
+                            <p>
+                                Stay connected with other gamers.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             RIGHT SIDE
+        ======================================= -->
+
+        <section class="login-section">
+
+
+            <div class="login-card">
+
+
+                <!-- FORM HEADING -->
+
+                <div class="form-heading">
+
+                    <p class="form-label">
+                        YUNG GAMING HUB
+                    </p>
+
+
+                    <h2>
+                        WELCOME
+                        <span>BACK.</span>
+                    </h2>
+
+
+                    <p>
+                        Enter your account details to continue.
+                    </p>
+
+                </div>
+
+
+
+                <!-- ==================================
+                     LOGIN FORM
+                =================================== -->
+
+                <form
+                    id="loginForm"
+                    novalidate
+                >
+
+
+                    <!-- USERNAME / EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="loginEmail">
+                            Email or Username
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="loginEmail"
+                            name="loginEmail"
+                            placeholder="Enter your email or username"
+                            autocomplete="username"
+                            required
+                        >
+
+
+                        <small
+                            class="error-message"
+                            id="loginEmailError">
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+
+                        <div class="password-label-row">
+
+                            <label for="loginPassword">
+                                Password
+                            </label>
+
+
+                            <a
+                                href="#"
+                                id="forgotPassword"
+                            >
+                                Forgot password?
+                            </a>
+
+                        </div>
+
+
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                name="loginPassword"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                class="show-password"
+                                id="toggleLoginPassword"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+
+                        <small
+                            class="error-message"
+                            id="loginPasswordError">
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- REMEMBER ME -->
+
+                    <div class="remember-row">
+
+
+                        <label class="remember-label">
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                                name="rememberMe"
+                            >
+
+                            <span>
+                                Remember me
+                            </span>
+
+                        </label>
+
+
+                    </div>
+
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="login-submit"
+                    >
+
+                        LOGIN TO ACCOUNT
+
+                    </button>
+
+
+
+                    <!-- ERROR / STATUS -->
+
+                    <div
+                        class="login-status"
+                        id="loginStatus"
+                    >
+                    </div>
+
+
+
+                    <!-- SUCCESS -->
+
+                    <div
+                        class="success-message"
+                        id="successMessage"
+                    >
+
+                        <div class="success-icon">
+                            ✓
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Login successful!
+                            </strong>
+
+                            <p>
+                                Welcome back to Yung Gaming Hub.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </form>
+
+
+
+                <!-- DIVIDER -->
+
+                <div class="divider">
+
+                    <span>
+                        OR
+                    </span>
+
+                </div>
+
+
+
+                <!-- CREATE ACCOUNT -->
+
+                <div class="register-prompt">
+
+                    <p>
+                        Don't have an account?
+                    </p>
+
+
+                    <a
+                        href="register.html"
+                        class="create-account-btn"
+                    >
+
+                        CREATE ACCOUNT
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <!-- ABOUT -->
+
+            <div class="footer-about">
+
+                <a
+                    href="home.html"
+                    class="logo"
+                >
+
+                    <span>
+                        YUNG
+                    </span>
+
+                    <strong>
+                        GAMING HUB
+                    </strong>
+
+                </a>
+
+
+                <p>
+
+                    A gaming community created for players
+                    who want to play, learn and compete.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- EXPLORE -->
+
+            <div class="footer-links">
+
+                <h3>
+                    Explore
+                </h3>
+
+
+                <a href="home.html">
+                    Home
+                </a>
+
+
+                <a href="news.html">
+                    News
+                </a>
+
+
+                <a href="weapons.html">
+                    Weapons
+                </a>
+
+
+                <a href="characters.html">
+                    Characters
+                </a>
+
+
+                <a href="maps.html">
+                    Maps
+                </a>
+
+            </div>
+
+
+
+            <!-- COMMUNITY -->
+
+            <div class="footer-links">
+
+                <h3>
+                    Community
+                </h3>
+
+
+                <a href="quiz.html">
+                    Quiz
+                </a>
+
+
+                <a href="tournaments.html">
+                    Tournaments
+                </a>
+
+
+                <a href="events.html">
+                    Events
+                </a>
+
+
+                <a href="leaderboard.html">
+                    Leaderboard
+                </a>
+
+            </div>
+
+
+
+            <!-- ACCOUNT -->
+
+            <div class="footer-links">
+
+                <h3>
+                    Account
+                </h3>
+
+
+                <a href="register.html">
+                    Register
+                </a>
+
+
+                <a href="login.html">
+                    Login
+                </a>
+
+
+                <a href="profile.html">
+                    Profile
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Yung Gaming Hub. All rights reserved.
+            </p>
+
+
+            <p>
+                Independent fan/community project.
+                Not affiliated with Garena.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script>
+
+
+        /* ======================================
+           GET ELEMENTS
+        ======================================= */
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+
+        const loginEmail =
+            document.getElementById("loginEmail");
+
+
+        const loginPassword =
+            document.getElementById("loginPassword");
+
+
+        const rememberMe =
+            document.getElementById("rememberMe");
+
+
+        const toggleLoginPassword =
+            document.getElementById(
+                "toggleLoginPassword"
+            );
+
+
+        const successMessage =
+            document.getElementById(
+                "successMessage"
+            );
+
+
+        const loginStatus =
+            document.getElementById(
+                "loginStatus"
+            );
+
+
+        const forgotPassword =
+            document.getElementById(
+                "forgotPassword"
+            );
+
+
+
+        /* ======================================
+           SHOW / HIDE PASSWORD
+        ======================================= */
+
+        toggleLoginPassword.addEventListener(
+            "click",
+            function () {
+
+
+                if (
+                    loginPassword.type ===
+                    "password"
+                ) {
+
+                    loginPassword.type =
+                        "text";
+
+                    toggleLoginPassword.textContent =
+                        "Hide";
+
+                }
+
+                else {
+
+                    loginPassword.type =
+                        "password";
+
+                    toggleLoginPassword.textContent =
+                        "Show";
+
+                }
+
+            }
+        );
+
+
+
+        /* ======================================
+           CLEAR ERRORS
+        ======================================= */
+
+        function clearErrors() {
+
+            document.getElementById(
+                "loginEmailError"
+            ).textContent = "";
+
+
+            document.getElementById(
+                "loginPasswordError"
+            ).textContent = "";
+
+
+            loginStatus.textContent = "";
+
+            loginStatus.className =
+                "login-status";
+
+        }
+
+
+
+        /* ======================================
+           FORM SUBMISSION
+        ======================================= */
+
+        loginForm.addEventListener(
+            "submit",
+            function (event) {
+
+
+                event.preventDefault();
+
+
+                clearErrors();
+
+
+                successMessage.style.display =
+                    "none";
+
+
+                let valid = true;
+
+
+
+                /* EMAIL / USERNAME */
+
+                if (
+                    loginEmail.value.trim()
+                    === ""
+                ) {
+
+                    document.getElementById(
+                        "loginEmailError"
+                    ).textContent =
+                        "Enter your email or username.";
+
+                    valid = false;
+
+                }
+
+
+
+                /* PASSWORD */
+
+                if (
+                    loginPassword.value.length
+                    === 0
+                ) {
+
+                    document.getElementById(
+                        "loginPasswordError"
+                    ).textContent =
+                        "Enter your password.";
+
+                    valid = false;
+
+                }
+
+
+
+                /* ==================================
+                   IF FORM IS VALID
+                =================================== */
+
+                if (valid) {
+
+
+                    /*
+                        IMPORTANT:
+
+                        This is currently only
+                        front-end login validation.
+
+                        We have NOT connected this
+                        to a real database yet.
+                    */
+
+
+                    successMessage.style.display =
+                        "flex";
+
+
+                    console.log(
+                        "Login form passed validation."
+                    );
+
+
+                    /*
+                        Temporary demonstration:
+
+                        After the real backend is added,
+                        this is where authentication will
+                        happen.
+                    */
+
+                }
+
+            }
+        );
+
+
+
+        /* ======================================
+           FORGOT PASSWORD
+        ======================================= */
+
+        forgotPassword.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+
+                alert(
+                    "Password recovery will be added when we connect the website to a database."
+                );
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Community | Yung Gaming Hub</title>
+
+    <meta
+        name="description"
+        content="Join the Yung Gaming Hub gaming community, discuss Free Fire, find teammates and share your gaming moments."
+    >
+
+    <link rel="stylesheet" href="community.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         HEADER
+    =========================================== -->
+
+    <header class="header">
+
+
+        <!-- LOGO -->
+
+        <a href="home.html" class="logo">
+
+            <span>YUNG</span>
+
+            <strong>GAMING HUB</strong>
+
+        </a>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="navbar">
+
+            <a href="home.html">
+                Home
+            </a>
+
+            <a href="news.html">
+                News
+            </a>
+
+            <a href="community.html" class="active">
+                Community
+            </a>
+
+            <a href="tournaments.html">
+                Tournaments
+            </a>
+
+            <a href="quiz.html">
+                Quiz
+            </a>
+
+            <a href="weapons.html">
+                Weapons
+            </a>
+
+            <a href="characters.html">
+                Characters
+            </a>
+
+            <a href="maps.html">
+                Maps
+            </a>
+
+        </nav>
+
+
+
+        <!-- ACCOUNT -->
+
+        <div class="header-account">
+
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+
+            <a href="register.html" class="register-btn">
+                Register
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         COMMUNITY HERO
+    =========================================== -->
+
+    <main>
+
+
+        <section class="community-hero">
+
+
+            <div class="hero-content">
+
+
+                <p class="hero-label">
+                    YUNG GAMING HUB COMMUNITY
+                </p>
+
+
+                <h1>
+                    PLAY.
+                    <span>CONNECT.</span>
+                    COMPETE.
+                </h1>
+
+
+                <p class="hero-description">
+
+                    Meet other players, share your gaming
+                    experiences, find teammates and talk
+                    about everything happening in the
+                    gaming community.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#create-post"
+                        class="primary-btn"
+                    >
+                        + CREATE POST
+                    </a>
+
+
+                    <a
+                        href="#discussions"
+                        class="secondary-btn"
+                    >
+                        EXPLORE COMMUNITY
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- COMMUNITY STATS -->
+
+            <div class="community-stats">
+
+
+                <div class="stat-card">
+
+                    <strong>
+                        0
+                    </strong>
+
+                    <span>
+                        Members
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <strong>
+                        0
+                    </strong>
+
+                    <span>
+                        Posts
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <strong>
+                        0
+                    </strong>
+
+                    <span>
+                        Discussions
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <strong>
+                        0
+                    </strong>
+
+                    <span>
+                        Online
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             COMMUNITY LAYOUT
+        =========================================== -->
+
+        <section class="community-area">
+
+
+            <!-- ======================================
+                 MAIN FEED
+            ======================================= -->
+
+            <div class="community-main">
+
+
+                <!-- SECTION HEADER -->
+
+                <div
+                    class="section-heading"
+                    id="discussions"
+                >
+
+                    <div>
+
+                        <p>
+                            COMMUNITY FEED
+                        </p>
+
+                        <h2>
+                            WHAT'S HAPPENING?
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        class="filter-btn active-filter"
+                        data-filter="all"
+                    >
+                        All Posts
+                    </button>
+
+                </div>
+
+
+
+                <!-- ==================================
+                     CREATE POST
+                =================================== -->
+
+                <div
+                    class="create-post"
+                    id="create-post"
+                >
+
+
+                    <div class="create-avatar">
+                        Y
+                    </div>
+
+
+                    <div class="create-content">
+
+                        <textarea
+                            id="postInput"
+                            placeholder="What's happening in the gaming community?"
+                            maxlength="500"
+                        ></textarea>
+
+
+                        <div class="create-bottom">
+
+
+                            <div class="post-tools">
+
+                                <button
+                                    type="button"
+                                    class="tool-btn"
+                                    title="Add image"
+                                >
+                                    📷
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="tool-btn"
+                                    title="Add video"
+                                >
+                                    🎥
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="tool-btn"
+                                    title="Add emoji"
+                                >
+                                    😀
+                                </button>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="post-btn"
+                                id="postButton"
+                            >
+                                POST
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================================
+                     CATEGORY FILTERS
+                =================================== -->
+
+                <div class="categories">
+
+
+                    <button
+                        class="category-btn active"
+                        data-category="all"
+                    >
+                        All
+                    </button>
+
+
+                    <button
+                        class="category-btn"
+                        data-category="general"
+                    >
+                        💬 General
+                    </button>
+
+
+                    <button
+                        class="category-btn"
+                        data-category="tournaments"
+                    >
+                        🏆 Tournaments
+                    </button>
+
+
+                    <button
+                        class="category-btn"
+                        data-category="teams"
+                    >
+                        👥 Find Players
+                    </button>
+
+
+                    <button
+                        class="category-btn"
+                        data-category="tips"
+                    >
+                        🧠 Tips
+                    </button>
+
+
+                    <button
+                        class="category-btn"
+                        data-category="clips"
+                    >
+                        🔥 Clips
+                    </button>
+
+                </div>
+
+
+
+                <!-- ==================================
+                     POSTS
+                =================================== -->
+
+                <div
+                    class="posts"
+                    id="posts"
+                >
+
+
+
+                    <!-- POST 1 -->
+
+                    <article
+                        class="post"
+                        data-category="tournaments"
+                    >
+
+
+                        <div class="post-top">
+
+
+                            <div class="avatar">
+                                C
+                            </div>
+
+
+                            <div class="post-user">
+
+                                <strong>
+                                    ChaosPlayer
+                                </strong>
+
+                                <span>
+                                    @chaosplayer · 2h
+                                </span>
+
+                            </div>
+
+
+                            <button class="more-btn">
+                                ⋮
+                            </button>
+
+                        </div>
+
+
+
+                        <div class="post-content">
+
+                            <span class="post-category">
+                                🏆 TOURNAMENTS
+                            </span>
+
+
+                            <p>
+
+                                Who is ready for the next
+                                Yung Gaming Hub tournament?
+                                🔥
+
+                                <br><br>
+
+                                I'm looking for two more
+                                players to join my squad.
+
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="post-actions">
+
+
+                            <button
+                                class="action-btn like-btn"
+                            >
+                                ♡
+                                <span>12</span>
+                            </button>
+
+
+                            <button
+                                class="action-btn comment-btn"
+                            >
+                                💬
+                                <span>4</span>
+                            </button>
+
+
+                            <button
+                                class="action-btn share-btn"
+                            >
+                                ↗
+                                <span>Share</span>
+                            </button>
+
+                        </div>
+
+
+                    </article>
+
+
+
+                    <!-- POST 2 -->
+
+                    <article
+                        class="post"
+                        data-category="tips"
+                    >
+
+
+                        <div class="post-top">
+
+
+                            <div class="avatar avatar-blue">
+                                F
+                            </div>
+
+
+                            <div class="post-user">
+
+                                <strong>
+                                    FreeFireKing
+                                </strong>
+
+                                <span>
+                                    @freefireking · 4h
+                                </span>
+
+                            </div>
+
+
+                            <button class="more-btn">
+                                ⋮
+                            </button>
+
+                        </div>
+
+
+
+                        <div class="post-content">
+
+                            <span class="post-category">
+                                🧠 TIPS
+                            </span>
+
+
+                            <p>
+
+                                What sensitivity settings
+                                are you guys using after
+                                the latest update?
+
+                                <br><br>
+
+                                Drop your settings below.
+                                👇
+
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="post-actions">
+
+
+                            <button
+                                class="action-btn like-btn"
+                            >
+                                ♡
+                                <span>27</span>
+                            </button>
+
+
+                            <button
+                                class="action-btn comment-btn"
+                            >
+                                💬
+                                <span>9</span>
+                            </button>
+
+
+                            <button
+                                class="action-btn share-btn"
+                            >
+                                ↗
+                                <span>Share</span>
+                            </button>
+
+                        </div>
+
+
+                    </article>
+
+
+
+                    <!-- POST 3 -->
+
+                    <article
+                        class="post"
+                        data-category="general"
+                    >
+
+
+                        <div class="post-top">
+
+
+                            <div class="avatar avatar-purple">
+                                D
+                            </div>
+
+
+                            <div class="post-user">
+
+                                <strong>
+                                    DarkShot
+                                </strong>
+
+                                <span>
+                                    @darkshot · 6h
+                                </span>
+
+                            </div>
+
+
+                            <button class="more-btn">
+                                ⋮
+                            </button>
+
+                        </div>
+
+
+
+                        <div class="post-content">
+
+                            <span class="post-category">
+                                💬 GENERAL
+                            </span>
+
+
+                            <p>
+
+                                What's your favourite
+                                Free Fire character right now?
+
+                                <br><br>
+
+                                Mine is definitely
+                                Chrono. 🔥
+
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="post-actions">
+
+
+                            <button
+                                class="action-btn like-btn"
+                            >
+                                ♡
+                                <span>18</span>
+                            </button>
+
+
+                            <button
+                                class="action-btn comment-btn"
+                            >
+                                💬
+                                <span>7</span>
+                            </button>
+
+
+                            <button
+                                class="action-btn share-btn"
+                            >
+                                ↗
+                                <span>Share</span>
+                            </button>
+
+                        </div>
+
+
+                    </article>
+
+
+
+                    <!-- POST 4 -->
+
+                    <article
+                        class="post"
+                        data-category="teams"
+                    >
+
+
+                        <div class="post-top">
+
+
+                            <div class="avatar avatar-green">
+                                N
+                            </div>
+
+
+                            <div class="post-user">
+
+                                <strong>
+                                    NightWolf
+                                </strong>
+
+                                <span>
+                                    @nightwolf · 8h
+                                </span>
+
+                            </div>
+
+
+                            <button class="more-btn">
+                                ⋮
+                            </button>
+
+                        </div>
+
+
+
+                        <div class="post-content">
+
+                            <span class="post-category">
+                                👥 FIND PLAYERS
+                            </span>
+
+
+                            <p>
+
+                                Looking for a squad to play
+                                ranked with tonight.
+
+                                <br><br>
+
+                                I'm looking for serious players
+                                who communicate properly.
+
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="post-actions">
+
+
+                            <button
+                                class="action-btn like-btn"
+                            >
+                                ♡
+                                <span>8</span>
+                            </button>
+
+
+                            <button
+                                class="action-btn comment-btn"
+                            >
+                                💬
+                                <span>5</span>
+                            </button>
+
+
+                            <button
+                                class="action-btn share-btn"
+                            >
+                                ↗
+                                <span>Share</span>
+                            </button>
+
+                        </div>
+
+
+                    </article>
+
+
+
+                    <!-- EMPTY MESSAGE -->
+
+                    <div
+                        class="no-posts"
+                        id="noPosts"
+                    >
+
+                        <div>
+                            🔍
+                        </div>
+
+                        <h3>
+                            No posts found
+                        </h3>
+
+                        <p>
+                            Try another category.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 RIGHT SIDEBAR
+            ======================================= -->
+
+            <aside class="community-sidebar">
+
+
+                <!-- SEARCH -->
+
+                <div class="sidebar-card search-card">
+
+
+                    <h3>
+                        Search Community
+                    </h3>
+
+
+                    <div class="search-box">
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search posts..."
+                        >
+
+                        <button
+                            type="button"
+                            id="searchButton"
+                        >
+                            🔍
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TRENDING -->
+
+                <div class="sidebar-card">
+
+
+                    <div class="sidebar-title">
+
+                        <h3>
+                            Trending Topics
+                        </h3>
+
+                        <span>
+                            🔥
+                        </span>
+
+                    </div>
+
+
+                    <div class="trending-list">
+
+
+                        <a href="#">
+
+                            <span>
+                                #FreeFireUpdate
+                            </span>
+
+                            <small>
+                                245 posts
+                            </small>
+
+                        </a>
+
+
+                        <a href="#">
+
+                            <span>
+                                #Tournament
+                            </span>
+
+                            <small>
+                                183 posts
+                            </small>
+
+                        </a>
+
+
+                        <a href="#">
+
+                            <span>
+                                #Ranked
+                            </span>
+
+                            <small>
+                                127 posts
+                            </small>
+
+                        </a>
+
+
+                        <a href="#">
+
+                            <span>
+                                #FreeFireTips
+                            </span>
+
+                            <small>
+                                94 posts
+                            </small>
+
+                        </a>
+
+
+                        <a href="#">
+
+                            <span>
+                                #SquadGoals
+                            </span>
+
+                            <small>
+                                71 posts
+                            </small>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ONLINE PLAYERS -->
+
+                <div class="sidebar-card">
+
+
+                    <div class="sidebar-title">
+
+                        <h3>
+                            Online Players
+                        </h3>
+
+                        <span class="online-count">
+                            0
+                        </span>
+
+                    </div>
+
+
+                    <div class="online-player">
+
+
+                        <div class="mini-avatar">
+                            C
+                            <span></span>
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                ChaosPlayer
+                            </strong>
+
+                            <small>
+                                Online
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="online-player">
+
+
+                        <div class="mini-avatar">
+                            F
+                            <span></span>
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                FreeFireKing
+                            </strong>
+
+                            <small>
+                                Online
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="online-player">
+
+
+                        <div class="mini-avatar">
+                            N
+                            <span></span>
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                NightWolf
+                            </strong>
+
+                            <small>
+                                Online
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- COMMUNITY RULES -->
+
+                <div class="sidebar-card rules-card">
+
+
+                    <h3>
+                        Community Rules
+                    </h3>
+
+
+                    <div class="rule">
+
+                        <span>
+                            01
+                        </span>
+
+                        <p>
+                            Respect other players.
+                        </p>
+
+                    </div>
+
+
+                    <div class="rule">
+
+                        <span>
+                            02
+                        </span>
+
+                        <p>
+                            No spam or harassment.
+                        </p>
+
+                    </div>
+
+
+                    <div class="rule">
+
+                        <span>
+                            03
+                        </span>
+
+                        <p>
+                            Keep discussions gaming-related.
+                        </p>
+
+                    </div>
+
+
+                    <div class="rule">
+
+                        <span>
+                            04
+                        </span>
+
+                        <p>
+                            No cheating or harmful content.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- JOIN -->
+
+                <div class="join-card">
+
+
+                    <div class="join-icon">
+                        🎮
+                    </div>
+
+
+                    <h3>
+                        New here?
+                    </h3>
+
+
+                    <p>
+                        Create an account and become
+                        part of the community.
+                    </p>
+
+
+                    <a
+                        href="community.html"
+                        class="join-btn"
+                    >
+                        JOIN COMMUNITY
+                    </a>
+
+                </div>
+
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer class="footer">
+
+
+        <div class="footer-container">
+
+
+            <div class="footer-about">
+
+                <a
+                    href="home.html"
+                    class="logo"
+                >
+
+                    <span>
+                        YUNG
+                    </span>
+
+                    <strong>
+                        GAMING HUB
+                    </strong>
+
+                </a>
+
+
+                <p>
+
+                    A gaming community created for
+                    players who want to play, learn
+                    and compete.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Explore
+                </h3>
+
+
+                <a href="home.html">
+                    Home
+                </a>
+
+
+                <a href="news.html">
+                    News
+                </a>
+
+
+                <a href="community.html">
+                    Community
+                </a>
+
+
+                <a href="tournaments.html">
+                    Tournaments
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Gaming
+                </h3>
+
+
+                <a href="weapons.html">
+                    Weapons
+                </a>
+
+
+                <a href="characters.html">
+                    Characters
+                </a>
+
+
+                <a href="maps.html">
+                    Maps
+                </a>
+
+
+                <a href="quiz.html">
+                    Quiz
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Account
+                </h3>
+
+
+                <a href="register.html">
+                    Register
+                </a>
+
+
+                <a href="login.html">
+                    Login
+                </a>
+
+
+                <a href="profile.html">
+                    Profile
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Yung Gaming Hub. All rights reserved.
+            </p>
+
+
+            <p>
+                Independent fan/community project.
+                Not affiliated with Garena.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script>
+
+
+        /* ======================================
+           CATEGORY FILTER
+        ======================================= */
+
+        const categoryButtons =
+            document.querySelectorAll(
+                ".category-btn"
+            );
+
+
+        const posts =
+            document.querySelectorAll(
+                ".post"
+            );
+
+
+        const noPosts =
+            document.getElementById(
+                "noPosts"
+            );
+
+
+        categoryButtons.forEach(
+            function(button) {
+
+                button.addEventListener(
+                    "click",
+                    function() {
+
+
+                        categoryButtons.forEach(
+                            function(btn) {
+
+                                btn.classList.remove(
+                                    "active"
+                                );
+
+                            }
+                        );
+
+
+                        button.classList.add(
+                            "active"
+                        );
+
+
+                        const category =
+                            button.dataset.category;
+
+
+                        let visiblePosts = 0;
+
+
+                        posts.forEach(
+                            function(post) {
+
+
+                                if (
+                                    category ===
+                                    "all"
+                                    ||
+                                    post.dataset.category ===
+                                    category
+                                ) {
+
+                                    post.style.display =
+                                        "block";
+
+                                    visiblePosts++;
+
+                                }
+
+                                else {
+
+                                    post.style.display =
+                                        "none";
+
+                                }
+
+                            }
+                        );
+
+
+                        if (
+                            visiblePosts === 0
+                        ) {
+
+                            noPosts.style.display =
+                                "block";
+
+                        }
+
+                        else {
+
+                            noPosts.style.display =
+                                "none";
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* ======================================
+           LIKE BUTTON
+        ======================================= */
+
+        const likeButtons =
+            document.querySelectorAll(
+                ".like-btn"
+            );
+
+
+        likeButtons.forEach(
+            function(button) {
+
+
+                button.addEventListener(
+                    "click",
+                    function() {
+
+
+                        button.classList.toggle(
+                            "liked"
+                        );
+
+
+                        const number =
+                            button.querySelector(
+                                "span"
+                            );
+
+
+                        let count =
+                            parseInt(
+                                number.textContent
+                            );
+
+
+                        if (
+                            button.classList.contains(
+                                "liked"
+                            )
+                        ) {
+
+                            number.textContent =
+                                count + 1;
+
+                            button.firstChild.textContent =
+                                "♥ ";
+
+                        }
+
+                        else {
+
+                            number.textContent =
+                                count - 1;
+
+                            button.firstChild.textContent =
+                                "♡ ";
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* ======================================
+           CREATE POST
+        ======================================= */
+
+        const postInput =
+            document.getElementById(
+                "postInput"
+            );
+
+
+        const postButton =
+            document.getElementById(
+                "postButton"
+            );
+
+
+        const postsContainer =
+            document.getElementById(
+                "posts"
+            );
+
+
+        postButton.addEventListener(
+            "click",
+            function() {
+
+
+                const text =
+                    postInput.value.trim();
+
+
+                if (text === "") {
+
+                    alert(
+                        "Write something before posting."
+                    );
+
+                    return;
+
+                }
+
+
+                const newPost =
+                    document.createElement(
+                        "article"
+                    );
+
+
+                newPost.className =
+                    "post";
+
+
+                newPost.dataset.category =
+                    "general";
+
+
+                newPost.innerHTML = `
+
+                    <div class="post-top">
+
+                        <div class="avatar">
+                            Y
+                        </div>
+
+                        <div class="post-user">
+
+                            <strong>
+                                You
+                            </strong>
+
+                            <span>
+                                @yourusername · Just now
+                            </span>
+
+                        </div>
+
+                        <button class="more-btn">
+                            ⋮
+                        </button>
+
+                    </div>
+
+
+                    <div class="post-content">
+
+                        <span class="post-category">
+                            💬 GENERAL
+                        </span>
+
+                        <p>
+                            ${text.replace(
+                                /</g,
+                                "&lt;"
+                            )}
+                        </p>
+
+                    </div>
+
+
+                    <div class="post-actions">
+
+                        <button class="action-btn like-btn">
+                            ♡
+                            <span>0</span>
+                        </button>
+
+                        <button class="action-btn comment-btn">
+                            💬
+                            <span>0</span>
+                        </button>
+
+                        <button class="action-btn share-btn">
+                            ↗
+                            <span>Share</span>
+                        </button>
+
+                    </div>
+
+                `;
+
+
+                postsContainer.prepend(
+                    newPost
+                );
+
+
+                postInput.value = "";
+
+
+                alert(
+                    "Your post has been added to the demo feed!"
+                );
+
+            }
+        );
+
+
+
+        /* ======================================
+           SEARCH
+        ======================================= */
+
+        const searchInput =
+            document.getElementById(
+                "searchInput"
+            );
+
+
+        searchInput.addEventListener(
+            "input",
+            function() {
+
+
+                const search =
+                    searchInput.value
+                        .toLowerCase()
+                        .trim();
+
+
+                let visiblePosts = 0;
+
+
+                posts.forEach(
+                    function(post) {
+
+
+                        const text =
+                            post.textContent
+                                .toLowerCase();
+
+
+                        if (
+                            text.includes(search)
+                        ) {
+
+                            post.style.display =
+                                "block";
+
+                            visiblePosts++;
+
+                        }
+
+                        else {
+
+                            post.style.display =
+                                "none";
+
+                        }
+
+                    }
+                );
+
+
+                if (
+                    visiblePosts === 0
+                ) {
+
+                    noPosts.style.display =
+                        "block";
+
+                }
+
+                else {
+
+                    noPosts.style.display =
+                        "none";
+
+                }
+
+            }
+        );
+
+
+
+        /* ======================================
+           COMMENT BUTTON
+        ======================================= */
+
+        const commentButtons =
+            document.querySelectorAll(
+                ".comment-btn"
+            );
+
+
+        commentButtons.forEach(
+            function(button) {
+
+
+                button.addEventListener(
+                    "click",
+                    function() {
+
+                        alert(
+                            "Comments will be available when the community backend is connected."
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* ======================================
+           SHARE BUTTON
+        ======================================= */
+
+        const shareButtons =
+            document.querySelectorAll(
+                ".share-btn"
+            );
+
+
+        shareButtons.forEach(
+            function(button) {
+
+
+                button.addEventListener(
+                    "click",
+                    async function() {
+
+
+                        try {
+
+
+                            await navigator.clipboard.writeText(
+                                window.location.href
+                            );
+
+
+                            alert(
+                                "Community page link copied!"
+                            );
+
+
+                        }
+
+                        catch (error) {
+
+
+                            alert(
+                                "Copy the page link from your browser."
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

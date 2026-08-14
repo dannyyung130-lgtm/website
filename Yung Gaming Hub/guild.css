@@ -1,0 +1,1265 @@
+/* =========================================
+   CHAOS CREW GUILD WEBSITE
+   YUNG GAMING HUB
+========================================= */
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0f;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navbar {
+    width: 100%;
+    min-height: 70px;
+
+    background: #111116;
+
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    border-bottom: 1px solid #25252d;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.logo {
+    font-size: 20px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+}
+
+
+.logo span {
+    font-size: 24px;
+}
+
+
+.navbar nav {
+    display: flex;
+    gap: 28px;
+}
+
+
+.navbar nav a {
+    color: #aaaab4;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #ff5c00;
+}
+
+
+.login-btn {
+    background: #ff5c00;
+
+    padding: 10px 20px;
+
+    border-radius: 6px;
+
+    font-weight: 700;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+
+.login-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 25px rgba(255, 92, 0, 0.25);
+}
+
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.guild-hero {
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #321505 0%,
+            #15100e 35%,
+            #0b0b0f 75%
+        );
+}
+
+
+.hero-content {
+    max-width: 850px;
+}
+
+
+.guild-badge {
+    width: 110px;
+    height: 110px;
+
+    margin: 0 auto 25px;
+
+    border: 2px solid #ff5c00;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 55px;
+
+    background: #151116;
+
+    box-shadow:
+        0 0 40px rgba(255, 92, 0, 0.3);
+}
+
+
+.small-title {
+    color: #ff5c00;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+}
+
+
+.guild-hero h1 {
+    font-size: clamp(55px, 10vw, 110px);
+
+    line-height: 1;
+
+    font-weight: 1000;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+
+.guild-hero h1 span,
+.section-title span,
+.apply-section h2 span,
+.application-hero h1 span {
+    color: #ff5c00;
+}
+
+
+.hero-text {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #b5b5bd;
+
+    font-size: 18px;
+}
+
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+    flex-wrap: wrap;
+}
+
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+
+    padding: 15px 28px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    transition: 0.3s;
+}
+
+
+.primary-btn {
+    background: #ff5c00;
+
+    color: white;
+}
+
+
+.primary-btn:hover {
+    background: #ff751f;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(255, 92, 0, 0.3);
+}
+
+
+.secondary-btn {
+    border: 1px solid #44444d;
+
+    color: white;
+}
+
+
+.secondary-btn:hover {
+    border-color: #ff5c00;
+
+    color: #ff5c00;
+}
+
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    background: #111116;
+
+    border-top: 1px solid #292930;
+
+    border-bottom: 1px solid #292930;
+}
+
+
+.stat-box {
+    text-align: center;
+
+    padding: 35px 15px;
+
+    border-right: 1px solid #292930;
+}
+
+
+.stat-box:last-child {
+    border-right: none;
+}
+
+
+.stat-box h2 {
+    font-size: 25px;
+
+    margin-bottom: 5px;
+}
+
+
+.stat-box h3 {
+    font-size: 14px;
+
+    letter-spacing: 1px;
+}
+
+
+.stat-box p {
+    color: #777782;
+
+    font-size: 13px;
+}
+
+
+
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
+
+.section {
+    padding: 100px 8%;
+
+    background: #0b0b0f;
+}
+
+
+.dark-section {
+    padding: 100px 8%;
+
+    background: #111116;
+
+    border-top: 1px solid #202027;
+
+    border-bottom: 1px solid #202027;
+}
+
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+
+.section-title p {
+    color: #ff5c00;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+
+.section-title h2 {
+    font-size: clamp(30px, 5vw, 50px);
+
+    font-weight: 900;
+}
+
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+
+.about-text p {
+    color: #aaaab4;
+
+    margin-bottom: 20px;
+
+    font-size: 16px;
+}
+
+
+.about-card {
+    background: #15151c;
+
+    border: 1px solid #292930;
+
+    border-radius: 12px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+
+.about-card:hover {
+    border-color: #ff5c00;
+
+    transform: translateY(-5px);
+}
+
+
+.card-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+
+.about-card h3 {
+    margin-bottom: 10px;
+}
+
+
+.about-card p {
+    color: #8f8f99;
+}
+
+
+
+/* =========================================
+   BENEFITS
+========================================= */
+
+.benefit-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.benefit-card {
+    padding: 30px 25px;
+
+    background: #17171e;
+
+    border: 1px solid #292930;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+
+.benefit-card:hover {
+    border-color: #ff5c00;
+
+    transform: translateY(-5px);
+}
+
+
+.benefit-icon {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+
+.benefit-card h3 {
+    font-size: 16px;
+
+    margin-bottom: 10px;
+}
+
+
+.benefit-card p {
+    color: #888892;
+
+    font-size: 14px;
+}
+
+
+
+/* =========================================
+   REQUIREMENTS
+========================================= */
+
+.requirements {
+    max-width: 900px;
+
+    margin: auto;
+}
+
+
+.requirement {
+    display: flex;
+
+    gap: 25px;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid #25252c;
+}
+
+
+.requirement > span {
+    color: #ff5c00;
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    min-width: 35px;
+}
+
+
+.requirement h3 {
+    margin-bottom: 5px;
+
+    font-size: 16px;
+}
+
+
+.requirement p {
+    color: #888892;
+
+    font-size: 14px;
+}
+
+
+
+/* =========================================
+   ROLES
+========================================= */
+
+.roles-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.role-card {
+    padding: 30px;
+
+    background: #17171e;
+
+    border: 1px solid #292930;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+
+.role-card:hover {
+    border-color: #ff5c00;
+
+    transform: translateY(-5px);
+}
+
+
+.role-card h3 {
+    margin-bottom: 12px;
+}
+
+
+.role-card p {
+    color: #888892;
+
+    font-size: 14px;
+}
+
+
+
+/* =========================================
+   STEPS
+========================================= */
+
+.steps {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+.step {
+    text-align: center;
+}
+
+
+.step-number {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: #ff5c00;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    font-size: 20px;
+
+    font-weight: 900;
+}
+
+
+.step h3 {
+    margin-bottom: 8px;
+}
+
+
+.step p {
+    color: #888892;
+
+    font-size: 14px;
+}
+
+
+
+/* =========================================
+   RULES
+========================================= */
+
+.rules-section {
+    padding: 100px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #110c0a,
+            #0b0b0f
+        );
+}
+
+
+.rules-box {
+    max-width: 800px;
+
+    margin: auto;
+
+    background: #15151c;
+
+    border: 1px solid #292930;
+
+    border-radius: 10px;
+
+    padding: 35px;
+}
+
+
+.rules-box p {
+    padding: 13px 0;
+
+    color: #b5b5bd;
+
+    border-bottom: 1px solid #24242b;
+}
+
+
+.rules-box p:last-child {
+    border-bottom: none;
+}
+
+
+
+/* =========================================
+   APPLY SECTION
+========================================= */
+
+.apply-section {
+    padding: 120px 20px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #321505,
+            #0b0b0f 65%
+        );
+}
+
+
+.apply-section h2 {
+    font-size: clamp(40px, 7vw, 70px);
+
+    margin-bottom: 10px;
+}
+
+
+.apply-section p:not(.small-title) {
+    color: #9999a3;
+
+    margin-bottom: 30px;
+}
+
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: #08080b;
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+    border-top: 1px solid #24242b;
+}
+
+
+.footer-logo {
+    font-size: 20px;
+
+    font-weight: 900;
+
+    margin-bottom: 10px;
+}
+
+
+footer > p {
+    color: #70707a;
+
+    font-size: 13px;
+}
+
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin: 20px 0;
+}
+
+
+.footer-links a {
+    color: #888892;
+
+    font-size: 13px;
+}
+
+
+.footer-links a:hover {
+    color: #ff5c00;
+}
+
+
+.copyright {
+    margin-top: 20px;
+}
+
+
+
+/* =========================================
+   APPLICATION PAGE
+========================================= */
+
+.application-hero {
+    text-align: center;
+
+    padding: 100px 20px 70px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #321505,
+            #0b0b0f 70%
+        );
+}
+
+
+.application-hero h1 {
+    font-size: clamp(40px, 7vw, 70px);
+
+    margin: 10px 0;
+}
+
+
+.application-hero p:last-child {
+    color: #9999a3;
+}
+
+
+
+/* =========================================
+   APPLICATION CONTAINER
+========================================= */
+
+.application-container {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 70px 20px 100px;
+}
+
+
+.form-intro {
+    margin-bottom: 35px;
+}
+
+
+.form-intro h2 {
+    margin-bottom: 10px;
+}
+
+
+.form-intro > p {
+    color: #92929c;
+}
+
+
+.notice {
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-left: 4px solid #ff5c00;
+
+    background: #17171e;
+
+    color: #aaaab4;
+
+    font-size: 14px;
+}
+
+
+
+/* =========================================
+   FORM SECTIONS
+========================================= */
+
+.form-section {
+    background: #121218;
+
+    border: 1px solid #292930;
+
+    border-radius: 10px;
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+}
+
+
+.form-section h3 {
+    font-size: 17px;
+
+    margin-bottom: 25px;
+
+    color: #ffffff;
+}
+
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.form-group label {
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #bcbcc4;
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    background: #0b0b0f;
+
+    color: white;
+
+    border: 1px solid #33333b;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #ff5c00;
+
+    box-shadow:
+        0 0 0 2px rgba(255, 92, 0, 0.08);
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #55555f;
+}
+
+
+.form-group select option {
+    background: #111116;
+
+    color: white;
+}
+
+
+
+/* =========================================
+   AGREEMENT
+========================================= */
+
+.agreement {
+    margin: 25px 0;
+
+    color: #9999a3;
+
+    font-size: 14px;
+}
+
+
+.agreement label {
+    display: flex;
+
+    gap: 10px;
+
+    align-items: flex-start;
+}
+
+
+.agreement input {
+    margin-top: 5px;
+
+    accent-color: #ff5c00;
+}
+
+
+
+/* =========================================
+   SUBMIT
+========================================= */
+
+.submit-btn {
+    width: 100%;
+
+    padding: 16px;
+
+    background: #ff5c00;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.submit-btn:hover {
+    background: #ff751f;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(255, 92, 0, 0.25);
+}
+
+
+.success-message {
+    text-align: center;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: #102615;
+
+    border: 1px solid #245c2d;
+
+    color: #6bea7d;
+
+    border-radius: 6px;
+}
+
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 15px 4%;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+
+    .navbar nav {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+
+    .stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .stat-box:nth-child(2) {
+        border-right: none;
+    }
+
+
+    .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .benefit-grid,
+    .roles-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .steps {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        row-gap: 40px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .logo {
+        font-size: 16px;
+    }
+
+
+    .login-btn {
+        padding: 8px 14px;
+    }
+
+
+    .guild-hero {
+        min-height: 600px;
+    }
+
+
+    .guild-hero h1 {
+        letter-spacing: -1px;
+    }
+
+
+    .hero-text {
+        font-size: 15px;
+    }
+
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+
+    .stat-box {
+        border-right: none;
+
+        border-bottom: 1px solid #292930;
+    }
+
+
+    .stat-box:last-child {
+        border-bottom: none;
+    }
+
+
+    .section,
+    .dark-section,
+    .rules-section {
+        padding: 70px 5%;
+    }
+
+
+    .benefit-grid,
+    .roles-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .form-section {
+        padding: 22px 18px;
+    }
+
+
+    .application-container {
+        padding-left: 15px;
+
+        padding-right: 15px;
+    }
+
+
+    .footer-links {
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+}
+.error-message {
+    text-align: center;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: #2b1010;
+
+    border: 1px solid #702020;
+
+    color: #ff7777;
+
+    border-radius: 6px;
+}
+.check-status-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 25px;
+    background: #ff5c00;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.check-status-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}

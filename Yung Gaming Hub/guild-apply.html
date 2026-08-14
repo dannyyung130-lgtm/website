@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apply | Chaos Crew</title>
+
+    <link rel="stylesheet" href="guild.css">
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="logo">
+        🔥 YUNG GAMING HUB
+    </div>
+
+    <nav>
+
+        <a href="home.html">Home</a>
+
+        <a href="news.html">News</a>
+
+        <a href="tournament.html">Tournaments</a>
+
+        <a href="community.html">Community</a>
+
+        <a href="guild.html">Guild</a>
+
+    </nav>
+
+    <a href="login.html" class="login-btn">
+        Login
+    </a>
+
+</header>
+
+
+
+<section class="application-hero">
+
+    <p class="small-title">
+        CHAOS CREW RECRUITMENT
+    </p>
+
+    <h1>
+        JOIN THE <span>CREW</span>
+    </h1>
+
+    <p>
+        Apply to become a member of Chaos Crew.
+    </p>
+
+</section>
+
+
+
+<main class="application-container">
+
+
+    <div class="form-intro">
+
+        <h2>CHAOS CREW APPLICATION</h2>
+
+        <p>
+            Fill in your information carefully.
+            Your application will be reviewed by the guild team.
+        </p>
+
+
+        <div class="notice">
+
+            ⚠️ <strong>Important:</strong>
+
+            We will never ask for your Free Fire password,
+            OTP, bank details or other sensitive information.
+
+        </div>
+
+    </div>
+
+
+
+    <form id="guildApplication">
+
+
+        <!-- PLAYER -->
+
+        <div class="form-section">
+
+            <h3>👤 PLAYER INFORMATION</h3>
+
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Player Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="playerName"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Age
+                    </label>
+
+                    <input
+                        type="number"
+                        id="age"
+                        min="13"
+                        max="99"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Free Fire Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="ffName"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Free Fire UID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="uid"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- GAME -->
+
+        <div class="form-section">
+
+            <h3>🎮 GAME INFORMATION</h3>
+
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Current Rank
+                    </label>
+
+                    <select id="rank" required>
+
+                        <option value="">
+                            Select your rank
+                        </option>
+
+                        <option>Bronze</option>
+                        <option>Silver</option>
+                        <option>Gold</option>
+                        <option>Platinum</option>
+                        <option>Diamond</option>
+                        <option>Heroic</option>
+                        <option>Master</option>
+                        <option>Grandmaster</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Main Game Mode
+                    </label>
+
+                    <select id="mode" required>
+
+                        <option value="">
+                            Select mode
+                        </option>
+
+                        <option>Battle Royale</option>
+                        <option>Clash Squad</option>
+                        <option>Both</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Main Role
+                    </label>
+
+                    <select id="role" required>
+
+                        <option value="">
+                            Select your role
+                        </option>
+
+                        <option>Rusher</option>
+                        <option>Sniper</option>
+                        <option>Support</option>
+                        <option>IGL</option>
+                        <option>All-rounder</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Experience
+                    </label>
+
+                    <select id="experience" required>
+
+                        <option value="">
+                            Select experience
+                        </option>
+
+                        <option>Beginner</option>
+                        <option>Intermediate</option>
+                        <option>Advanced</option>
+                        <option>Competitive Player</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div class="form-section">
+
+            <h3>💬 CONTACT</h3>
+
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Telegram Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="telegram"
+                        placeholder="@username"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Discord Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="discord"
+                        placeholder="Optional"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- QUESTIONS -->
+
+        <div class="form-section">
+
+            <h3>🔥 TELL US ABOUT YOURSELF</h3>
+
+
+            <div class="form-group">
+
+                <label>
+                    Why do you want to join Chaos Crew?
+                </label>
+
+                <textarea
+                    id="whyJoin"
+                    rows="6"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <br>
+
+
+            <div class="form-group">
+
+                <label>
+                    What is your biggest strength?
+                </label>
+
+                <textarea
+                    id="strength"
+                    rows="5"
+                    required
+                ></textarea>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RULES -->
+
+        <div class="agreement">
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="rules"
+                    required
+                >
+
+                I agree to follow the Chaos Crew rules
+                and respect other members.
+
+            </label>
+
+        </div>
+
+
+
+        <button
+            type="submit"
+            class="submit-btn"
+            id="submitButton"
+        >
+
+            SUBMIT APPLICATION 🔥
+
+        </button>
+
+
+        <p id="formMessage"></p>
+
+
+    </form>
+
+
+</main>
+
+
+
+<footer>
+
+    <div class="footer-logo">
+        🔥 YUNG GAMING HUB
+    </div>
+
+    <p>
+        Chaos Crew • Free Fire Gaming Community
+    </p>
+
+    <p class="copyright">
+        © 2026 Yung Gaming Hub
+    </p>
+
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase.js"></script>
+
+
+
+<script>
+
+const form =
+    document.getElementById("guildApplication");
+
+const message =
+    document.getElementById("formMessage");
+
+const submitButton =
+    document.getElementById("submitButton");
+
+
+
+function generateApplicationCode() {
+
+    const random =
+        Math.random()
+        .toString(36)
+        .substring(2, 8)
+        .toUpperCase();
+
+    return "CC-" + random;
+
+}
+
+
+
+form.addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
+
+
+        submitButton.disabled = true;
+
+        submitButton.textContent =
+            "SUBMITTING...";
+
+
+        message.textContent = "";
+
+
+
+        const applicationCode =
+            generateApplicationCode();
+
+
+
+        const application = {
+
+            application_code:
+                applicationCode,
+
+            player_name:
+                document
+                .getElementById("playerName")
+                .value
+                .trim(),
+
+            age:
+                Number(
+                    document
+                    .getElementById("age")
+                    .value
+                ),
+
+            ff_name:
+                document
+                .getElementById("ffName")
+                .value
+                .trim(),
+
+            uid:
+                document
+                .getElementById("uid")
+                .value
+                .trim(),
+
+            rank:
+                document
+                .getElementById("rank")
+                .value,
+
+            game_mode:
+                document
+                .getElementById("mode")
+                .value,
+
+            role:
+                document
+                .getElementById("role")
+                .value,
+
+            experience:
+                document
+                .getElementById("experience")
+                .value,
+
+            telegram:
+                document
+                .getElementById("telegram")
+                .value
+                .trim(),
+
+            discord:
+                document
+                .getElementById("discord")
+                .value
+                .trim(),
+
+            why_join:
+                document
+                .getElementById("whyJoin")
+                .value
+                .trim(),
+
+            strength:
+                document
+                .getElementById("strength")
+                .value
+                .trim(),
+
+            status:
+                "pending"
+
+        };
+
+
+
+        const {
+            data,
+            error
+        } = await supabaseClient
+            .from("guild_applications")
+            .insert([application])
+            .select()
+            .single();
+
+
+
+        if (error) {
+
+            console.error(
+                "SUPABASE ERROR:",
+                error
+            );
+
+
+            message.textContent =
+                "❌ " + error.message;
+
+            message.className =
+                "error-message";
+
+
+            submitButton.disabled =
+                false;
+
+            submitButton.textContent =
+                "SUBMIT APPLICATION 🔥";
+
+            return;
+
+        }
+
+
+
+        message.className =
+            "success-message";
+
+
+        message.innerHTML = `
+
+            <div class="application-success">
+
+                <h2>
+                    🎉 APPLICATION SUBMITTED!
+                </h2>
+
+                <p>
+                    Your application has been received.
+                </p>
+
+                <p>
+                    <strong>
+                        YOUR APPLICATION ID
+                    </strong>
+                </p>
+
+                <div class="application-code">
+                    ${applicationCode}
+                </div>
+
+                <p>
+                    Save this ID. You will need it
+                    to check your application status.
+                </p>
+
+                
+                <a
+                    href="check-application.html"
+                     class="check-status-button"
+                >
+                         CHECK APPLICATION STATUS
+                </a>
+                    
+                >
+                    
+
+            </div>
+
+        `;
+
+
+        form.reset();
+
+
+        submitButton.disabled =
+            false;
+
+
+        submitButton.textContent =
+            "SUBMIT APPLICATION 🔥";
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

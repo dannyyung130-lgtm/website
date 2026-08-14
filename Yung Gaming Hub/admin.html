@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chaos Crew Admin</title>
+
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+
+<body>
+
+    <!-- ============================= -->
+    <!-- LOGIN SCREEN -->
+    <!-- ============================= -->
+
+    <section id="loginSection" class="login-section">
+
+        <div class="login-card">
+
+            <div class="admin-icon">
+                🔥
+            </div>
+
+            <p class="small-title">
+                CHAOS CREW
+            </p>
+
+            <h1>
+                ADMIN <span>LOGIN</span>
+            </h1>
+
+            <p class="login-description">
+                Authorized administrators only.
+            </p>
+
+
+            <form id="loginForm">
+
+                <label for="email">
+                    Admin Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter admin email"
+                    required
+                >
+
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                    required
+                >
+
+
+                <button
+                    type="submit"
+                    id="loginButton"
+                >
+                    LOGIN
+                </button>
+
+            </form>
+
+
+            <div
+                id="loginMessage"
+                class="message"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ============================= -->
+    <!-- ADMIN DASHBOARD -->
+    <!-- ============================= -->
+
+    <section
+        id="dashboardSection"
+        class="dashboard-section hidden"
+    >
+
+
+        <!-- HEADER -->
+
+        <header class="admin-header">
+
+            <div>
+
+                <p class="small-title">
+                    CHAOS CREW
+                </p>
+
+                <h1>
+                    ADMIN <span>DASHBOARD</span>
+                </h1>
+
+                <p id="adminEmail">
+                    Admin
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    id="refreshButton"
+                    class="refresh-button"
+                >
+                    🔄 REFRESH
+                </button>
+
+                <button
+                    id="logoutButton"
+                    class="logout-button"
+                >
+                    LOGOUT
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <main class="dashboard-container">
+
+
+            <!-- ============================= -->
+            <!-- STATISTICS -->
+            <!-- ============================= -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card pending-stat">
+
+                    <div class="stat-icon">
+                        🟠
+                    </div>
+
+                    <div>
+
+                        <p>
+                            PENDING
+                        </p>
+
+                        <h2 id="pendingCount">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card approved-stat">
+
+                    <div class="stat-icon">
+                        🟢
+                    </div>
+
+                    <div>
+
+                        <p>
+                            APPROVED
+                        </p>
+
+                        <h2 id="approvedCount">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card rejected-stat">
+
+                    <div class="stat-icon">
+                        🔴
+                    </div>
+
+                    <div>
+
+                        <p>
+                            REJECTED
+                        </p>
+
+                        <h2 id="rejectedCount">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card total-stat">
+
+                    <div class="stat-icon">
+                        📋
+                    </div>
+
+                    <div>
+
+                        <p>
+                            TOTAL
+                        </p>
+
+                        <h2 id="totalCount">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ============================= -->
+            <!-- APPLICATIONS -->
+            <!-- ============================= -->
+
+            <div class="applications-section">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="small-title">
+                            MANAGEMENT
+                        </p>
+
+                        <h2>
+                            Guild Applications
+                        </h2>
+
+                    </div>
+
+
+                    <div class="search-box">
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search player, UID or application ID..."
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ERROR -->
+
+                <div
+                    id="dashboardMessage"
+                    class="message"
+                ></div>
+
+
+
+                <!-- LOADING -->
+
+                <div
+                    id="loading"
+                    class="loading"
+                >
+                    Loading applications...
+                </div>
+
+
+
+                <!-- TABLE -->
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Application ID
+                                </th>
+
+                                <th>
+                                    Player
+                                </th>
+
+                                <th>
+                                    Free Fire Name
+                                </th>
+
+                                <th>
+                                    UID
+                                </th>
+
+                                <th>
+                                    Rank
+                                </th>
+
+                                <th>
+                                    Mode
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Date
+                                </th>
+
+                                <th>
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="applicationsTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <div
+                    id="emptyState"
+                    class="empty-state hidden"
+                >
+
+                    <div>
+                        📭
+                    </div>
+
+                    <h3>
+                        No applications found
+                    </h3>
+
+                    <p>
+                        There are currently no applications matching your search.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </main>
+
+
+    </section>
+
+
+
+    <!-- ============================= -->
+    <!-- APPLICATION DETAILS MODAL -->
+    <!-- ============================= -->
+
+    <div
+        id="detailsModal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+            <button
+                id="closeModal"
+                class="close-modal"
+            >
+                ×
+            </button>
+
+
+            <p class="small-title">
+                APPLICATION DETAILS
+            </p>
+
+            <h2 id="modalPlayerName">
+                Player
+            </h2>
+
+
+            <div
+                id="applicationDetails"
+                class="application-details"
+            ></div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    id="modalApprove"
+                    class="approve-button"
+                >
+                    ✓ APPROVE
+                </button>
+
+                <button
+                    id="modalReject"
+                    class="reject-button"
+                >
+                    ✕ REJECT
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SUPABASE -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="supabase.js"></script>
+
+
+
+    <!-- ADMIN JAVASCRIPT -->
+
+    <script>
+
+    let applications = [];
+
+    let selectedApplication = null;
+
+
+
+    // ==========================================
+    // ELEMENTS
+    // ==========================================
+
+    const loginSection =
+        document.getElementById("loginSection");
+
+    const dashboardSection =
+        document.getElementById("dashboardSection");
+
+    const loginForm =
+        document.getElementById("loginForm");
+
+    const loginButton =
+        document.getElementById("loginButton");
+
+    const loginMessage =
+        document.getElementById("loginMessage");
+
+    const logoutButton =
+        document.getElementById("logoutButton");
+
+    const refreshButton =
+        document.getElementById("refreshButton");
+
+    const adminEmail =
+        document.getElementById("adminEmail");
+
+    const applicationsTable =
+        document.getElementById("applicationsTable");
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+    const loading =
+        document.getElementById("loading");
+
+    const emptyState =
+        document.getElementById("emptyState");
+
+    const dashboardMessage =
+        document.getElementById("dashboardMessage");
+
+    const detailsModal =
+        document.getElementById("detailsModal");
+
+    const closeModal =
+        document.getElementById("closeModal");
+
+    const modalPlayerName =
+        document.getElementById("modalPlayerName");
+
+    const applicationDetails =
+        document.getElementById("applicationDetails");
+
+    const modalApprove =
+        document.getElementById("modalApprove");
+
+    const modalReject =
+        document.getElementById("modalReject");
+
+
+
+    // ==========================================
+    // CHECK LOGIN
+    // ==========================================
+
+    async function checkLogin() {
+
+        const {
+            data: {
+                session
+            }
+        } = await supabaseClient.auth.getSession();
+
+
+        if (session) {
+
+            showDashboard(session);
+
+        } else {
+
+            showLogin();
+
+        }
+
+    }
+
+
+
+    // ==========================================
+    // SHOW LOGIN
+    // ==========================================
+
+    function showLogin() {
+
+        loginSection.classList.remove("hidden");
+
+        dashboardSection.classList.add("hidden");
+
+    }
+
+
+
+    // ==========================================
+    // SHOW DASHBOARD
+    // ==========================================
+
+    function showDashboard(session) {
+
+        loginSection.classList.add("hidden");
+
+        dashboardSection.classList.remove("hidden");
+
+        adminEmail.textContent =
+            session.user.email || "Administrator";
+
+
+        loadApplications();
+
+    }
+
+
+
+    // ==========================================
+    // LOGIN
+    // ==========================================
+
+    loginForm.addEventListener(
+        "submit",
+        async function(event) {
+
+            event.preventDefault();
+
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const password =
+                document.getElementById("password").value;
+
+
+            loginButton.disabled = true;
+
+            loginButton.textContent =
+                "LOGGING IN...";
+
+            loginMessage.innerHTML = "";
+
+
+            const {
+                data,
+                error
+            } =
+                await supabaseClient.auth.signInWithPassword({
+
+                    email: email,
+
+                    password: password
+
+                });
+
+
+            loginButton.disabled = false;
+
+            loginButton.textContent =
+                "LOGIN";
+
+
+            if (error) {
+
+                loginMessage.innerHTML = `
+                    <div class="error-message">
+                        ❌ ${escapeHTML(error.message)}
+                    </div>
+                `;
+
+                return;
+
+            }
+
+
+            showDashboard(data.session);
+
+        }
+    );
+
+
+
+    // ==========================================
+    // LOGOUT
+    // ==========================================
+
+    logoutButton.addEventListener(
+        "click",
+        async function() {
+
+            await supabaseClient.auth.signOut();
+
+            applications = [];
+
+            showLogin();
+
+        }
+    );
+
+
+
+    // ==========================================
+    // LOAD APPLICATIONS
+    // ==========================================
+
+    async function loadApplications() {
+
+        loading.classList.remove("hidden");
+
+        applicationsTable.innerHTML = "";
+
+        emptyState.classList.add("hidden");
+
+        dashboardMessage.innerHTML = "";
+
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient
+
+            .from("guild_applications")
+
+            .select("*")
+
+            .order(
+                "created_at",
+                {
+                    ascending: false
+                }
+            );
+
+
+        loading.classList.add("hidden");
+
+
+        if (error) {
+
+            dashboardMessage.innerHTML = `
+                <div class="error-message">
+                    ❌ ${escapeHTML(error.message)}
+                </div>
+            `;
+
+            return;
+
+        }
+
+
+        applications = data || [];
+
+
+        updateStatistics();
+
+        renderApplications(applications);
+
+    }
+
+
+
+    // ==========================================
+    // UPDATE STATISTICS
+    // ==========================================
+
+    function updateStatistics() {
+
+        const pending =
+            applications.filter(
+                app => app.status === "pending"
+            ).length;
+
+
+        const approved =
+            applications.filter(
+                app => app.status === "approved"
+            ).length;
+
+
+        const rejected =
+            applications.filter(
+                app => app.status === "rejected"
+            ).length;
+
+
+        document.getElementById("pendingCount")
+            .textContent = pending;
+
+
+        document.getElementById("approvedCount")
+            .textContent = approved;
+
+
+        document.getElementById("rejectedCount")
+            .textContent = rejected;
+
+
+        document.getElementById("totalCount")
+            .textContent = applications.length;
+
+    }
+
+
+
+    // ==========================================
+    // RENDER APPLICATIONS
+    // ==========================================
+
+    function renderApplications(list) {
+
+        applicationsTable.innerHTML = "";
+
+
+        if (!list.length) {
+
+            emptyState.classList.remove("hidden");
+
+            return;
+
+        }
+
+
+        emptyState.classList.add("hidden");
+
+
+        list.forEach(function(app) {
+
+            const row =
+                document.createElement("tr");
+
+
+            const date =
+                app.created_at
+                ? new Date(app.created_at)
+                    .toLocaleDateString()
+                : "-";
+
+
+            row.innerHTML = `
+
+                <td>
+                    <strong>
+                        ${escapeHTML(app.application_code)}
+                    </strong>
+                </td>
+
+
+                <td>
+                    ${escapeHTML(app.player_name)}
+                </td>
+
+
+                <td>
+                    ${escapeHTML(app.ff_name)}
+                </td>
+
+
+                <td>
+                    ${escapeHTML(app.uid)}
+                </td>
+
+
+                <td>
+                    ${escapeHTML(app.rank)}
+                </td>
+
+
+                <td>
+                    ${escapeHTML(app.game_mode)}
+                </td>
+
+
+                <td>
+                    <span class="status ${getStatusClass(app.status)}">
+                        ${escapeHTML(
+                            app.status.toUpperCase()
+                        )}
+                    </span>
+                </td>
+
+
+                <td>
+                    ${date}
+                </td>
+
+
+                <td>
+
+                    <div class="action-buttons">
+
+                        <button
+                            class="view-button"
+                            onclick="viewApplication('${app.id}')"
+                        >
+                            VIEW
+                        </button>
+
+                        ${
+                            app.status === "pending"
+                            ? `
+
+                                <button
+                                    class="approve-button small"
+                                    onclick="changeStatus('${app.id}', 'approved')"
+                                >
+                                    ✓
+                                </button>
+
+
+                                <button
+                                    class="reject-button small"
+                                    onclick="changeStatus('${app.id}', 'rejected')"
+                                >
+                                    ✕
+                                </button>
+
+                            `
+                            : ""
+                        }
+
+                    </div>
+
+                </td>
+
+            `;
+
+
+            applicationsTable.appendChild(row);
+
+        });
+
+    }
+
+
+
+    // ==========================================
+    // SEARCH
+    // ==========================================
+
+    searchInput.addEventListener(
+        "input",
+        function() {
+
+            const search =
+                this.value
+                    .trim()
+                    .toLowerCase();
+
+
+            if (!search) {
+
+                renderApplications(applications);
+
+                return;
+
+            }
+
+
+            const filtered =
+                applications.filter(function(app) {
+
+                    return (
+
+                        String(app.application_code)
+                            .toLowerCase()
+                            .includes(search)
+
+                        ||
+
+                        String(app.player_name)
+                            .toLowerCase()
+                            .includes(search)
+
+                        ||
+
+                        String(app.ff_name)
+                            .toLowerCase()
+                            .includes(search)
+
+                        ||
+
+                        String(app.uid)
+                            .toLowerCase()
+                            .includes(search)
+
+                        ||
+
+                        String(app.rank)
+                            .toLowerCase()
+                            .includes(search)
+
+                    );
+
+                });
+
+
+            renderApplications(filtered);
+
+        }
+    );
+
+
+
+    // ==========================================
+    // VIEW APPLICATION
+    // ==========================================
+
+    window.viewApplication =
+        function(id) {
+
+            const app =
+                applications.find(
+                    item => String(item.id) === String(id)
+                );
+
+
+            if (!app) {
+                return;
+            }
+
+
+            selectedApplication = app;
+
+
+            modalPlayerName.textContent =
+                app.player_name;
+
+
+            applicationDetails.innerHTML = `
+
+                <div class="detail-row">
+
+                    <span>
+                        Application ID
+                    </span>
+
+                    <strong>
+                        ${escapeHTML(app.application_code)}
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+                        Player Name
+                    </span>
+
+                    <strong>
+                        ${escapeHTML(app.player_name)}
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+                        Age
+                    </span>
+
+                    <strong>
+                        ${escapeHTML(app.age)}
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+                        Free Fire Name
+                    </span>
+
+                    <strong>
+                        ${escapeHTML(app.ff_name)}
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+                        UID
+                    </span>
+
+                    <strong>
+                        ${escapeHTML(app.uid)}
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+                        Rank
+                    </span>
+
+                    <strong>
+                        ${escapeHTML(app.rank)}
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+                        Game Mode
+                    </span>
+
+                    <strong>
+                        ${escapeHTML(app.game_mode)}
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+                        Preferred Role
+                    </span>
+
+                    <strong>
+                        ${escapeHTML(app.role)}
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+                        Experience
+                    </span>
+
+                    <strong>
+                        ${escapeHTML(app.experience)}
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+                        Telegram
+                    </span>
+
+                    <strong>
+                        ${escapeHTML(app.telegram)}
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+                        Discord
+                    </span>
+
+                    <strong>
+                        ${escapeHTML(app.discord || "-")}
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-long">
+
+                    <span>
+                        Why do you want to join?
+                    </span>
+
+                    <p>
+                        ${escapeHTML(app.why_join)}
+                    </p>
+
+                </div>
+
+
+                <div class="detail-long">
+
+                    <span>
+                        Player's Strength
+                    </span>
+
+                    <p>
+                        ${escapeHTML(app.strength)}
+                    </p>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+                        Current Status
+                    </span>
+
+                    <strong class="status ${getStatusClass(app.status)}">
+                        ${escapeHTML(app.status.toUpperCase())}
+                    </strong>
+
+                </div>
+
+            `;
+
+
+            if (app.status === "pending") {
+
+                modalApprove.style.display =
+                    "block";
+
+                modalReject.style.display =
+                    "block";
+
+            } else {
+
+                modalApprove.style.display =
+                    "none";
+
+                modalReject.style.display =
+                    "none";
+
+            }
+
+
+            detailsModal.classList.remove("hidden");
+
+        };
+
+
+
+    // ==========================================
+    // CHANGE APPLICATION STATUS
+    // ==========================================
+
+    window.changeStatus =
+        async function(id, newStatus) {
+
+            const app =
+                applications.find(
+                    item => String(item.id) === String(id)
+                );
+
+
+            if (!app) {
+                return;
+            }
+
+
+            const action =
+                newStatus === "approved"
+                ? "approve"
+                : "reject";
+
+
+            const confirmed =
+                confirm(
+                    `Are you sure you want to ${action} ${app.ff_name}?`
+                );
+
+
+            if (!confirmed) {
+                return;
+            }
+
+
+            const {
+                error
+            } =
+                await supabaseClient
+
+                .from("guild_applications")
+
+                .update({
+                    status: newStatus
+                })
+
+                .eq(
+                    "id",
+                    id
+                );
+
+
+            if (error) {
+
+                alert(
+                    "Could not update application:\n\n"
+                    + error.message
+                );
+
+                console.error(error);
+
+                return;
+
+            }
+
+
+            alert(
+                newStatus === "approved"
+                ? "🎉 Application approved!"
+                : "Application rejected."
+            );
+
+
+            detailsModal.classList.add("hidden");
+
+
+            await loadApplications();
+
+        };
+
+
+
+    // ==========================================
+    // MODAL BUTTONS
+    // ==========================================
+
+    modalApprove.addEventListener(
+        "click",
+        function() {
+
+            if (!selectedApplication) {
+                return;
+            }
+
+
+            changeStatus(
+                selectedApplication.id,
+                "approved"
+            );
+
+        }
+    );
+
+
+    modalReject.addEventListener(
+        "click",
+        function() {
+
+            if (!selectedApplication) {
+                return;
+            }
+
+
+            changeStatus(
+                selectedApplication.id,
+                "rejected"
+            );
+
+        }
+    );
+
+
+    closeModal.addEventListener(
+        "click",
+        function() {
+
+            detailsModal.classList.add("hidden");
+
+        }
+    );
+
+
+    detailsModal.addEventListener(
+        "click",
+        function(event) {
+
+            if (event.target === detailsModal) {
+
+                detailsModal.classList.add("hidden");
+
+            }
+
+        }
+    );
+
+
+
+    // ==========================================
+    // REFRESH
+    // ==========================================
+
+    refreshButton.addEventListener(
+        "click",
+        function() {
+
+            loadApplications();
+
+        }
+    );
+
+
+
+    // ==========================================
+    // STATUS CLASS
+    // ==========================================
+
+    function getStatusClass(status) {
+
+        if (status === "approved") {
+            return "status-approved";
+        }
+
+        if (status === "rejected") {
+            return "status-rejected";
+        }
+
+        return "status-pending";
+
+    }
+
+
+
+    // ==========================================
+    // SECURITY: ESCAPE HTML
+    // ==========================================
+
+    function escapeHTML(value) {
+
+        if (
+            value === null ||
+            value === undefined
+        ) {
+
+            return "";
+
+        }
+
+
+        return String(value)
+
+            .replace(
+                /&/g,
+                "&amp;"
+            )
+
+            .replace(
+                /</g,
+                "&lt;"
+            )
+
+            .replace(
+                />/g,
+                "&gt;"
+            )
+
+            .replace(
+                /"/g,
+                "&quot;"
+            )
+
+            .replace(
+                /'/g,
+                "&#039;"
+            );
+
+    }
+
+
+
+    // ==========================================
+    // START
+    // ==========================================
+
+    checkLogin();
+
+
+
+    </script>
+
+
+</body>
+
+</html>
