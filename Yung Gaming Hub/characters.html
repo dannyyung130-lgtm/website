@@ -1,0 +1,2110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Characters | Yung Gaming Hub</title>
+
+    <link
+        rel="stylesheet"
+        href="home.css"
+    >
+
+    <style>
+
+        /* =========================================
+           GLOBAL
+        ========================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #080808;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        /* =========================================
+           NAVBAR
+        ========================================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 15px 5%;
+
+            background: rgba(10, 10, 10, 0.97);
+
+            border-bottom: 1px solid #252525;
+        }
+
+        .logo {
+            color: white;
+            font-size: 18px;
+            font-weight: 900;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #ff6500;
+        }
+
+        .navbar nav {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .navbar nav a {
+            color: #cfcfcf;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.2s ease;
+        }
+
+        .navbar nav a:hover {
+            color: #ff6500;
+        }
+
+        .navbar nav a.active {
+            color: #ff6500;
+        }
+
+        .login-btn {
+            padding: 10px 18px;
+
+            background: #ff6500;
+            color: white;
+
+            border-radius: 6px;
+
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================== */
+
+        .characters-hero {
+            padding: 90px 20px 60px;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255, 101, 0, 0.15),
+                    transparent 55%
+                );
+        }
+
+        .hero-small {
+            color: #ff6500;
+
+            font-size: 13px;
+            font-weight: 900;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 15px;
+        }
+
+        .characters-hero h1 {
+            margin: 0;
+
+            font-size: clamp(
+                45px,
+                8vw,
+                90px
+            );
+
+            font-weight: 900;
+
+            line-height: 0.95;
+        }
+
+        .characters-hero h1 span {
+            color: #ff6500;
+        }
+
+        .characters-hero p {
+            max-width: 680px;
+
+            margin: 25px auto 0;
+
+            color: #999;
+
+            font-size: 17px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================================
+           MAIN CONTAINER
+        ========================================== */
+
+        .characters-container {
+            width: min(1200px, 90%);
+
+            margin: auto;
+
+            padding-bottom: 80px;
+        }
+
+
+        /* =========================================
+           SEARCH + FILTER
+        ========================================== */
+
+        .character-controls {
+            display: flex;
+
+            gap: 15px;
+
+            margin-bottom: 35px;
+
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+
+            min-width: 240px;
+        }
+
+        .search-box input {
+            width: 100%;
+
+            padding: 15px 18px;
+
+            background: #111;
+
+            border: 1px solid #2b2b2b;
+
+            border-radius: 8px;
+
+            color: white;
+
+            outline: none;
+
+            font-size: 15px;
+        }
+
+        .search-box input:focus {
+            border-color: #ff6500;
+        }
+
+        .filter-box {
+            min-width: 210px;
+        }
+
+        .filter-box select {
+            width: 100%;
+
+            padding: 15px 18px;
+
+            background: #111;
+
+            border: 1px solid #2b2b2b;
+
+            border-radius: 8px;
+
+            color: white;
+
+            outline: none;
+
+            font-size: 15px;
+
+            cursor: pointer;
+        }
+
+        .filter-box select:focus {
+            border-color: #ff6500;
+        }
+
+
+        /* =========================================
+           SECTION HEADING
+        ========================================== */
+
+        .section-heading {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 25px;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+
+            font-size: 28px;
+        }
+
+        .character-count {
+            color: #888;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           CHARACTER GRID
+        ========================================== */
+
+        .character-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 20px;
+        }
+
+
+        /* =========================================
+           CHARACTER CARD
+        ========================================== */
+
+        .character-card {
+            background: #111;
+
+            border: 1px solid #272727;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+
+            border-color: #ff6500;
+
+            box-shadow:
+                0 12px 35px
+                rgba(255, 101, 0, 0.12);
+        }
+
+
+        /* =========================================
+           CHARACTER PLACEHOLDER
+        ========================================== */
+
+        .character-visual {
+            height: 210px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255, 101, 0, 0.17),
+                    transparent 65%
+                );
+
+            border-bottom: 1px solid #242424;
+        }
+
+        .character-icon {
+            width: 105px;
+            height: 105px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #191919;
+
+            border: 2px solid #ff6500;
+
+            font-size: 48px;
+        }
+
+
+        /* =========================================
+           CARD CONTENT
+        ========================================== */
+
+        .character-content {
+            padding: 20px;
+        }
+
+        .character-role {
+            display: inline-block;
+
+            padding: 5px 9px;
+
+            background:
+                rgba(255, 101, 0, 0.12);
+
+            color: #ff6500;
+
+            border-radius: 5px;
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+        }
+
+        .character-name {
+            margin: 12px 0 7px;
+
+            font-size: 24px;
+
+            font-weight: 900;
+        }
+
+        .character-description {
+            margin: 0 0 18px;
+
+            color: #999;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================================
+           ABILITY
+        ========================================== */
+
+        .ability-box {
+            padding: 15px;
+
+            background: #181818;
+
+            border-radius: 8px;
+
+            margin-bottom: 15px;
+        }
+
+        .ability-title {
+            display: block;
+
+            color: #ff6500;
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            margin-bottom: 7px;
+        }
+
+        .ability-name {
+            display: block;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: 900;
+
+            margin-bottom: 7px;
+        }
+
+        .ability-description {
+            margin: 0;
+
+            color: #888;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================================
+           CHARACTER DETAILS
+        ========================================== */
+
+        .character-details {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 10px;
+        }
+
+        .detail {
+            padding: 11px;
+
+            background: #181818;
+
+            border-radius: 6px;
+        }
+
+        .detail-label {
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: #777;
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+            font-weight: 800;
+        }
+
+        .detail-value {
+            color: white;
+
+            font-size: 13px;
+
+            font-weight: 800;
+        }
+
+
+        /* =========================================
+           PLAYSTYLE
+        ========================================== */
+
+        .playstyle {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-top: 16px;
+
+            padding-top: 15px;
+
+            border-top: 1px solid #292929;
+        }
+
+        .playstyle span {
+            color: #888;
+
+            font-size: 12px;
+        }
+
+        .playstyle strong {
+            color: #ff6500;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================
+           NO RESULTS
+        ========================================== */
+
+        .no-results {
+            display: none;
+
+            padding: 60px 20px;
+
+            text-align: center;
+
+            color: #777;
+        }
+
+        .no-results-icon {
+            font-size: 50px;
+
+            margin-bottom: 15px;
+        }
+
+        .no-results h3 {
+            margin: 0 0 8px;
+
+            color: white;
+        }
+
+
+        /* =========================================
+           CHARACTER TIPS
+        ========================================== */
+
+        .tips-section {
+            margin-top: 70px;
+        }
+
+        .tips-section h2 {
+            margin-bottom: 25px;
+
+            font-size: 30px;
+        }
+
+        .tips-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .tip-card {
+            padding: 25px;
+
+            background: #111;
+
+            border: 1px solid #272727;
+
+            border-radius: 10px;
+        }
+
+        .tip-icon {
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+        .tip-card h3 {
+            margin: 0 0 10px;
+
+            font-size: 18px;
+        }
+
+        .tip-card p {
+            margin: 0;
+
+            color: #888;
+
+            line-height: 1.6;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================== */
+
+        .footer {
+            padding: 50px 20px;
+
+            text-align: center;
+
+            background: #050505;
+
+            border-top: 1px solid #222;
+        }
+
+        .footer-logo {
+            font-size: 20px;
+
+            font-weight: 900;
+
+            margin-bottom: 10px;
+        }
+
+        .footer-logo span {
+            color: #ff6500;
+        }
+
+        .footer p {
+            margin: 6px 0;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================== */
+
+        @media (max-width: 900px) {
+
+            .navbar {
+                flex-wrap: wrap;
+
+                gap: 15px;
+            }
+
+            .navbar nav {
+                order: 3;
+
+                width: 100%;
+
+                justify-content: center;
+
+                overflow-x: auto;
+
+                padding-bottom: 5px;
+            }
+
+            .character-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .tips-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding: 13px 15px;
+            }
+
+            .logo {
+                font-size: 14px;
+            }
+
+            .login-btn {
+                padding: 9px 13px;
+
+                font-size: 12px;
+            }
+
+            .navbar nav {
+                justify-content: flex-start;
+
+                gap: 18px;
+            }
+
+            .navbar nav a {
+                font-size: 12px;
+
+                white-space: nowrap;
+            }
+
+            .characters-hero {
+                padding:
+                    60px 15px 45px;
+            }
+
+            .characters-hero p {
+                font-size: 14px;
+            }
+
+            .characters-container {
+                width: 92%;
+            }
+
+            .character-controls {
+                flex-direction: column;
+            }
+
+            .search-box,
+            .filter-box {
+                width: 100%;
+
+                min-width: 0;
+            }
+
+            .section-heading {
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                gap: 5px;
+            }
+
+            .character-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .character-visual {
+                height: 180px;
+            }
+
+            .character-name {
+                font-size: 21px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            🔥 YUNG
+            <span>
+                GAMING HUB
+            </span>
+
+        </div>
+
+
+        <nav>
+
+            <a href="home.html">
+                Home
+            </a>
+
+            <a href="news.html">
+                News
+            </a>
+
+            <a href="tournament.html">
+                Tournaments
+            </a>
+
+            <a href="weapon.html">
+                Weapons
+            </a>
+
+            <a
+                href="characters.html"
+                class="active"
+            >
+                Characters
+            </a>
+
+            <a href="community.html">
+                Community
+            </a>
+
+            <a href="guild.html">
+                Chaos Crew
+            </a>
+
+        </nav>
+
+
+        <a
+            href="login.html"
+            class="login-btn"
+        >
+            Login
+        </a>
+
+    </header>
+
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section class="characters-hero">
+
+        <div class="hero-small">
+            FREE FIRE DATABASE
+        </div>
+
+
+        <h1>
+            CHARACTER <span>ARSENAL</span>
+        </h1>
+
+
+        <p>
+
+            Explore characters, abilities and
+            playstyles. Find characters that match
+            the way you like to play.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="characters-container">
+
+
+        <!-- =====================================
+             SEARCH AND FILTER
+        ====================================== -->
+
+        <div class="character-controls">
+
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="characterSearch"
+                    placeholder="🔎 Search for a character..."
+                >
+
+            </div>
+
+
+            <div class="filter-box">
+
+                <select id="characterFilter">
+
+                    <option value="all">
+                        All Roles
+                    </option>
+
+                    <option value="aggressive">
+                        Aggressive
+                    </option>
+
+                    <option value="support">
+                        Support
+                    </option>
+
+                    <option value="defensive">
+                        Defensive
+                    </option>
+
+                    <option value="healing">
+                        Healing
+                    </option>
+
+                    <option value="mobility">
+                        Mobility
+                    </option>
+
+                    <option value="balanced">
+                        Balanced
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             SECTION HEADING
+        ====================================== -->
+
+        <div class="section-heading">
+
+            <h2>
+                Character Arsenal
+            </h2>
+
+
+            <span
+                class="character-count"
+                id="characterCount"
+            >
+                Showing characters
+            </span>
+
+        </div>
+
+
+
+        <!-- =====================================
+             CHARACTER GRID
+        ====================================== -->
+
+        <div
+            class="character-grid"
+            id="characterGrid"
+        >
+
+
+            <!-- KELLY -->
+
+            <article
+                class="character-card"
+                data-name="Kelly"
+                data-role="mobility"
+            >
+
+                <div class="character-visual">
+
+                    <div class="character-icon">
+                        🏃
+                    </div>
+
+                </div>
+
+
+                <div class="character-content">
+
+                    <span class="character-role">
+                        Mobility
+                    </span>
+
+
+                    <h3 class="character-name">
+                        Kelly
+                    </h3>
+
+
+                    <p class="character-description">
+
+                        A fast-paced character suited
+                        to players who like movement,
+                        rotations and aggressive plays.
+
+                    </p>
+
+
+                    <div class="ability-box">
+
+                        <span class="ability-title">
+                            Ability
+                        </span>
+
+                        <span class="ability-name">
+                            Movement Specialist
+                        </span>
+
+                        <p class="ability-description">
+
+                            Designed around speed and
+                            mobility during combat.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="character-details">
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                Best For
+                            </span>
+
+                            <span class="detail-value">
+                                Rushers
+                            </span>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                Style
+                            </span>
+
+                            <span class="detail-value">
+                                Fast
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="playstyle">
+
+                        <span>
+                            Playstyle
+                        </span>
+
+                        <strong>
+                            AGGRESSIVE
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- DJ ALOK -->
+
+            <article
+                class="character-card"
+                data-name="DJ Alok"
+                data-role="support"
+            >
+
+                <div class="character-visual">
+
+                    <div class="character-icon">
+                        🎧
+                    </div>
+
+                </div>
+
+
+                <div class="character-content">
+
+                    <span class="character-role">
+                        Support
+                    </span>
+
+
+                    <h3 class="character-name">
+                        DJ Alok
+                    </h3>
+
+
+                    <p class="character-description">
+
+                        A popular support-style character
+                        suited to players who want utility
+                        during fights.
+
+                    </p>
+
+
+                    <div class="ability-box">
+
+                        <span class="ability-title">
+                            Ability
+                        </span>
+
+                        <span class="ability-name">
+                            Aura Support
+                        </span>
+
+                        <p class="ability-description">
+
+                            Provides useful team and
+                            movement support during
+                            engagements.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="character-details">
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                Best For
+                            </span>
+
+                            <span class="detail-value">
+                                Teams
+                            </span>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                Style
+                            </span>
+
+                            <span class="detail-value">
+                                Support
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="playstyle">
+
+                        <span>
+                            Playstyle
+                        </span>
+
+                        <strong>
+                            TEAM PLAYER
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- CHRONO -->
+
+            <article
+                class="character-card"
+                data-name="Chrono"
+                data-role="defensive"
+            >
+
+                <div class="character-visual">
+
+                    <div class="character-icon">
+                        🛡️
+                    </div>
+
+                </div>
+
+
+                <div class="character-content">
+
+                    <span class="character-role">
+                        Defensive
+                    </span>
+
+
+                    <h3 class="character-name">
+                        Chrono
+                    </h3>
+
+
+                    <p class="character-description">
+
+                        A defensive character suited
+                        to players who like creating
+                        safer opportunities during fights.
+
+                    </p>
+
+
+                    <div class="ability-box">
+
+                        <span class="ability-title">
+                            Ability
+                        </span>
+
+                        <span class="ability-name">
+                            Time Shield
+                        </span>
+
+                        <p class="ability-description">
+
+                            Built around temporary defensive
+                            protection during combat.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="character-details">
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                Best For
+                            </span>
+
+                            <span class="detail-value">
+                                Defenders
+                            </span>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                Style
+                            </span>
+
+                            <span class="detail-value">
+                                Defensive
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="playstyle">
+
+                        <span>
+                            Playstyle
+                        </span>
+
+                        <strong>
+                            CONTROLLED
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- K -->
+
+            <article
+                class="character-card"
+                data-name="K"
+                data-role="support"
+            >
+
+                <div class="character-visual">
+
+                    <div class="character-icon">
+                        ⚡
+                    </div>
+
+                </div>
+
+
+                <div class="character-content">
+
+                    <span class="character-role">
+                        Support
+                    </span>
+
+
+                    <h3 class="character-name">
+                        K
+                    </h3>
+
+
+                    <p class="character-description">
+
+                        A utility-focused character for
+                        players who like managing resources
+                        throughout a match.
+
+                    </p>
+
+
+                    <div class="ability-box">
+
+                        <span class="ability-title">
+                            Ability
+                        </span>
+
+                        <span class="ability-name">
+                            Master of All
+                        </span>
+
+                        <p class="ability-description">
+
+                            Focuses on resource management
+                            and sustained utility.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="character-details">
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                Best For
+                            </span>
+
+                            <span class="detail-value">
+                                Flexible Players
+                            </span>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                Style
+                            </span>
+
+                            <span class="detail-value">
+                                Utility
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="playstyle">
+
+                        <span>
+                            Playstyle
+                        </span>
+
+                        <strong>
+                            FLEXIBLE
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- HAYATO -->
+
+            <article
+                class="character-card"
+                data-name="Hayato"
+                data-role="aggressive"
+            >
+
+                <div class="character-visual">
+
+                    <div class="character-icon">
+                        ⚔️
+                    </div>
+
+                </div>
+
+
+                <div class="character-content">
+
+                    <span class="character-role">
+                        Aggressive
+                    </span>
+
+
+                    <h3 class="character-name">
+                        Hayato
+                    </h3>
+
+
+                    <p class="character-description">
+
+                        A combat-focused character for
+                        players who enjoy close fights and
+                        taking calculated risks.
+
+                    </p>
+
+
+                    <div class="ability-box">
+
+                        <span class="ability-title">
+                            Ability
+                        </span>
+
+                        <span class="ability-name">
+                            Bushido
+                        </span>
+
+                        <p class="ability-description">
+
+                            Designed around improving combat
+                            effectiveness in dangerous situations.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="character-details">
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                Best For
+                            </span>
+
+                            <span class="detail-value">
+                                Rushers
+                            </span>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                Style
+                            </span>
+
+                            <span class="detail-value">
+                                Combat
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="playstyle">
+
+                        <span>
+                            Playstyle
+                        </span>
+
+                        <strong>
+                            AGGRESSIVE
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- MAXIM -->
+
+            <article
+                class="character-card"
+                data-name="Maxim"
+                data-role="healing"
+            >
+
+                <div class="character-visual">
+
+                    <div class="character-icon">
+                        🍽️
+                    </div>
+
+                </div>
+
+
+                <div class="character-content">
+
+                    <span class="character-role">
+                        Healing
+                    </span>
+
+
+                    <h3 class="character-name">
+                        Maxim
+                    </h3>
+
+
+                    <p class="character-description">
+
+                        A utility character for players
+                        who value faster recovery and
+                        efficient resource usage.
+
+                    </p>
+
+
+                    <div class="ability-box">
+
+                        <span class="ability-title">
+                            Ability
+                        </span>
+
+                        <span class="ability-name">
+                            Gluttony
+                        </span>
+
+                        <p class="ability-description">
+
+                            Built around faster use of
+                            recovery items.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="character-details">
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                Best For
+                            </span>
+
+                            <span class="detail-value">
+                                Survivors
+                            </span>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                Style
+                            </span>
+
+                            <span class="detail-value">
+                                Utility
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="playstyle">
+
+                        <span>
+                            Playstyle
+                        </span>
+
+                        <strong>
+                            SURVIVAL
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- MOCO -->
+
+            <article
+                class="character-card"
+                data-name="Moco"
+                data-role="support"
+            >
+
+                <div class="character-visual">
+
+                    <div class="character-icon">
+                        💻
+                    </div>
+
+                </div>
+
+
+                <div class="character-content">
+
+                    <span class="character-role">
+                        Support
+                    </span>
+
+
+                    <h3 class="character-name">
+                        Moco
+                    </h3>
+
+
+                    <p class="character-description">
+
+                        A tactical character that fits
+                        players who like gathering
+                        information during fights.
+
+                    </p>
+
+
+                    <div class="ability-box">
+
+                        <span class="ability-title">
+                            Ability
+                        </span>
+
+                        <span class="ability-name">
+                            Hacker's Eye
+                        </span>
+
+                        <p class="ability-description">
+
+                            Helps reveal useful information
+                            about opponents.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="character-details">
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                Best For
+                            </span>
+
+                            <span class="detail-value">
+                                Scouts
+                            </span>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                Style
+                            </span>
+
+                            <span class="detail-value">
+                                Tactical
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="playstyle">
+
+                        <span>
+                            Playstyle
+                        </span>
+
+                        <strong>
+                            TACTICAL
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- WUKONG -->
+
+            <article
+                class="character-card"
+                data-name="Wukong"
+                data-role="balanced"
+            >
+
+                <div class="character-visual">
+
+                    <div class="character-icon">
+                        🐒
+                    </div>
+
+                </div>
+
+
+                <div class="character-content">
+
+                    <span class="character-role">
+                        Balanced
+                    </span>
+
+
+                    <h3 class="character-name">
+                        Wukong
+                    </h3>
+
+
+                    <p class="character-description">
+
+                        A deceptive character suited to
+                        players who enjoy surprising
+                        opponents and changing tactics.
+
+                    </p>
+
+
+                    <div class="ability-box">
+
+                        <span class="ability-title">
+                            Ability
+                        </span>
+
+                        <span class="ability-name">
+                            Camouflage
+                        </span>
+
+                        <p class="ability-description">
+
+                            Allows tactical repositioning
+                            and surprise plays.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="character-details">
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                Best For
+                            </span>
+
+                            <span class="detail-value">
+                                Trick Players
+                            </span>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                Style
+                            </span>
+
+                            <span class="detail-value">
+                                Tactical
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="playstyle">
+
+                        <span>
+                            Playstyle
+                        </span>
+
+                        <strong>
+                            STRATEGIC
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             NO RESULTS
+        ====================================== -->
+
+        <div
+            class="no-results"
+            id="noResults"
+        >
+
+            <div class="no-results-icon">
+                🔎
+            </div>
+
+            <h3>
+                No character found
+            </h3>
+
+            <p>
+                Try another character name or role.
+            </p>
+
+        </div>
+
+
+
+        <!-- =====================================
+             TIPS
+        ====================================== -->
+
+        <section class="tips-section">
+
+            <h2>
+                🔥 CHARACTER TIPS
+            </h2>
+
+
+            <div class="tips-grid">
+
+
+                <div class="tip-card">
+
+                    <div class="tip-icon">
+                        🧠
+                    </div>
+
+                    <h3>
+                        Match Your Playstyle
+                    </h3>
+
+                    <p>
+
+                        Don't choose a character only
+                        because they are popular. Pick
+                        one that matches how you actually
+                        play.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="tip-card">
+
+                    <div class="tip-icon">
+                        🤝
+                    </div>
+
+                    <h3>
+                        Think About Your Team
+                    </h3>
+
+                    <p>
+
+                        In squad games, combining
+                        different abilities can give
+                        your team more options.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="tip-card">
+
+                    <div class="tip-icon">
+                        🎮
+                    </div>
+
+                    <h3>
+                        Practice The Ability
+                    </h3>
+
+                    <p>
+
+                        Learn when to activate an
+                        ability instead of using it
+                        immediately every time.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-logo">
+
+            🔥 YUNG
+            <span>
+                GAMING HUB
+            </span>
+
+        </div>
+
+
+        <p>
+            Free Fire gaming community and player hub.
+        </p>
+
+
+        <p>
+            © 2026 Yung Gaming Hub
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+        const searchInput =
+            document.getElementById(
+                "characterSearch"
+            );
+
+
+        const filterSelect =
+            document.getElementById(
+                "characterFilter"
+            );
+
+
+        const characterCards =
+            document.querySelectorAll(
+                ".character-card"
+            );
+
+
+        const characterCount =
+            document.getElementById(
+                "characterCount"
+            );
+
+
+        const noResults =
+            document.getElementById(
+                "noResults"
+            );
+
+
+
+        function filterCharacters() {
+
+            const searchTerm =
+                searchInput
+                    .value
+                    .toLowerCase()
+                    .trim();
+
+
+            const selectedRole =
+                filterSelect.value;
+
+
+            let visibleCharacters = 0;
+
+
+
+            characterCards.forEach(
+                function(card) {
+
+                    const characterName =
+                        card.dataset.name
+                            .toLowerCase();
+
+
+                    const characterRole =
+                        card.dataset.role;
+
+
+                    const matchesSearch =
+                        characterName.includes(
+                            searchTerm
+                        );
+
+
+                    const matchesRole =
+                        selectedRole === "all" ||
+                        characterRole === selectedRole;
+
+
+
+                    if (
+                        matchesSearch &&
+                        matchesRole
+                    ) {
+
+                        card.style.display = "";
+
+                        visibleCharacters++;
+
+                    } else {
+
+                        card.style.display = "none";
+
+                    }
+
+                }
+            );
+
+
+
+            characterCount.textContent =
+                visibleCharacters +
+                " character" +
+                (
+                    visibleCharacters === 1
+                        ? ""
+                        : "s"
+                ) +
+                " shown";
+
+
+
+            if (
+                visibleCharacters === 0
+            ) {
+
+                noResults.style.display =
+                    "block";
+
+            } else {
+
+                noResults.style.display =
+                    "none";
+
+            }
+
+        }
+
+
+
+        searchInput.addEventListener(
+            "input",
+            filterCharacters
+        );
+
+
+        filterSelect.addEventListener(
+            "change",
+            filterCharacters
+        );
+
+
+        filterCharacters();
+
+    </script>
+
+
+</body>
+
+</html>

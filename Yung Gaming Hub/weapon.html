@@ -1,0 +1,2293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Weapons | Yung Gaming Hub</title>
+
+    <link
+        rel="stylesheet"
+        href="home.css"
+    >
+
+    <style>
+
+        /* =========================================
+           GLOBAL
+        ========================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #080808;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        /* =========================================
+           NAVBAR
+        ========================================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 15px 5%;
+
+            background: rgba(10, 10, 10, 0.96);
+
+            border-bottom: 1px solid #252525;
+        }
+
+
+        .logo {
+            color: white;
+            font-size: 18px;
+            font-weight: 900;
+            white-space: nowrap;
+        }
+
+
+        .logo span {
+            color: #ff6500;
+        }
+
+
+        .navbar nav {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+
+        .navbar nav a {
+            color: #cfcfcf;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: 0.2s ease;
+        }
+
+
+        .navbar nav a:hover {
+            color: #ff6500;
+        }
+
+
+        .login-btn {
+            padding: 10px 18px;
+
+            background: #ff6500;
+            color: white;
+
+            border-radius: 6px;
+
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================== */
+
+        .weapons-hero {
+            padding: 90px 20px 60px;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255, 101, 0, 0.15),
+                    transparent 55%
+                );
+        }
+
+
+        .hero-small {
+            color: #ff6500;
+
+            font-size: 13px;
+            font-weight: 900;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .weapons-hero h1 {
+            margin: 0;
+
+            font-size: clamp(
+                45px,
+                8vw,
+                90px
+            );
+
+            font-weight: 900;
+
+            line-height: 0.95;
+        }
+
+
+        .weapons-hero h1 span {
+            color: #ff6500;
+        }
+
+
+        .weapons-hero p {
+            max-width: 650px;
+
+            margin: 25px auto 0;
+
+            color: #999;
+
+            font-size: 17px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================================
+           MAIN CONTAINER
+        ========================================== */
+
+        .weapons-container {
+            width: min(
+                1200px,
+                90%
+            );
+
+            margin: auto;
+
+            padding-bottom: 80px;
+        }
+
+
+        /* =========================================
+           SEARCH
+        ========================================== */
+
+        .weapon-controls {
+            display: flex;
+
+            gap: 15px;
+
+            margin-bottom: 35px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .search-box {
+            flex: 1;
+
+            min-width: 240px;
+        }
+
+
+        .search-box input {
+            width: 100%;
+
+            padding: 15px 18px;
+
+            background: #111;
+
+            border: 1px solid #2b2b2b;
+
+            border-radius: 8px;
+
+            color: white;
+
+            outline: none;
+
+            font-size: 15px;
+        }
+
+
+        .search-box input:focus {
+            border-color: #ff6500;
+        }
+
+
+        .filter-box {
+            min-width: 210px;
+        }
+
+
+        .filter-box select {
+            width: 100%;
+
+            padding: 15px 18px;
+
+            background: #111;
+
+            border: 1px solid #2b2b2b;
+
+            border-radius: 8px;
+
+            color: white;
+
+            outline: none;
+
+            font-size: 15px;
+
+            cursor: pointer;
+        }
+
+
+        .filter-box select:focus {
+            border-color: #ff6500;
+        }
+
+
+        /* =========================================
+           SECTION TITLE
+        ========================================== */
+
+        .section-heading {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 25px;
+        }
+
+
+        .section-heading h2 {
+            margin: 0;
+
+            font-size: 28px;
+        }
+
+
+        .weapon-count {
+            color: #888;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           WEAPON GRID
+        ========================================== */
+
+        .weapon-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    minmax(0, 1fr)
+                );
+
+            gap: 20px;
+        }
+
+
+        /* =========================================
+           WEAPON CARD
+        ========================================== */
+
+        .weapon-card {
+            position: relative;
+
+            background: #111;
+
+            border: 1px solid #272727;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+
+        .weapon-card:hover {
+            transform: translateY(-5px);
+
+            border-color: #ff6500;
+
+            box-shadow:
+                0 12px 35px
+                rgba(255, 101, 0, 0.12);
+        }
+
+
+        /* =========================================
+           WEAPON VISUAL
+        ========================================== */
+
+        .weapon-visual {
+            height: 190px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255, 101, 0, 0.16),
+                    transparent 65%
+                );
+
+            border-bottom: 1px solid #242424;
+        }
+
+
+        .weapon-icon {
+            font-size: 75px;
+
+            filter:
+                drop-shadow(
+                    0 10px 20px
+                    rgba(0, 0, 0, 0.7)
+                );
+        }
+
+
+        /* =========================================
+           CARD CONTENT
+        ========================================== */
+
+        .weapon-content {
+            padding: 20px;
+        }
+
+
+        .weapon-type {
+            display: inline-block;
+
+            padding: 5px 9px;
+
+            background: rgba(
+                255,
+                101,
+                0,
+                0.12
+            );
+
+            color: #ff6500;
+
+            border-radius: 5px;
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+        }
+
+
+        .weapon-name {
+            margin: 12px 0 7px;
+
+            font-size: 24px;
+
+            font-weight: 900;
+        }
+
+
+        .weapon-description {
+            margin: 0 0 18px;
+
+            color: #999;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================================
+           STATS
+        ========================================== */
+
+        .weapon-stats {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 10px;
+        }
+
+
+        .stat {
+            padding: 11px;
+
+            background: #181818;
+
+            border-radius: 6px;
+        }
+
+
+        .stat-label {
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: #777;
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+            font-weight: 800;
+        }
+
+
+        .stat-value {
+            color: white;
+
+            font-size: 14px;
+
+            font-weight: 800;
+        }
+
+
+        /* =========================================
+           DIFFICULTY
+        ========================================== */
+
+        .difficulty {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-top: 18px;
+
+            padding-top: 15px;
+
+            border-top: 1px solid #292929;
+        }
+
+
+        .difficulty span {
+            color: #888;
+
+            font-size: 12px;
+        }
+
+
+        .stars {
+            color: #ff6500;
+
+            letter-spacing: 2px;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================
+           NO RESULTS
+        ========================================== */
+
+        .no-results {
+            display: none;
+
+            padding: 60px 20px;
+
+            text-align: center;
+
+            color: #777;
+        }
+
+
+        .no-results div {
+            font-size: 50px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .no-results h3 {
+            margin: 0 0 8px;
+
+            color: white;
+        }
+
+
+        /* =========================================
+           TIPS SECTION
+        ========================================== */
+
+        .tips-section {
+            margin-top: 70px;
+        }
+
+
+        .tips-section h2 {
+            margin-bottom: 25px;
+
+            font-size: 30px;
+        }
+
+
+        .tips-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .tip-card {
+            padding: 25px;
+
+            background: #111;
+
+            border: 1px solid #272727;
+
+            border-radius: 10px;
+        }
+
+
+        .tip-icon {
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .tip-card h3 {
+            margin: 0 0 10px;
+
+            font-size: 18px;
+        }
+
+
+        .tip-card p {
+            margin: 0;
+
+            color: #888;
+
+            line-height: 1.6;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================== */
+
+        .footer {
+            padding: 50px 20px;
+
+            text-align: center;
+
+            background: #050505;
+
+            border-top: 1px solid #222;
+        }
+
+
+        .footer-logo {
+            font-size: 20px;
+
+            font-weight: 900;
+
+            margin-bottom: 10px;
+        }
+
+
+        .footer-logo span {
+            color: #ff6500;
+        }
+
+
+        .footer p {
+            margin: 6px 0;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================
+           MOBILE NAV
+        ========================================== */
+
+        @media (max-width: 900px) {
+
+            .navbar {
+                flex-wrap: wrap;
+
+                gap: 15px;
+            }
+
+
+            .navbar nav {
+                order: 3;
+
+                width: 100%;
+
+                justify-content: center;
+
+                overflow-x: auto;
+
+                padding-bottom: 5px;
+            }
+
+
+            .weapon-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .tips-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding: 13px 15px;
+            }
+
+
+            .logo {
+                font-size: 14px;
+            }
+
+
+            .login-btn {
+                padding: 9px 13px;
+
+                font-size: 12px;
+            }
+
+
+            .navbar nav {
+                justify-content: flex-start;
+
+                gap: 18px;
+            }
+
+
+            .navbar nav a {
+                font-size: 12px;
+
+                white-space: nowrap;
+            }
+
+
+            .weapons-hero {
+                padding:
+                    60px 15px 45px;
+            }
+
+
+            .weapons-hero p {
+                font-size: 14px;
+            }
+
+
+            .weapons-container {
+                width: 92%;
+            }
+
+
+            .weapon-controls {
+                flex-direction: column;
+            }
+
+
+            .search-box,
+            .filter-box {
+                width: 100%;
+                min-width: 0;
+            }
+
+
+            .section-heading {
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                gap: 5px;
+            }
+
+
+            .weapon-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .weapon-visual {
+                height: 170px;
+            }
+
+
+            .weapon-icon {
+                font-size: 65px;
+            }
+
+
+            .weapon-name {
+                font-size: 21px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🔥 YUNG <span>GAMING HUB</span>
+        </div>
+
+
+        <nav>
+
+            <a href="home.html">
+                Home
+            </a>
+
+            <a href="news.html">
+                News
+            </a>
+
+            <a href="tournament.html">
+                Tournaments
+            </a>
+
+            <a href="weapon.html">
+                Weapons
+            </a>
+
+            <a href="community.html">
+                Community
+            </a>
+
+            <a href="guild.html">
+                Chaos Crew
+            </a>
+
+        </nav>
+
+
+        <a
+            href="login.html"
+            class="login-btn"
+        >
+            Login
+        </a>
+
+    </header>
+
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section class="weapons-hero">
+
+        <div class="hero-small">
+            FREE FIRE DATABASE
+        </div>
+
+
+        <h1>
+            WEAPON <span>ARSENAL</span>
+        </h1>
+
+
+        <p>
+
+            Explore the weapons section of
+            Yung Gaming Hub. Search for weapons,
+            compare their roles and learn how
+            to use different weapon classes.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="weapons-container">
+
+
+        <!-- =====================================
+             SEARCH + FILTER
+        ====================================== -->
+
+        <div class="weapon-controls">
+
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="weaponSearch"
+                    placeholder="🔎 Search for a weapon..."
+                >
+
+            </div>
+
+
+            <div class="filter-box">
+
+                <select id="weaponFilter">
+
+                    <option value="all">
+                        All Weapons
+                    </option>
+
+                    <option value="assault-rifle">
+                        Assault Rifles
+                    </option>
+
+                    <option value="smg">
+                        SMG
+                    </option>
+
+                    <option value="shotgun">
+                        Shotguns
+                    </option>
+
+                    <option value="sniper">
+                        Snipers
+                    </option>
+
+                    <option value="pistol">
+                        Pistols
+                    </option>
+
+                    <option value="marksman">
+                        Marksman
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             WEAPON HEADING
+        ====================================== -->
+
+        <div class="section-heading">
+
+            <h2>
+                Weapon Arsenal
+            </h2>
+
+
+            <span
+                class="weapon-count"
+                id="weaponCount"
+            >
+                Showing weapons
+            </span>
+
+        </div>
+
+
+
+        <!-- =====================================
+             WEAPON GRID
+        ====================================== -->
+
+        <div
+            class="weapon-grid"
+            id="weaponGrid"
+        >
+
+
+
+            <!-- AK47 -->
+
+            <article
+                class="weapon-card"
+                data-name="AK47"
+                data-type="assault-rifle"
+            >
+
+                <div class="weapon-visual">
+
+                    <div class="weapon-icon">
+                        🔫
+                    </div>
+
+                </div>
+
+
+                <div class="weapon-content">
+
+                    <span class="weapon-type">
+                        Assault Rifle
+                    </span>
+
+
+                    <h3 class="weapon-name">
+                        AK47
+                    </h3>
+
+
+                    <p class="weapon-description">
+
+                        A classic assault rifle suited
+                        to players who prefer strong
+                        damage and aggressive gunfights.
+
+                    </p>
+
+
+                    <div class="weapon-stats">
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Damage
+                            </span>
+
+                            <span class="stat-value">
+                                High
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Range
+                            </span>
+
+                            <span class="stat-value">
+                                Long
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Fire Rate
+                            </span>
+
+                            <span class="stat-value">
+                                High
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Role
+                            </span>
+
+                            <span class="stat-value">
+                                Assault
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="difficulty">
+
+                        <span>
+                            Difficulty
+                        </span>
+
+                        <div class="stars">
+                            ★★★★☆
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- M4A1 -->
+
+            <article
+                class="weapon-card"
+                data-name="M4A1"
+                data-type="assault-rifle"
+            >
+
+                <div class="weapon-visual">
+
+                    <div class="weapon-icon">
+                        🔫
+                    </div>
+
+                </div>
+
+
+                <div class="weapon-content">
+
+                    <span class="weapon-type">
+                        Assault Rifle
+                    </span>
+
+
+                    <h3 class="weapon-name">
+                        M4A1
+                    </h3>
+
+
+                    <p class="weapon-description">
+
+                        A balanced assault rifle that
+                        works well for players who want
+                        a flexible weapon.
+
+                    </p>
+
+
+                    <div class="weapon-stats">
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Damage
+                            </span>
+
+                            <span class="stat-value">
+                                Medium
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Range
+                            </span>
+
+                            <span class="stat-value">
+                                Long
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Fire Rate
+                            </span>
+
+                            <span class="stat-value">
+                                High
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Role
+                            </span>
+
+                            <span class="stat-value">
+                                Balanced
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="difficulty">
+
+                        <span>
+                            Difficulty
+                        </span>
+
+                        <div class="stars">
+                            ★★★☆☆
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- SCAR -->
+
+            <article
+                class="weapon-card"
+                data-name="SCAR"
+                data-type="assault-rifle"
+            >
+
+                <div class="weapon-visual">
+
+                    <div class="weapon-icon">
+                        🔫
+                    </div>
+
+                </div>
+
+
+                <div class="weapon-content">
+
+                    <span class="weapon-type">
+                        Assault Rifle
+                    </span>
+
+
+                    <h3 class="weapon-name">
+                        SCAR
+                    </h3>
+
+
+                    <p class="weapon-description">
+
+                        A versatile rifle designed for
+                        players who like controlled and
+                        consistent fights.
+
+                    </p>
+
+
+                    <div class="weapon-stats">
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Damage
+                            </span>
+
+                            <span class="stat-value">
+                                Medium
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Range
+                            </span>
+
+                            <span class="stat-value">
+                                Long
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Fire Rate
+                            </span>
+
+                            <span class="stat-value">
+                                Medium
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Role
+                            </span>
+
+                            <span class="stat-value">
+                                Balanced
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="difficulty">
+
+                        <span>
+                            Difficulty
+                        </span>
+
+                        <div class="stars">
+                            ★★★☆☆
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- MP40 -->
+
+            <article
+                class="weapon-card"
+                data-name="MP40"
+                data-type="smg"
+            >
+
+                <div class="weapon-visual">
+
+                    <div class="weapon-icon">
+                        🔫
+                    </div>
+
+                </div>
+
+
+                <div class="weapon-content">
+
+                    <span class="weapon-type">
+                        SMG
+                    </span>
+
+
+                    <h3 class="weapon-name">
+                        MP40
+                    </h3>
+
+
+                    <p class="weapon-description">
+
+                        A close-range SMG built for
+                        aggressive players and fast
+                        engagements.
+
+                    </p>
+
+
+                    <div class="weapon-stats">
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Damage
+                            </span>
+
+                            <span class="stat-value">
+                                High
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Range
+                            </span>
+
+                            <span class="stat-value">
+                                Short
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Fire Rate
+                            </span>
+
+                            <span class="stat-value">
+                                Very High
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Role
+                            </span>
+
+                            <span class="stat-value">
+                                Rusher
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="difficulty">
+
+                        <span>
+                            Difficulty
+                        </span>
+
+                        <div class="stars">
+                            ★★★★☆
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- UMP -->
+
+            <article
+                class="weapon-card"
+                data-name="UMP"
+                data-type="smg"
+            >
+
+                <div class="weapon-visual">
+
+                    <div class="weapon-icon">
+                        🔫
+                    </div>
+
+                </div>
+
+
+                <div class="weapon-content">
+
+                    <span class="weapon-type">
+                        SMG
+                    </span>
+
+
+                    <h3 class="weapon-name">
+                        UMP
+                    </h3>
+
+
+                    <p class="weapon-description">
+
+                        A flexible SMG for close and
+                        medium-range combat.
+
+                    </p>
+
+
+                    <div class="weapon-stats">
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Damage
+                            </span>
+
+                            <span class="stat-value">
+                                Medium
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Range
+                            </span>
+
+                            <span class="stat-value">
+                                Medium
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Fire Rate
+                            </span>
+
+                            <span class="stat-value">
+                                High
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Role
+                            </span>
+
+                            <span class="stat-value">
+                                Aggressive
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="difficulty">
+
+                        <span>
+                            Difficulty
+                        </span>
+
+                        <div class="stars">
+                            ★★★☆☆
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- M1887 -->
+
+            <article
+                class="weapon-card"
+                data-name="M1887"
+                data-type="shotgun"
+            >
+
+                <div class="weapon-visual">
+
+                    <div class="weapon-icon">
+                        🔫
+                    </div>
+
+                </div>
+
+
+                <div class="weapon-content">
+
+                    <span class="weapon-type">
+                        Shotgun
+                    </span>
+
+
+                    <h3 class="weapon-name">
+                        M1887
+                    </h3>
+
+
+                    <p class="weapon-description">
+
+                        A powerful close-range shotgun
+                        that rewards accurate aim and
+                        aggressive movement.
+
+                    </p>
+
+
+                    <div class="weapon-stats">
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Damage
+                            </span>
+
+                            <span class="stat-value">
+                                Very High
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Range
+                            </span>
+
+                            <span class="stat-value">
+                                Short
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Fire Rate
+                            </span>
+
+                            <span class="stat-value">
+                                Medium
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Role
+                            </span>
+
+                            <span class="stat-value">
+                                Rusher
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="difficulty">
+
+                        <span>
+                            Difficulty
+                        </span>
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- AWM -->
+
+            <article
+                class="weapon-card"
+                data-name="AWM"
+                data-type="sniper"
+            >
+
+                <div class="weapon-visual">
+
+                    <div class="weapon-icon">
+                        🎯
+                    </div>
+
+                </div>
+
+
+                <div class="weapon-content">
+
+                    <span class="weapon-type">
+                        Sniper
+                    </span>
+
+
+                    <h3 class="weapon-name">
+                        AWM
+                    </h3>
+
+
+                    <p class="weapon-description">
+
+                        A long-range sniper designed
+                        for players who prefer precision
+                        and calculated shots.
+
+                    </p>
+
+
+                    <div class="weapon-stats">
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Damage
+                            </span>
+
+                            <span class="stat-value">
+                                Very High
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Range
+                            </span>
+
+                            <span class="stat-value">
+                                Very Long
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Fire Rate
+                            </span>
+
+                            <span class="stat-value">
+                                Low
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Role
+                            </span>
+
+                            <span class="stat-value">
+                                Sniper
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="difficulty">
+
+                        <span>
+                            Difficulty
+                        </span>
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- DESERT EAGLE -->
+
+            <article
+                class="weapon-card"
+                data-name="Desert Eagle"
+                data-type="pistol"
+            >
+
+                <div class="weapon-visual">
+
+                    <div class="weapon-icon">
+                        🔫
+                    </div>
+
+                </div>
+
+
+                <div class="weapon-content">
+
+                    <span class="weapon-type">
+                        Pistol
+                    </span>
+
+
+                    <h3 class="weapon-name">
+                        Desert Eagle
+                    </h3>
+
+
+                    <p class="weapon-description">
+
+                        A high-impact pistol that can
+                        reward players with accurate
+                        aim.
+
+                    </p>
+
+
+                    <div class="weapon-stats">
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Damage
+                            </span>
+
+                            <span class="stat-value">
+                                High
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Range
+                            </span>
+
+                            <span class="stat-value">
+                                Medium
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Fire Rate
+                            </span>
+
+                            <span class="stat-value">
+                                Medium
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Role
+                            </span>
+
+                            <span class="stat-value">
+                                Backup
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="difficulty">
+
+                        <span>
+                            Difficulty
+                        </span>
+
+                        <div class="stars">
+                            ★★★★☆
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- SKS -->
+
+            <article
+                class="weapon-card"
+                data-name="SKS"
+                data-type="marksman"
+            >
+
+                <div class="weapon-visual">
+
+                    <div class="weapon-icon">
+                        🎯
+                    </div>
+
+                </div>
+
+
+                <div class="weapon-content">
+
+                    <span class="weapon-type">
+                        Marksman
+                    </span>
+
+
+                    <h3 class="weapon-name">
+                        SKS
+                    </h3>
+
+
+                    <p class="weapon-description">
+
+                        A semi-automatic marksman weapon
+                        for players who enjoy controlled
+                        long-range engagements.
+
+                    </p>
+
+
+                    <div class="weapon-stats">
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Damage
+                            </span>
+
+                            <span class="stat-value">
+                                High
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Range
+                            </span>
+
+                            <span class="stat-value">
+                                Long
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Fire Rate
+                            </span>
+
+                            <span class="stat-value">
+                                Medium
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span class="stat-label">
+                                Role
+                            </span>
+
+                            <span class="stat-value">
+                                Precision
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="difficulty">
+
+                        <span>
+                            Difficulty
+                        </span>
+
+                        <div class="stars">
+                            ★★★★☆
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             NO RESULTS
+        ====================================== -->
+
+        <div
+            class="no-results"
+            id="noResults"
+        >
+
+            <div>
+                🔎
+            </div>
+
+            <h3>
+                No weapon found
+            </h3>
+
+            <p>
+                Try another weapon name or category.
+            </p>
+
+        </div>
+
+
+
+        <!-- =====================================
+             TIPS
+        ====================================== -->
+
+        <section class="tips-section">
+
+            <h2>
+                🔥 WEAPON TIPS
+            </h2>
+
+
+            <div class="tips-grid">
+
+
+                <div class="tip-card">
+
+                    <div class="tip-icon">
+                        🎯
+                    </div>
+
+                    <h3>
+                        Know Your Range
+                    </h3>
+
+                    <p>
+
+                        Don't force every weapon into
+                        every situation. Choose your
+                        weapon based on the distance
+                        between you and your opponent.
+
+                    </p>
+
+                </div>
+
+
+                <div class="tip-card">
+
+                    <div class="tip-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        Practice Your Aim
+                    </h3>
+
+                    <p>
+
+                        Good movement combined with
+                        accurate aim can make a bigger
+                        difference than simply choosing
+                        a popular weapon.
+
+                    </p>
+
+                </div>
+
+
+                <div class="tip-card">
+
+                    <div class="tip-icon">
+                        🧠
+                    </div>
+
+                    <h3>
+                        Build Your Loadout
+                    </h3>
+
+                    <p>
+
+                        Try pairing weapons that cover
+                        different ranges so you have
+                        an option when the fight changes.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-logo">
+
+            🔥 YUNG
+            <span>
+                GAMING HUB
+            </span>
+
+        </div>
+
+
+        <p>
+            Free Fire gaming community and player hub.
+        </p>
+
+
+        <p>
+            © 2026 Yung Gaming Hub
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+
+        const searchInput =
+            document.getElementById(
+                "weaponSearch"
+            );
+
+
+        const filterSelect =
+            document.getElementById(
+                "weaponFilter"
+            );
+
+
+        const weaponCards =
+            document.querySelectorAll(
+                ".weapon-card"
+            );
+
+
+        const weaponCount =
+            document.getElementById(
+                "weaponCount"
+            );
+
+
+        const noResults =
+            document.getElementById(
+                "noResults"
+            );
+
+
+
+        function filterWeapons() {
+
+
+            const searchTerm =
+                searchInput
+                    .value
+                    .toLowerCase()
+                    .trim();
+
+
+            const selectedType =
+                filterSelect.value;
+
+
+            let visibleWeapons = 0;
+
+
+
+            weaponCards.forEach(
+                function(card) {
+
+
+                    const weaponName =
+                        card.dataset.name
+                            .toLowerCase();
+
+
+                    const weaponType =
+                        card.dataset.type;
+
+
+
+                    const matchesSearch =
+                        weaponName.includes(
+                            searchTerm
+                        );
+
+
+                    const matchesFilter =
+                        selectedType === "all" ||
+                        weaponType === selectedType;
+
+
+
+                    if (
+                        matchesSearch &&
+                        matchesFilter
+                    ) {
+
+                        card.style.display =
+                            "";
+
+                        visibleWeapons++;
+
+                    } else {
+
+                        card.style.display =
+                            "none";
+
+                    }
+
+                }
+            );
+
+
+
+            /* UPDATE COUNT */
+
+            weaponCount.textContent =
+                visibleWeapons +
+                " weapon" +
+                (
+                    visibleWeapons === 1
+                        ? ""
+                        : "s"
+                ) +
+                " shown";
+
+
+
+            /* NO RESULTS */
+
+            if (
+                visibleWeapons === 0
+            ) {
+
+                noResults.style.display =
+                    "block";
+
+            } else {
+
+                noResults.style.display =
+                    "none";
+
+            }
+
+        }
+
+
+
+        searchInput.addEventListener(
+            "input",
+            filterWeapons
+        );
+
+
+        filterSelect.addEventListener(
+            "change",
+            filterWeapons
+        );
+
+
+        /* INITIAL COUNT */
+
+        filterWeapons();
+
+
+    </script>
+
+
+</body>
+
+</html>
