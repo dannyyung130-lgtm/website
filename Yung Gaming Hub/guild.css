@@ -1263,3 +1263,138 @@ footer > p {
     transform: translateY(-2px);
     opacity: 0.9;
 }
+/* ==========================================
+   APPLICATION SUCCESS
+========================================== */
+
+.success-message {
+    margin-top: 30px;
+    padding: 35px 25px;
+    background: #0d2d17;
+    border: 1px solid #1e7439;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+.success-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+
+.success-message h2 {
+    margin: 0 0 10px;
+    color: #4dff75;
+    font-size: 27px;
+}
+
+
+.success-message > p {
+    color: #d5ffe0;
+}
+
+
+.application-id-title {
+    margin-top: 25px;
+    margin-bottom: 8px;
+    color: #4dff75 !important;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+
+.application-id-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px auto;
+    max-width: 430px;
+}
+
+
+#applicationId {
+    padding: 13px 18px;
+    background: #07150b;
+    border: 1px solid #286b3d;
+    border-radius: 7px;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    user-select: all;
+}
+
+
+#copyIdButton {
+    padding: 13px 16px;
+    background: #ff6500;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-weight: 800;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+
+#copyIdButton:hover {
+    opacity: 0.9;
+}
+
+
+#checkStatusButton {
+    margin-top: 15px;
+    padding: 15px 22px;
+    background: transparent;
+    color: white;
+    border: 1px solid #ff6500;
+    border-radius: 7px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+
+#checkStatusButton:hover {
+    background: #ff6500;
+}
+
+
+.copy-message {
+    min-height: 20px;
+    margin-top: 12px;
+    color: #4dff75 !important;
+    font-weight: 700;
+}
+
+
+.save-id-text {
+    color: #999 !important;
+    font-size: 14px;
+}
+
+
+@media (max-width: 600px) {
+
+    .application-id-box {
+        flex-direction: column;
+    }
+
+
+    #applicationId {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    #copyIdButton {
+        width: 100%;
+    }
+
+
+    #checkStatusButton {
+        width: 100%;
+    }
+
+}

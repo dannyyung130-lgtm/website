@@ -2,664 +2,1490 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Apply | Chaos Crew</title>
 
     <link rel="stylesheet" href="guild.css">
 
+    <style>
+        /* =========================================
+           SUCCESS MESSAGE
+        ========================================= */
+
+        .success-message {
+            display: none;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 40px 25px;
+            background: #0d2d17;
+            border: 1px solid #1e7439;
+            border-radius: 12px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .success-message h2 {
+            margin: 0 0 10px;
+            color: #4dff75;
+            font-size: 28px;
+        }
+
+        .success-message p {
+            color: #d5ffe0;
+            line-height: 1.6;
+        }
+
+        .application-id-title {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #4dff75 !important;
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        .application-id-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 10px auto;
+        }
+
+        #applicationId {
+            display: inline-block;
+            padding: 14px 18px;
+            background: #07150b;
+            border: 1px solid #286b3d;
+            border-radius: 8px;
+            color: white;
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            user-select: all;
+            box-sizing: border-box;
+        }
+
+        #copyIdButton {
+            padding: 14px 18px;
+            background: #ff6500;
+            color: white;
+            border: 1px solid #ff6500;
+            border-radius: 8px;
+            font-weight: 800;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        #copyIdButton:hover {
+            opacity: 0.9;
+        }
+
+        #checkStatusButton {
+            margin-top: 15px;
+            padding: 15px 22px;
+            background: #ff6500;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        #checkStatusButton:hover {
+            opacity: 0.9;
+        }
+
+        .copy-message {
+            min-height: 20px;
+            margin-top: 12px;
+            color: #4dff75 !important;
+            font-weight: 700;
+        }
+
+        .save-id-text {
+            color: #999 !important;
+            font-size: 14px;
+        }
+
+        .new-application-btn {
+            margin-top: 15px;
+            padding: 13px 20px;
+            background: transparent;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .new-application-btn:hover {
+            background: #222;
+        }
+
+        .error-message {
+            color: #ff5555;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 600px) {
+
+            .success-message {
+                margin: 20px 10px;
+                padding: 30px 18px;
+            }
+
+            .success-message h2 {
+                font-size: 23px;
+            }
+
+            .application-id-box {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            #applicationId {
+                width: 100%;
+                text-align: center;
+            }
+
+            #copyIdButton {
+                width: 100%;
+            }
+
+            #checkStatusButton {
+                width: 100%;
+            }
+
+            .new-application-btn {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 
 <body>
 
 
-<header class="navbar">
+    <!-- =========================================
+         NAVBAR
+    ========================================= -->
 
-    <div class="logo">
-        🔥 YUNG GAMING HUB
-    </div>
+    <header class="navbar">
 
-    <nav>
+        <div class="logo">
+            🔥 YUNG GAMING HUB
+        </div>
 
-        <a href="home.html">Home</a>
+        <nav>
 
-        <a href="news.html">News</a>
+            <a href="home.html">
+                Home
+            </a>
 
-        <a href="tournament.html">Tournaments</a>
+            <a href="news.html">
+                News
+            </a>
 
-        <a href="community.html">Community</a>
+            <a href="tournament.html">
+                Tournaments
+            </a>
 
-        <a href="guild.html">Guild</a>
+            <a href="community.html">
+                Community
+            </a>
 
-    </nav>
+            <a href="guild.html">
+                Guild
+            </a>
 
-    <a href="login.html" class="login-btn">
-        Login
-    </a>
+        </nav>
 
-</header>
+        <a href="login.html" class="login-btn">
+            Login
+        </a>
 
-
-
-<section class="application-hero">
-
-    <p class="small-title">
-        CHAOS CREW RECRUITMENT
-    </p>
-
-    <h1>
-        JOIN THE <span>CREW</span>
-    </h1>
-
-    <p>
-        Apply to become a member of Chaos Crew.
-    </p>
-
-</section>
+    </header>
 
 
+    <!-- =========================================
+         HERO
+    ========================================= -->
 
-<main class="application-container">
+    <section class="application-hero">
 
-
-    <div class="form-intro">
-
-        <h2>CHAOS CREW APPLICATION</h2>
-
-        <p>
-            Fill in your information carefully.
-            Your application will be reviewed by the guild team.
+        <p class="small-title">
+            CHAOS CREW RECRUITMENT
         </p>
 
+        <h1>
+            JOIN THE <span>CREW</span>
+        </h1>
 
-        <div class="notice">
+        <p>
+            Apply to become a member of Chaos Crew.
+        </p>
 
-            ⚠️ <strong>Important:</strong>
-
-            We will never ask for your Free Fire password,
-            OTP, bank details or other sensitive information.
-
-        </div>
-
-    </div>
+    </section>
 
 
+    <!-- =========================================
+         MAIN
+    ========================================= -->
 
-    <form id="guildApplication">
-
-
-        <!-- PLAYER -->
-
-        <div class="form-section">
-
-            <h3>👤 PLAYER INFORMATION</h3>
+    <main class="application-container">
 
 
-            <div class="form-grid">
+        <!-- =====================================
+             INTRO
+        ====================================== -->
 
+        <div class="form-intro">
 
-                <div class="form-group">
+            <h2>
+                CHAOS CREW APPLICATION
+            </h2>
 
-                    <label>
-                        Player Name
-                    </label>
+            <p>
+                Fill in your information carefully.
+                Your application will be reviewed by the
+                Chaos Crew team.
+            </p>
 
-                    <input
-                        type="text"
-                        id="playerName"
-                        required
-                    >
+            <div class="notice">
 
-                </div>
+                ⚠️ <strong>Important:</strong>
 
-
-                <div class="form-group">
-
-                    <label>
-                        Age
-                    </label>
-
-                    <input
-                        type="number"
-                        id="age"
-                        min="13"
-                        max="99"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>
-                        Free Fire Name
-                    </label>
-
-                    <input
-                        type="text"
-                        id="ffName"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>
-                        Free Fire UID
-                    </label>
-
-                    <input
-                        type="text"
-                        id="uid"
-                        required
-                    >
-
-                </div>
+                We will never ask for your Free Fire
+                password, OTP, bank details or other
+                sensitive information.
 
             </div>
 
         </div>
 
 
+        <!-- =====================================
+             APPLICATION FORM
+        ====================================== -->
 
-        <!-- GAME -->
-
-        <div class="form-section">
-
-            <h3>🎮 GAME INFORMATION</h3>
-
-
-            <div class="form-grid">
+        <form id="guildApplication">
 
 
-                <div class="form-group">
+            <!-- PLAYER INFORMATION -->
 
-                    <label>
-                        Current Rank
-                    </label>
+            <div class="form-section">
 
-                    <select id="rank" required>
-
-                        <option value="">
-                            Select your rank
-                        </option>
-
-                        <option>Bronze</option>
-                        <option>Silver</option>
-                        <option>Gold</option>
-                        <option>Platinum</option>
-                        <option>Diamond</option>
-                        <option>Heroic</option>
-                        <option>Master</option>
-                        <option>Grandmaster</option>
-
-                    </select>
-
-                </div>
+                <h3>
+                    👤 PLAYER INFORMATION
+                </h3>
 
 
-                <div class="form-group">
-
-                    <label>
-                        Main Game Mode
-                    </label>
-
-                    <select id="mode" required>
-
-                        <option value="">
-                            Select mode
-                        </option>
-
-                        <option>Battle Royale</option>
-                        <option>Clash Squad</option>
-                        <option>Both</option>
-
-                    </select>
-
-                </div>
+                <div class="form-grid">
 
 
-                <div class="form-group">
+                    <div class="form-group">
 
-                    <label>
-                        Main Role
-                    </label>
+                        <label for="playerName">
+                            Player Name
+                        </label>
 
-                    <select id="role" required>
+                        <input
+                            type="text"
+                            id="playerName"
+                            placeholder="Your name"
+                            required
+                        >
 
-                        <option value="">
-                            Select your role
-                        </option>
-
-                        <option>Rusher</option>
-                        <option>Sniper</option>
-                        <option>Support</option>
-                        <option>IGL</option>
-                        <option>All-rounder</option>
-
-                    </select>
-
-                </div>
+                    </div>
 
 
-                <div class="form-group">
+                    <div class="form-group">
 
-                    <label>
-                        Experience
-                    </label>
+                        <label for="age">
+                            Age
+                        </label>
 
-                    <select id="experience" required>
+                        <input
+                            type="number"
+                            id="age"
+                            min="13"
+                            max="99"
+                            placeholder="Your age"
+                            required
+                        >
 
-                        <option value="">
-                            Select experience
-                        </option>
+                    </div>
 
-                        <option>Beginner</option>
-                        <option>Intermediate</option>
-                        <option>Advanced</option>
-                        <option>Competitive Player</option>
 
-                    </select>
+                    <div class="form-group">
+
+                        <label for="ffName">
+                            Free Fire Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="ffName"
+                            placeholder="Your Free Fire name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="uid">
+                            Free Fire UID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="uid"
+                            placeholder="Your Free Fire UID"
+                            required
+                        >
+
+                    </div>
+
 
                 </div>
 
             </div>
 
-        </div>
+
+            <!-- =====================================
+                 GAME INFORMATION
+            ====================================== -->
+
+            <div class="form-section">
+
+                <h3>
+                    🎮 GAME INFORMATION
+                </h3>
 
 
-
-        <!-- CONTACT -->
-
-        <div class="form-section">
-
-            <h3>💬 CONTACT</h3>
+                <div class="form-grid">
 
 
-            <div class="form-grid">
+                    <div class="form-group">
+
+                        <label for="rank">
+                            Current Rank
+                        </label>
+
+                        <select
+                            id="rank"
+                            required
+                        >
+
+                            <option value="">
+                                Select your rank
+                            </option>
+
+                            <option>
+                                Bronze
+                            </option>
+
+                            <option>
+                                Silver
+                            </option>
+
+                            <option>
+                                Gold
+                            </option>
+
+                            <option>
+                                Platinum
+                            </option>
+
+                            <option>
+                                Diamond
+                            </option>
+
+                            <option>
+                                Heroic
+                            </option>
+
+                            <option>
+                                Master
+                            </option>
+
+                            <option>
+                                Grandmaster
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="mode">
+                            Main Game Mode
+                        </label>
+
+                        <select
+                            id="mode"
+                            required
+                        >
+
+                            <option value="">
+                                Select mode
+                            </option>
+
+                            <option>
+                                Battle Royale
+                            </option>
+
+                            <option>
+                                Clash Squad
+                            </option>
+
+                            <option>
+                                Both
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="role">
+                            Main Role
+                        </label>
+
+                        <select
+                            id="role"
+                            required
+                        >
+
+                            <option value="">
+                                Select your role
+                            </option>
+
+                            <option>
+                                Rusher
+                            </option>
+
+                            <option>
+                                Sniper
+                            </option>
+
+                            <option>
+                                Support
+                            </option>
+
+                            <option>
+                                IGL
+                            </option>
+
+                            <option>
+                                All-rounder
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="experience">
+                            Experience
+                        </label>
+
+                        <select
+                            id="experience"
+                            required
+                        >
+
+                            <option value="">
+                                Select experience
+                            </option>
+
+                            <option>
+                                Beginner
+                            </option>
+
+                            <option>
+                                Intermediate
+                            </option>
+
+                            <option>
+                                Advanced
+                            </option>
+
+                            <option>
+                                Competitive Player
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 CONTACT
+            ====================================== -->
+
+            <div class="form-section">
+
+                <h3>
+                    💬 CONTACT
+                </h3>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label for="telegram">
+                            Telegram Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="telegram"
+                            placeholder="@username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="discord">
+                            Discord Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="discord"
+                            placeholder="Optional"
+                        >
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 QUESTIONS
+            ====================================== -->
+
+            <div class="form-section">
+
+                <h3>
+                    🔥 TELL US ABOUT YOURSELF
+                </h3>
 
 
                 <div class="form-group">
 
-                    <label>
-                        Telegram Username
+                    <label for="whyJoin">
+                        Why do you want to join Chaos Crew?
                     </label>
 
-                    <input
-                        type="text"
-                        id="telegram"
-                        placeholder="@username"
+                    <textarea
+                        id="whyJoin"
+                        rows="6"
+                        placeholder="Tell us why you want to join..."
                         required
-                    >
+                    ></textarea>
 
                 </div>
+
+
+                <br>
 
 
                 <div class="form-group">
 
-                    <label>
-                        Discord Username
+                    <label for="strength">
+                        What is your biggest strength?
                     </label>
 
-                    <input
-                        type="text"
-                        id="discord"
-                        placeholder="Optional"
-                    >
+                    <textarea
+                        id="strength"
+                        rows="5"
+                        placeholder="Tell us your biggest strength..."
+                        required
+                    ></textarea>
 
                 </div>
 
+
             </div>
 
-        </div>
 
+            <!-- =====================================
+                 RULES
+            ====================================== -->
 
-
-        <!-- QUESTIONS -->
-
-        <div class="form-section">
-
-            <h3>🔥 TELL US ABOUT YOURSELF</h3>
-
-
-            <div class="form-group">
+            <div class="agreement">
 
                 <label>
-                    Why do you want to join Chaos Crew?
-                </label>
 
-                <textarea
-                    id="whyJoin"
-                    rows="6"
-                    required
-                ></textarea>
+                    <input
+                        type="checkbox"
+                        id="rules"
+                        required
+                    >
+
+                    I agree to follow the Chaos Crew
+                    rules and respect other members.
+
+                </label>
 
             </div>
 
 
-            <br>
+            <!-- =====================================
+                 SUBMIT
+            ====================================== -->
+
+            <button
+                type="submit"
+                class="submit-btn"
+                id="submitButton"
+            >
+
+                SUBMIT APPLICATION 🔥
+
+            </button>
 
 
-            <div class="form-group">
-
-                <label>
-                    What is your biggest strength?
-                </label>
-
-                <textarea
-                    id="strength"
-                    rows="5"
-                    required
-                ></textarea>
-
-            </div>
-
-        </div>
+            <p
+                id="formMessage"
+            ></p>
 
 
-
-        <!-- RULES -->
-
-        <div class="agreement">
-
-            <label>
-
-                <input
-                    type="checkbox"
-                    id="rules"
-                    required
-                >
-
-                I agree to follow the Chaos Crew rules
-                and respect other members.
-
-            </label>
-
-        </div>
+        </form>
 
 
+        <!-- =========================================
+             SUCCESS SCREEN
+        ========================================== -->
 
-        <button
-            type="submit"
-            class="submit-btn"
-            id="submitButton"
+        <div
+            id="successMessage"
+            class="success-message"
         >
 
-            SUBMIT APPLICATION 🔥
 
-        </button>
+            <div class="success-icon">
+                🎉
+            </div>
 
 
-        <p id="formMessage"></p>
+            <h2>
+                APPLICATION SUBMITTED!
+            </h2>
 
 
-    </form>
+            <p>
+                Your application has been received.
+            </p>
 
 
-</main>
+            <p class="application-id-title">
+                YOUR APPLICATION ID
+            </p>
 
 
+            <div class="application-id-box">
 
-<footer>
 
-    <div class="footer-logo">
-        🔥 YUNG GAMING HUB
-    </div>
+                <span id="applicationId">
+                </span>
 
-    <p>
-        Chaos Crew • Free Fire Gaming Community
-    </p>
 
-    <p class="copyright">
-        © 2026 Yung Gaming Hub
-    </p>
+                <button
+                    type="button"
+                    id="copyIdButton"
+                >
 
-</footer>
+                    📋 COPY ID
 
+                </button>
 
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+            </div>
 
-<script src="supabase.js"></script>
 
+            <p class="save-id-text">
 
+                Your application ID has been saved
+                on this device.
 
-<script>
+                You can also copy it and keep it
+                somewhere safe.
 
-const form =
-    document.getElementById("guildApplication");
+            </p>
 
-const message =
-    document.getElementById("formMessage");
 
-const submitButton =
-    document.getElementById("submitButton");
+            <button
+                type="button"
+                id="checkStatusButton"
+            >
 
+                🔎 CHECK APPLICATION STATUS
 
+            </button>
 
-function generateApplicationCode() {
 
-    const random =
-        Math.random()
-        .toString(36)
-        .substring(2, 8)
-        .toUpperCase();
+            <p
+                id="copyMessage"
+                class="copy-message"
+            ></p>
 
-    return "CC-" + random;
 
-}
+            <button
+                type="button"
+                class="new-application-btn"
+                id="newApplicationButton"
+            >
 
+                APPLY AGAIN
 
+            </button>
 
-form.addEventListener(
-    "submit",
-    async function(event) {
 
-        event.preventDefault();
+        </div>
 
 
-        submitButton.disabled = true;
+    </main>
 
-        submitButton.textContent =
-            "SUBMITTING...";
 
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
 
-        message.textContent = "";
+    <footer>
 
+        <div class="footer-logo">
+            🔥 YUNG GAMING HUB
+        </div>
 
+        <p>
+            Chaos Crew • Free Fire Gaming Community
+        </p>
 
-        const applicationCode =
-            generateApplicationCode();
+        <p class="copyright">
+            © 2026 Yung Gaming Hub
+        </p>
 
+    </footer>
 
 
-        const application = {
 
-            application_code:
-                applicationCode,
+    <!-- =========================================
+         SUPABASE
+    ========================================== -->
 
-            player_name:
-                document
-                .getElementById("playerName")
-                .value
-                .trim(),
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-            age:
-                Number(
-                    document
-                    .getElementById("age")
-                    .value
-                ),
-
-            ff_name:
-                document
-                .getElementById("ffName")
-                .value
-                .trim(),
-
-            uid:
-                document
-                .getElementById("uid")
-                .value
-                .trim(),
-
-            rank:
-                document
-                .getElementById("rank")
-                .value,
-
-            game_mode:
-                document
-                .getElementById("mode")
-                .value,
-
-            role:
-                document
-                .getElementById("role")
-                .value,
-
-            experience:
-                document
-                .getElementById("experience")
-                .value,
-
-            telegram:
-                document
-                .getElementById("telegram")
-                .value
-                .trim(),
-
-            discord:
-                document
-                .getElementById("discord")
-                .value
-                .trim(),
-
-            why_join:
-                document
-                .getElementById("whyJoin")
-                .value
-                .trim(),
-
-            strength:
-                document
-                .getElementById("strength")
-                .value
-                .trim(),
-
-            status:
-                "pending"
-
-        };
-
-
-
-        const {
-            data,
-            error
-        } = await supabaseClient
-            .from("guild_applications")
-            .insert([application])
-            .select()
-            .single();
-
-
-
-        if (error) {
-
-            console.error(
-                "SUPABASE ERROR:",
-                error
+    <script src="supabase.js"></script>
+
+
+
+    <!-- =========================================
+         MAIN JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+
+        /* =========================================
+           GET ELEMENTS
+        ========================================= */
+
+        const form =
+            document.getElementById(
+                "guildApplication"
             );
 
 
-            message.textContent =
-                "❌ " + error.message;
+        const message =
+            document.getElementById(
+                "formMessage"
+            );
 
-            message.className =
-                "error-message";
+
+        const submitButton =
+            document.getElementById(
+                "submitButton"
+            );
 
 
-            submitButton.disabled =
-                false;
+        const successMessage =
+            document.getElementById(
+                "successMessage"
+            );
 
-            submitButton.textContent =
-                "SUBMIT APPLICATION 🔥";
 
-            return;
+        const applicationIdElement =
+            document.getElementById(
+                "applicationId"
+            );
+
+
+        const copyIdButton =
+            document.getElementById(
+                "copyIdButton"
+            );
+
+
+        const checkStatusButton =
+            document.getElementById(
+                "checkStatusButton"
+            );
+
+
+        const copyMessage =
+            document.getElementById(
+                "copyMessage"
+            );
+
+
+        const newApplicationButton =
+            document.getElementById(
+                "newApplicationButton"
+            );
+
+
+
+        /* =========================================
+           GENERATE APPLICATION ID
+        ========================================== */
+
+        function generateApplicationCode() {
+
+            const random =
+                Math.random()
+                    .toString(36)
+                    .substring(2, 8)
+                    .toUpperCase();
+
+
+            return "CC-" + random;
 
         }
 
 
 
-        message.className =
-            "success-message";
+        /* =========================================
+           COPY APPLICATION ID
+        ========================================== */
+
+        async function copyApplicationId() {
 
 
-        message.innerHTML = `
-
-            <div class="application-success">
-
-                <h2>
-                    🎉 APPLICATION SUBMITTED!
-                </h2>
-
-                <p>
-                    Your application has been received.
-                </p>
-
-                <p>
-                    <strong>
-                        YOUR APPLICATION ID
-                    </strong>
-                </p>
-
-                <div class="application-code">
-                    ${applicationCode}
-                </div>
-
-                <p>
-                    Save this ID. You will need it
-                    to check your application status.
-                </p>
-
-                
-                <a
-                    href="check-application.html"
-                     class="check-status-button"
-                >
-                         CHECK APPLICATION STATUS
-                </a>
-                    
-                >
-                    
-
-            </div>
-
-        `;
+            const applicationId =
+                applicationIdElement
+                    .textContent
+                    .trim();
 
 
-        form.reset();
+            if (!applicationId) {
+
+                return;
+
+            }
 
 
-        submitButton.disabled =
-            false;
+            try {
 
 
-        submitButton.textContent =
-            "SUBMIT APPLICATION 🔥";
+                await navigator.clipboard.writeText(
+                    applicationId
+                );
 
-    }
-);
 
-</script>
+                copyIdButton.textContent =
+                    "✅ COPIED!";
+
+
+                copyMessage.textContent =
+                    "Application ID copied successfully.";
+
+
+            } catch (error) {
+
+
+                /*
+                    Fallback for browsers that
+                    don't allow clipboard API.
+                */
+
+
+                const temporaryInput =
+                    document.createElement(
+                        "input"
+                    );
+
+
+                temporaryInput.value =
+                    applicationId;
+
+
+                document.body.appendChild(
+                    temporaryInput
+                );
+
+
+                temporaryInput.select();
+
+
+                try {
+
+
+                    document.execCommand(
+                        "copy"
+                    );
+
+
+                    copyIdButton.textContent =
+                        "✅ COPIED!";
+
+
+                    copyMessage.textContent =
+                        "Application ID copied successfully.";
+
+
+                } catch (fallbackError) {
+
+
+                    copyMessage.textContent =
+                        "Copy failed. Please select the ID manually.";
+
+
+                }
+
+
+                document.body.removeChild(
+                    temporaryInput
+                );
+
+            }
+
+
+            setTimeout(function () {
+
+
+                copyIdButton.textContent =
+                    "📋 COPY ID";
+
+
+                copyMessage.textContent =
+                    "";
+
+
+            }, 2500);
+
+
+        }
+
+
+
+        copyIdButton.addEventListener(
+            "click",
+            copyApplicationId
+        );
+
+
+
+        /* =========================================
+           CHECK APPLICATION STATUS
+        ========================================== */
+
+        checkStatusButton.addEventListener(
+            "click",
+            function () {
+
+
+                const applicationId =
+                    applicationIdElement
+                        .textContent
+                        .trim();
+
+
+                if (!applicationId) {
+
+                    return;
+
+                }
+
+
+                /*
+                    Save the ID on the phone/browser.
+                */
+
+
+                localStorage.setItem(
+                    "chaosCrewApplicationId",
+                    applicationId
+                );
+
+
+                /*
+                    Go to status page.
+                */
+
+
+                window.location.href =
+                    "check-application.html";
+
+
+            }
+        );
+
+
+
+        /* =========================================
+           APPLY AGAIN
+        ========================================== */
+
+        newApplicationButton.addEventListener(
+            "click",
+            function () {
+
+
+                /*
+                    Show form again.
+                */
+
+
+                form.style.display =
+                    "";
+
+
+                /*
+                    Hide success screen.
+                */
+
+
+                successMessage.classList.remove(
+                    "show"
+                );
+
+
+                /*
+                    Clear form.
+                */
+
+
+                form.reset();
+
+
+                /*
+                    Clear old messages.
+                */
+
+
+                message.textContent =
+                    "";
+
+
+                copyMessage.textContent =
+                    "";
+
+
+                /*
+                    Scroll to top.
+                */
+
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+
+            }
+        );
+
+
+
+        /* =========================================
+           SUBMIT APPLICATION
+        ========================================== */
+
+        form.addEventListener(
+            "submit",
+            async function (event) {
+
+
+                /*
+                    Stop normal page refresh.
+                */
+
+
+                event.preventDefault();
+
+
+                /*
+                    Disable button while submitting.
+                */
+
+
+                submitButton.disabled =
+                    true;
+
+
+                submitButton.textContent =
+                    "SUBMITTING...";
+
+
+                message.textContent =
+                    "";
+
+
+                message.className =
+                    "";
+
+
+                /*
+                    Create unique application ID.
+                */
+
+
+                const applicationCode =
+                    generateApplicationCode();
+
+
+
+                /* =================================
+                   COLLECT FORM DATA
+                ================================== */
+
+                const application = {
+
+
+                    application_code:
+                        applicationCode,
+
+
+                    player_name:
+                        document
+                            .getElementById(
+                                "playerName"
+                            )
+                            .value
+                            .trim(),
+
+
+                    age:
+                        Number(
+                            document
+                                .getElementById(
+                                    "age"
+                                )
+                                .value
+                        ),
+
+
+                    ff_name:
+                        document
+                            .getElementById(
+                                "ffName"
+                            )
+                            .value
+                            .trim(),
+
+
+                    uid:
+                        document
+                            .getElementById(
+                                "uid"
+                            )
+                            .value
+                            .trim(),
+
+
+                    rank:
+                        document
+                            .getElementById(
+                                "rank"
+                            )
+                            .value,
+
+
+                    game_mode:
+                        document
+                            .getElementById(
+                                "mode"
+                            )
+                            .value,
+
+
+                    role:
+                        document
+                            .getElementById(
+                                "role"
+                            )
+                            .value,
+
+
+                    experience:
+                        document
+                            .getElementById(
+                                "experience"
+                            )
+                            .value,
+
+
+                    telegram:
+                        document
+                            .getElementById(
+                                "telegram"
+                            )
+                            .value
+                            .trim(),
+
+
+                    discord:
+                        document
+                            .getElementById(
+                                "discord"
+                            )
+                            .value
+                            .trim(),
+
+
+                    why_join:
+                        document
+                            .getElementById(
+                                "whyJoin"
+                            )
+                            .value
+                            .trim(),
+
+
+                    strength:
+                        document
+                            .getElementById(
+                                "strength"
+                            )
+                            .value
+                            .trim(),
+
+
+                    status:
+                        "pending"
+
+                };
+
+
+
+                /* =================================
+                   SEND TO SUPABASE
+                ================================== */
+
+                try {
+
+
+                    const result =
+                        await supabaseClient
+                            .from(
+                                "guild_applications"
+                            )
+                            .insert(
+                                [application]
+                            )
+                            .select()
+                            .single();
+
+
+
+                    const data =
+                        result.data;
+
+
+                    const error =
+                        result.error;
+
+
+
+                    /* =================================
+                       CHECK FOR ERROR
+                    ================================== */
+
+                    if (error) {
+
+
+                        console.error(
+                            "SUPABASE ERROR:",
+                            error
+                        );
+
+
+                        message.textContent =
+                            "❌ " +
+                            error.message;
+
+
+                        message.className =
+                            "error-message";
+
+
+                        submitButton.disabled =
+                            false;
+
+
+                        submitButton.textContent =
+                            "SUBMIT APPLICATION 🔥";
+
+
+                        return;
+
+                    }
+
+
+
+                    /* =================================
+                       GET REAL APPLICATION ID
+                    ================================== */
+
+                    const realApplicationId =
+                        data &&
+                        data.application_code
+                            ? data.application_code
+                            : applicationCode;
+
+
+
+                    /*
+                        Put the REAL ID into
+                        the success screen.
+                    */
+
+
+                    applicationIdElement.textContent =
+                        realApplicationId;
+
+
+
+                    /* =================================
+                       SAVE ID ON DEVICE
+                    ================================== */
+
+                    localStorage.setItem(
+                        "chaosCrewApplicationId",
+                        realApplicationId
+                    );
+
+
+
+                    /* =================================
+                       HIDE FORM
+                    ================================== */
+
+                    form.style.display =
+                        "none";
+
+
+
+                    /* =================================
+                       SHOW SUCCESS
+                    ================================== */
+
+                    successMessage.classList.add(
+                        "show"
+                    );
+
+
+
+                    /* =================================
+                       RESET BUTTON
+                    ================================== */
+
+                    submitButton.disabled =
+                        false;
+
+
+                    submitButton.textContent =
+                        "SUBMIT APPLICATION 🔥";
+
+
+
+                    /* =================================
+                       GO TO SUCCESS SCREEN
+                    ================================== */
+
+                    window.scrollTo({
+
+                        top: 0,
+
+                        behavior: "smooth"
+
+                    });
+
+
+                } catch (error) {
+
+
+                    console.error(
+                        "SUBMISSION ERROR:",
+                        error
+                    );
+
+
+                    message.textContent =
+                        "❌ Something went wrong. Please try again.";
+
+
+                    message.className =
+                        "error-message";
+
+
+                    submitButton.disabled =
+                        false;
+
+
+                    submitButton.textContent =
+                        "SUBMIT APPLICATION 🔥";
+
+
+                }
+
+
+            }
+        );
+
+
+    </script>
 
 
 </body>
