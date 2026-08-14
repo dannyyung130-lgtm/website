@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Tournament Registration | Yung Gaming Hub</title>
+
+    <link rel="stylesheet" href="tournament.css">
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <a href="home.html" class="logo">
+        🔥 YUNG <span>GAMING HUB</span>
+    </a>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="tournament.html" class="active">Tournaments</a>
+        <a href="weapon.html">Weapons</a>
+        <a href="characters.html">Characters</a>
+        <a href="community.html">Community</a>
+        <a href="guild.html">Chaos Crew</a>
+    </nav>
+
+    <a href="login.html" class="login-btn">
+        Login
+    </a>
+
+</header>
+
+
+<section class="hero" style="min-height:420px;">
+
+    <div class="hero-tag">
+        YUNG GAMING HUB
+    </div>
+
+    <h1>
+        TOURNAMENT <span>REGISTRATION</span>
+    </h1>
+
+    <p>
+        Register for the next tournament.
+        Your information will be reviewed before
+        you receive room access.
+    </p>
+
+</section>
+
+
+<section class="section">
+
+<div class="container">
+
+<div style="
+max-width:700px;
+margin:auto;
+background:#111;
+border:1px solid #292929;
+border-radius:12px;
+padding:30px;
+">
+
+<form id="tournamentForm">
+
+
+<label>
+Tournament
+</label>
+
+<select id="tournamentType" required>
+
+<option value="">
+Choose tournament
+</option>
+
+<option value="solo">
+Solo — ₦1,000
+</option>
+
+<option value="duo">
+Duo — ₦2,000
+</option>
+
+<option value="squad">
+Squad — ₦5,000
+</option>
+
+</select>
+
+
+<label>
+Full Name
+</label>
+
+<input
+type="text"
+id="fullName"
+placeholder="Your name"
+required
+>
+
+
+<label>
+Free Fire Name
+</label>
+
+<input
+type="text"
+id="freeFireName"
+placeholder="Your Free Fire name"
+required
+>
+
+
+<label>
+Free Fire UID
+</label>
+
+<input
+type="text"
+id="freeFireUID"
+placeholder="Your Free Fire UID"
+required
+>
+
+
+<label>
+WhatsApp Number
+</label>
+
+<input
+type="tel"
+id="whatsapp"
+placeholder="08012345678"
+required
+>
+
+
+<label>
+TikTok Username
+</label>
+
+<input
+type="text"
+id="tiktok"
+placeholder="@username"
+>
+
+
+<label>
+Choose Tournament Date
+</label>
+
+<input
+type="date"
+id="tournamentDate"
+required
+>
+
+
+<label>
+I agree to the tournament rules
+</label>
+
+<div style="
+display:flex;
+gap:10px;
+align-items:center;
+margin:10px 0 20px;
+">
+
+<input
+type="checkbox"
+id="rules"
+required
+>
+
+<span style="color:#aaa;font-size:13px;">
+I will follow the tournament rules and fair-play requirements.
+</span>
+
+</div>
+
+
+<button type="submit">
+SUBMIT REGISTRATION
+</button>
+
+
+<div id="formMessage"></div>
+
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer class="footer">
+
+<div class="footer-logo">
+🔥 YUNG <span>GAMING HUB</span>
+</div>
+
+<p>
+© 2026 Yung Gaming Hub
+</p>
+
+</footer>
+
+
+<style>
+
+form label {
+    display:block;
+
+    margin-top:18px;
+    margin-bottom:7px;
+
+    color:#ddd;
+
+    font-size:13px;
+
+    font-weight:800;
+}
+
+form input,
+form select {
+
+    width:100%;
+
+    padding:14px;
+
+    background:#181818;
+
+    color:white;
+
+    border:1px solid #303030;
+
+    border-radius:6px;
+
+    outline:none;
+
+}
+
+form input:focus,
+form select:focus {
+    border-color:#ff6500;
+}
+
+form button {
+
+    width:100%;
+
+    padding:15px;
+
+    margin-top:20px;
+
+    background:#ff6500;
+
+    color:white;
+
+    border:0;
+
+    border-radius:6px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+}
+
+#formMessage {
+
+    margin-top:18px;
+
+    padding:14px;
+
+    display:none;
+
+    border-radius:6px;
+
+    font-size:13px;
+
+}
+
+.success {
+    display:block !important;
+
+    background:rgba(0,180,80,.1);
+
+    color:#4cff9b;
+}
+
+.error {
+    display:block !important;
+
+    background:rgba(255,0,0,.1);
+
+    color:#ff7070;
+}
+
+</style>
+
+
+<script src="supabase.js"></script>
+
+<script>
+
+const form =
+document.getElementById("tournamentForm");
+
+const message =
+document.getElementById("formMessage");
+
+
+form.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+
+    message.className = "";
+    message.style.display = "block";
+
+    message.textContent =
+        "Submitting your registration...";
+
+
+    const tournamentType =
+        document.getElementById("tournamentType").value;
+
+    const fullName =
+        document.getElementById("fullName").value.trim();
+
+    const freeFireName =
+        document.getElementById("freeFireName").value.trim();
+
+    const freeFireUID =
+        document.getElementById("freeFireUID").value.trim();
+
+    const whatsapp =
+        document.getElementById("whatsapp").value.trim();
+
+    const tiktok =
+        document.getElementById("tiktok").value.trim();
+
+    const tournamentDate =
+        document.getElementById("tournamentDate").value;
+
+
+    try {
+
+        const { data, error } =
+            await supabaseClient
+            .from("tournament_registrations")
+            .insert([{
+
+                tournament_type:
+                    tournamentType,
+
+                full_name:
+                    fullName,
+
+                free_fire_name:
+                    freeFireName,
+
+                free_fire_uid:
+                    freeFireUID,
+
+                whatsapp:
+                    whatsapp,
+
+                tiktok:
+                    tiktok,
+
+                tournament_date:
+                    tournamentDate,
+
+                status:
+                    "pending"
+
+            }])
+            .select()
+            .single();
+
+
+        if (error) {
+            throw error;
+        }
+
+
+        message.className = "success";
+
+        message.innerHTML = `
+            ✅ Registration submitted successfully!<br><br>
+
+            Your registration is now waiting for review.<br>
+
+            <strong>
+            Registration ID: ${data.id}
+            </strong><br><br>
+
+            Keep this ID safe.
+            Check the Yung Gaming Hub WhatsApp channel
+            for tournament announcements.
+        `;
+
+
+        form.reset();
+
+
+    } catch(error) {
+
+        console.error(error);
+
+        message.className = "error";
+
+        message.textContent =
+            "Something went wrong: " +
+            error.message;
+
+    }
+
+});
+
+</script>
+
+
+</body>
+</html>

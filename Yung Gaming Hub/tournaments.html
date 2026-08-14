@@ -1,1258 +1,704 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tournaments | Yung Gaming Hub</title>
 
-    <meta name="description"
-        content="Join Yung Gaming Hub tournaments, compete with other players, follow results and climb the leaderboard.">
-
-    <link rel="stylesheet" href="tournaments.css">
+    <link rel="stylesheet" href="tournament.css">
 </head>
 
 <body>
 
+<header class="navbar">
 
-    <!-- ==========================================
-         HEADER
-    =========================================== -->
+    <a href="home.html" class="logo">
+        🔥 YUNG <span>GAMING HUB</span>
+    </a>
 
-    <header class="header">
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="tournament.html" class="active">Tournaments</a>
+        <a href="weapon.html">Weapons</a>
+        <a href="characters.html">Characters</a>
+        <a href="community.html">Community</a>
+        <a href="guild.html">Chaos Crew</a>
+    </nav>
 
-        <div class="logo">
-            <span>YUNG</span>
-            <strong>GAMING HUB</strong>
+    <a href="login.html" class="login-btn">
+        Login
+    </a>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-tag">
+        YUNG GAMING HUB
+    </div>
+
+    <h1>
+        WEEKLY <span>TOURNAMENTS</span>
+    </h1>
+
+    <p>
+        Compete every week, prove your skills and
+        fight for the prize.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="#schedule" class="primary-btn">
+            View Schedule
+        </a>
+
+        <a href="tournament-register.html" class="secondary-btn">
+            Register Now
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- TODAY -->
+
+<section class="today-section">
+
+    <div class="container">
+
+        <div class="today-card">
+
+            <div>
+
+                <span class="today-label">
+                    🔥 TODAY'S TOURNAMENT
+                </span>
+
+                <h2 id="todayTitle">
+                    Loading...
+                </h2>
+
+                <p id="todayDescription">
+                    Loading today's tournament...
+                </p>
+
+            </div>
+
+            <div class="today-time">
+
+                <span>
+                    START TIME
+                </span>
+
+                <strong>
+                    8:00 PM
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SCHEDULE -->
+
+<section id="schedule" class="section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                EVERY WEEK
+            </span>
+
+            <h2>
+                TOURNAMENT SCHEDULE
+            </h2>
+
+            <p>
+                Choose your format and compete at 8:00 PM.
+            </p>
+
         </div>
 
 
-        <nav class="navbar">
-
-            <a href="home.html">Home</a>
-
-            <a href="news.html">News</a>
-
-            <a href="weapons.html">Weapons</a>
-
-            <a href="characters.html">Characters</a>
-
-            <a href="maps.html">Maps</a>
-
-            <a href="quiz.html">Quiz</a>
-
-            <a href="tournaments.html" class="active">
-                Tournaments
-            </a>
-
-        </nav>
+        <div class="schedule-grid">
 
 
-        <div class="header-buttons">
+            <div class="day-card">
 
-            <a href="login.html" class="login-btn">
-                Login
-            </a>
-
-            <a href="register.html" class="register-btn">
-                Register
-            </a>
-
-        </div>
-
-    </header>
-
-
-
-    <!-- ==========================================
-         MAIN
-    =========================================== -->
-
-    <main>
-
-
-        <!-- ======================================
-             TOURNAMENT HERO
-        ======================================= -->
-
-        <section class="tournament-hero">
-
-            <div class="hero-overlay"></div>
-
-
-            <div class="hero-content">
-
-                <p class="hero-label">
-                    🏆 YUNG GAMING HUB COMPETITIONS
-                </p>
-
-
-                <h1>
-                    PLAY.
-                    <span>COMPETE.</span>
-                    CONQUER.
-                </h1>
-
-
-                <p class="hero-description">
-
-                    Think you have what it takes?
-
-                    Join community tournaments,
-                    compete against other players
-                    and fight your way to the top.
-
-                </p>
-
-
-                <div class="hero-buttons">
-
-                    <a href="#tournaments" class="primary-btn">
-                        View Tournaments
-                    </a>
-
-                    <a href="#how-it-works" class="secondary-btn">
-                        How It Works
-                    </a>
-
+                <div class="day">
+                    MON
                 </div>
 
-            </div>
-
-        </section>
-
-
-
-        <!-- ======================================
-             TOURNAMENT STATS
-        ======================================= -->
-
-        <section class="tournament-stats">
-
-            <div class="stat">
-
-                <span class="stat-icon">
-                    🏆
-                </span>
-
-                <h3>Community Cups</h3>
-
-                <p>
-                    Coming Soon
-                </p>
-
-            </div>
-
-
-            <div class="stat">
-
-                <span class="stat-icon">
-                    👥
-                </span>
-
-                <h3>Players</h3>
-
-                <p>
-                    Growing Community
-                </p>
-
-            </div>
-
-
-            <div class="stat">
-
-                <span class="stat-icon">
-                    🎮
-                </span>
-
-                <h3>Game</h3>
-
-                <p>
-                    Free Fire
-                </p>
-
-            </div>
-
-
-            <div class="stat">
-
-                <span class="stat-icon">
-                    🥇
-                </span>
-
-                <h3>Champions</h3>
-
-                <p>
-                    Waiting For You
-                </p>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ======================================
-             FEATURED TOURNAMENT
-        ======================================= -->
-
-        <section class="featured-section">
-
-            <div class="section-heading">
-
-                <p class="section-label">
-                    FEATURED
-                </p>
-
-                <h2>
-                    YUNG GAMING HUB
-                    <span>CUP</span>
-                </h2>
-
-                <p>
-                    Our first major community tournament.
-                </p>
-
-            </div>
-
-
-            <div class="featured-card">
-
-
-                <div class="featured-image">
-
-                    <div class="featured-badge">
-                        COMING SOON
-                    </div>
-
-
-                    <div class="trophy">
-                        🏆
-                    </div>
-
+                <div class="format">
+                    👤 SOLO
                 </div>
 
-
-
-                <div class="featured-info">
-
-                    <div class="featured-top">
-
-                        <div>
-
-                            <span class="tournament-type">
-                                COMMUNITY TOURNAMENT
-                            </span>
-
-                            <h3>
-                                Yung Gaming Hub Cup
-                            </h3>
-
-                        </div>
-
-
-                        <div class="status">
-                            ● NOT OPEN
-                        </div>
-
-                    </div>
-
-
-                    <p class="featured-description">
-
-                        A community competition designed
-                        to bring Free Fire players together.
-
-                        Teams will compete through different
-                        stages before the final champion is crowned.
-
-                    </p>
-
-
-
-                    <div class="tournament-details-grid">
-
-
-                        <div class="detail">
-
-                            <span>🎮</span>
-
-                            <div>
-
-                                <small>GAME</small>
-
-                                <strong>
-                                    Free Fire
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="detail">
-
-                            <span>👥</span>
-
-                            <div>
-
-                                <small>FORMAT</small>
-
-                                <strong>
-                                    Team Battle
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="detail">
-
-                            <span>📅</span>
-
-                            <div>
-
-                                <small>DATE</small>
-
-                                <strong>
-                                    To Be Announced
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="detail">
-
-                            <span>💰</span>
-
-                            <div>
-
-                                <small>PRIZE</small>
-
-                                <strong>
-                                    To Be Announced
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div class="featured-actions">
-
-                        <button class="disabled-btn" disabled>
-                            Registration Not Open
-                        </button>
-
-                        <a href="#rules" class="text-btn">
-                            View Rules →
-                        </a>
-
-                    </div>
-
+                <div class="prize">
+                    ₦1,000
                 </div>
 
-            </div>
-
-        </section>
-
-
-
-        <!-- ======================================
-             UPCOMING TOURNAMENTS
-        ======================================= -->
-
-        <section class="tournaments-section" id="tournaments">
-
-
-            <div class="section-heading">
-
-                <p class="section-label">
-                    COMPETE
-                </p>
-
-                <h2>
-                    UPCOMING
-                    <span>TOURNAMENTS</span>
-                </h2>
-
-                <p>
-                    More competitions will be added as
-                    the Yung Gaming Hub community grows.
-                </p>
-
-            </div>
-
-
-
-            <div class="tournament-grid">
-
-
-                <!-- TOURNAMENT CARD 1 -->
-
-                <article class="tournament-card">
-
-                    <div class="card-image">
-
-                        <span class="card-status">
-                            COMING SOON
-                        </span>
-
-                        <span class="card-icon">
-                            🔥
-                        </span>
-
-                    </div>
-
-
-                    <div class="card-content">
-
-                        <span class="card-category">
-                            BATTLE ROYALE
-                        </span>
-
-                        <h3>
-                            Yung Battle Royale
-                        </h3>
-
-                        <p>
-                            Battle against other players
-                            in a community competition.
-                        </p>
-
-
-                        <div class="card-info">
-
-                            <span>
-                                📅 TBA
-                            </span>
-
-                            <span>
-                                👥 Teams
-                            </span>
-
-                        </div>
-
-
-                        <a href="#" class="card-btn">
-                            Details →
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- TOURNAMENT CARD 2 -->
-
-                <article class="tournament-card">
-
-                    <div class="card-image">
-
-                        <span class="card-status">
-                            COMING SOON
-                        </span>
-
-                        <span class="card-icon">
-                            ⚡
-                        </span>
-
-                    </div>
-
-
-                    <div class="card-content">
-
-                        <span class="card-category">
-                            CHALLENGE
-                        </span>
-
-                        <h3>
-                            Speed Challenge
-                        </h3>
-
-                        <p>
-                            Test your speed, skills and
-                            decision making against others.
-                        </p>
-
-
-                        <div class="card-info">
-
-                            <span>
-                                📅 TBA
-                            </span>
-
-                            <span>
-                                👤 Solo
-                            </span>
-
-                        </div>
-
-
-                        <a href="#" class="card-btn">
-                            Details →
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- TOURNAMENT CARD 3 -->
-
-                <article class="tournament-card">
-
-                    <div class="card-image">
-
-                        <span class="card-status">
-                            COMING SOON
-                        </span>
-
-                        <span class="card-icon">
-                            👑
-                        </span>
-
-                    </div>
-
-
-                    <div class="card-content">
-
-                        <span class="card-category">
-                            CHAMPIONSHIP
-                        </span>
-
-                        <h3>
-                            Hub Championship
-                        </h3>
-
-                        <p>
-                            The ultimate community competition
-                            for the best players.
-                        </p>
-
-
-                        <div class="card-info">
-
-                            <span>
-                                📅 TBA
-                            </span>
-
-                            <span>
-                                👥 Teams
-                            </span>
-
-                        </div>
-
-
-                        <a href="#" class="card-btn">
-                            Details →
-                        </a>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ======================================
-             HOW IT WORKS
-        ======================================= -->
-
-        <section class="how-section" id="how-it-works">
-
-
-            <div class="section-heading">
-
-                <p class="section-label">
-                    SIMPLE PROCESS
-                </p>
-
-                <h2>
-                    HOW IT
-                    <span>WORKS</span>
-                </h2>
-
-                <p>
-                    Joining a Yung Gaming Hub tournament
-                    will be simple.
-                </p>
-
-            </div>
-
-
-
-            <div class="steps">
-
-
-                <div class="step">
-
-                    <div class="step-number">
-                        01
-                    </div>
-
-                    <div class="step-icon">
-                        👤
-                    </div>
-
-                    <h3>
-                        Create Account
-                    </h3>
-
-                    <p>
-                        Create your Yung Gaming Hub
-                        player account.
-                    </p>
-
+                <div class="time">
+                    8:00 PM
                 </div>
 
-
-
-                <div class="step">
-
-                    <div class="step-number">
-                        02
-                    </div>
-
-                    <div class="step-icon">
-                        📝
-                    </div>
-
-                    <h3>
-                        Register
-                    </h3>
-
-                    <p>
-                        Choose a tournament and
-                        register when registration opens.
-                    </p>
-
-                </div>
-
-
-
-                <div class="step">
-
-                    <div class="step-number">
-                        03
-                    </div>
-
-                    <div class="step-icon">
-                        🎮
-                    </div>
-
-                    <h3>
-                        Compete
-                    </h3>
-
-                    <p>
-                        Play your matches and
-                        follow the tournament rules.
-                    </p>
-
-                </div>
-
-
-
-                <div class="step">
-
-                    <div class="step-number">
-                        04
-                    </div>
-
-                    <div class="step-icon">
-                        🏆
-                    </div>
-
-                    <h3>
-                        Win
-                    </h3>
-
-                    <p>
-                        Climb the rankings and
-                        become a champion.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ======================================
-             PRIZES
-        ======================================= -->
-
-        <section class="prizes-section">
-
-
-            <div class="section-heading">
-
-                <p class="section-label">
-                    REWARDS
-                </p>
-
-                <h2>
-                    PLAY FOR
-                    <span>GLORY</span>
-                </h2>
-
-                <p>
-                    Tournament rewards will be announced
-                    when official competitions open.
-                </p>
-
-            </div>
-
-
-
-            <div class="prize-grid">
-
-
-                <div class="prize-card">
-
-                    <div class="prize-icon">
-                        🥇
-                    </div>
-
-                    <h3>
-                        1st Place
-                    </h3>
-
-                    <p>
-                        Champion
-                    </p>
-
-                    <strong>
-                        TBA
-                    </strong>
-
-                </div>
-
-
-
-                <div class="prize-card">
-
-                    <div class="prize-icon">
-                        🥈
-                    </div>
-
-                    <h3>
-                        2nd Place
-                    </h3>
-
-                    <p>
-                        Runner-up
-                    </p>
-
-                    <strong>
-                        TBA
-                    </strong>
-
-                </div>
-
-
-
-                <div class="prize-card">
-
-                    <div class="prize-icon">
-                        🥉
-                    </div>
-
-                    <h3>
-                        3rd Place
-                    </h3>
-
-                    <p>
-                        Bronze
-                    </p>
-
-                    <strong>
-                        TBA
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ======================================
-             RULES
-        ======================================= -->
-
-        <section class="rules-section" id="rules">
-
-
-            <div class="section-heading">
-
-                <p class="section-label">
-                    PLAY FAIR
-                </p>
-
-                <h2>
-                    TOURNAMENT
-                    <span>RULES</span>
-                </h2>
-
-                <p>
-                    Fair competition keeps the community
-                    enjoyable for everyone.
-                </p>
-
-            </div>
-
-
-
-            <div class="rules-container">
-
-
-                <div class="rule">
-
-                    <span>
-                        01
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Fair Play
-                        </h3>
-
-                        <p>
-                            Players must compete fairly
-                            and follow the tournament rules.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="rule">
-
-                    <span>
-                        02
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            No Cheating
-                        </h3>
-
-                        <p>
-                            Cheats, hacks and unauthorized
-                            tools are not allowed.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="rule">
-
-                    <span>
-                        03
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Respect Players
-                        </h3>
-
-                        <p>
-                            Harassment, threats and abusive
-                            behavior will not be tolerated.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="rule">
-
-                    <span>
-                        04
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Follow Instructions
-                        </h3>
-
-                        <p>
-                            Players must follow instructions
-                            from tournament administrators.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="rule">
-
-                    <span>
-                        05
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Match Evidence
-                        </h3>
-
-                        <p>
-                            Players may be required to provide
-                            screenshots or other match evidence.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="rule">
-
-                    <span>
-                        06
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Admin Decisions
-                        </h3>
-
-                        <p>
-                            Tournament administrators may make
-                            final decisions regarding disputes.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ======================================
-             REGISTRATION CTA
-        ======================================= -->
-
-        <section class="registration-section">
-
-
-            <div class="registration-content">
-
-                <div class="registration-icon">
-                    🏆
-                </div>
-
-
-                <p class="section-label">
-                    GET READY
-                </p>
-
-
-                <h2>
-                    READY TO
-                    <span>COMPETE?</span>
-                </h2>
-
-
-                <p>
-                    Create your account now so you can
-                    register when our tournaments open.
-                </p>
-
-
-                <div class="registration-buttons">
-
-                    <a href="register.html" class="primary-btn">
-                        Create Account
-                    </a>
-
-                    <a href="home.html" class="secondary-btn">
-                        Back Home
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ======================================
-             FAQ
-        ======================================= -->
-
-        <section class="faq-section">
-
-
-            <div class="section-heading">
-
-                <p class="section-label">
-                    QUESTIONS
-                </p>
-
-                <h2>
-                    TOURNAMENT
-                    <span>FAQ</span>
-                </h2>
-
-            </div>
-
-
-
-            <div class="faq-container">
-
-
-                <details>
-
-                    <summary>
-                        Who can participate?
-                    </summary>
-
-                    <p>
-                        Tournament eligibility will be announced
-                        for each competition when registration opens.
-                    </p>
-
-                </details>
-
-
-
-                <details>
-
-                    <summary>
-                        Do I need an account?
-                    </summary>
-
-                    <p>
-                        Yes. Players will need a Yung Gaming Hub
-                        account to participate in tournaments.
-                    </p>
-
-                </details>
-
-
-
-                <details>
-
-                    <summary>
-                        Are tournaments free?
-                    </summary>
-
-                    <p>
-                        Each tournament will clearly state its
-                        entry requirements before registration.
-                    </p>
-
-                </details>
-
-
-
-                <details>
-
-                    <summary>
-                        How will winners be decided?
-                    </summary>
-
-                    <p>
-                        Tournament results will be determined
-                        according to the rules and format of
-                        the specific competition.
-                    </p>
-
-                </details>
-
-
-
-                <details>
-
-                    <summary>
-                        When will the first tournament start?
-                    </summary>
-
-                    <p>
-                        The date will be announced once the
-                        tournament is officially ready.
-                    </p>
-
-                </details>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- ==========================================
-         FOOTER
-    =========================================== -->
-
-    <footer class="footer">
-
-
-        <div class="footer-container">
-
-
-            <div class="footer-about">
-
-                <div class="logo footer-logo">
-
-                    <span>YUNG</span>
-
-                    <strong>
-                        GAMING HUB
-                    </strong>
-
-                </div>
-
-
-                <p>
-                    A gaming community created for players
-                    who want to play, learn and compete.
-                </p>
-
-            </div>
-
-
-
-            <div class="footer-links">
-
-                <h3>
-                    Explore
-                </h3>
-
-                <a href="home.html">
-                    Home
-                </a>
-
-                <a href="news.html">
-                    News
-                </a>
-
-                <a href="weapons.html">
-                    Weapons
-                </a>
-
-                <a href="characters.html">
-                    Characters
-                </a>
-
-                <a href="maps.html">
-                    Maps
-                </a>
-
-            </div>
-
-
-
-            <div class="footer-links">
-
-                <h3>
-                    Community
-                </h3>
-
-                <a href="quiz.html">
-                    Quiz
-                </a>
-
-                <a href="tournaments.html">
-                    Tournaments
-                </a>
-
-                <a href="events.html">
-                    Events
-                </a>
-
-                <a href="leaderboard.html">
-                    Leaderboard
-                </a>
-
-            </div>
-
-
-
-            <div class="footer-links">
-
-                <h3>
-                    Account
-                </h3>
-
-                <a href="register.html">
+                <a href="tournament-register.html?type=solo">
                     Register
                 </a>
 
-                <a href="login.html">
-                    Login
+            </div>
+
+
+            <div class="day-card">
+
+                <div class="day">
+                    TUE
+                </div>
+
+                <div class="format">
+                    👥 DUO
+                </div>
+
+                <div class="prize">
+                    ₦2,000
+                </div>
+
+                <div class="time">
+                    8:00 PM
+                </div>
+
+                <a href="tournament-register.html?type=duo">
+                    Register
                 </a>
 
-                <a href="profile.html">
-                    Profile
+            </div>
+
+
+            <div class="day-card">
+
+                <div class="day">
+                    WED
+                </div>
+
+                <div class="format">
+                    👤 SOLO
+                </div>
+
+                <div class="prize">
+                    ₦1,000
+                </div>
+
+                <div class="time">
+                    8:00 PM
+                </div>
+
+                <a href="tournament-register.html?type=solo">
+                    Register
+                </a>
+
+            </div>
+
+
+            <div class="day-card">
+
+                <div class="day">
+                    THU
+                </div>
+
+                <div class="format">
+                    👥 DUO
+                </div>
+
+                <div class="prize">
+                    ₦2,000
+                </div>
+
+                <div class="time">
+                    8:00 PM
+                </div>
+
+                <a href="tournament-register.html?type=duo">
+                    Register
+                </a>
+
+            </div>
+
+
+            <div class="day-card">
+
+                <div class="day">
+                    FRI
+                </div>
+
+                <div class="format">
+                    👤 SOLO
+                </div>
+
+                <div class="prize">
+                    ₦1,000
+                </div>
+
+                <div class="time">
+                    8:00 PM
+                </div>
+
+                <a href="tournament-register.html?type=solo">
+                    Register
+                </a>
+
+            </div>
+
+
+            <div class="day-card weekend">
+
+                <div class="day">
+                    SAT
+                </div>
+
+                <div class="format">
+                    👥 SQUAD
+                </div>
+
+                <div class="prize">
+                    ₦5,000
+                </div>
+
+                <div class="time">
+                    8:00 PM
+                </div>
+
+                <a href="tournament-register.html?type=squad">
+                    Register
+                </a>
+
+            </div>
+
+
+            <div class="day-card weekend">
+
+                <div class="day">
+                    SUN
+                </div>
+
+                <div class="format">
+                    👥 SQUAD
+                </div>
+
+                <div class="prize">
+                    ₦5,000
+                </div>
+
+                <div class="time">
+                    8:00 PM
+                </div>
+
+                <a href="tournament-register.html?type=squad">
+                    Register
                 </a>
 
             </div>
 
         </div>
 
+    </div>
+
+</section>
 
 
-        <div class="footer-bottom">
+<!-- HOW IT WORKS -->
 
-            <p>
-                © 2026 Yung Gaming Hub. All rights reserved.
-            </p>
+<section class="section dark-section">
 
-            <p>
-                Independent fan/community project.
-                Not affiliated with Garena.
-            </p>
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                HOW IT WORKS
+            </span>
+
+            <h2>
+                JOIN THE BATTLE
+            </h2>
 
         </div>
 
-    </footer>
 
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Register
+                </h3>
+
+                <p>
+                    Register for the tournament you
+                    want to play.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    Wait For Approval
+                </h3>
+
+                <p>
+                    Your registration is checked before
+                    the tournament.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Get Room Details
+                </h3>
+
+                <p>
+                    Approved players receive access
+                    to the private room information.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <h3>
+                    Play
+                </h3>
+
+                <p>
+                    Join the room at 8:00 PM and
+                    compete.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FORMATS -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                CHOOSE YOUR STYLE
+            </span>
+
+            <h2>
+                TOURNAMENT FORMATS
+            </h2>
+
+        </div>
+
+
+        <div class="format-grid">
+
+
+            <div class="format-card">
+
+                <div class="big-icon">
+                    👤
+                </div>
+
+                <h3>
+                    SOLO
+                </h3>
+
+                <p>
+                    Fight for yourself and prove
+                    that you can survive alone.
+                </p>
+
+                <strong>
+                    ₦1,000
+                </strong>
+
+                <small>
+                    Monday • Wednesday • Friday
+                </small>
+
+            </div>
+
+
+            <div class="format-card">
+
+                <div class="big-icon">
+                    👥
+                </div>
+
+                <h3>
+                    DUO
+                </h3>
+
+                <p>
+                    Find your partner in-game and
+                    fight together.
+                </p>
+
+                <strong>
+                    ₦2,000
+                </strong>
+
+                <small>
+                    Tuesday • Thursday
+                </small>
+
+            </div>
+
+
+            <div class="format-card featured">
+
+                <div class="featured-label">
+                    WEEKEND
+                </div>
+
+                <div class="big-icon">
+                    👥👥
+                </div>
+
+                <h3>
+                    SQUAD
+                </h3>
+
+                <p>
+                    Build your squad and compete
+                    in the weekend battle.
+                </p>
+
+                <strong>
+                    ₦5,000
+                </strong>
+
+                <small>
+                    Saturday • Sunday
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- IMPORTANT INFORMATION -->
+
+<section class="section rules-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                IMPORTANT
+            </span>
+
+            <h2>
+                TOURNAMENT RULES
+            </h2>
+
+        </div>
+
+
+        <div class="rules-grid">
+
+            <div>
+                <span>01</span>
+                <p>
+                    No cheats, hacks or unfair software.
+                </p>
+            </div>
+
+            <div>
+                <span>02</span>
+                <p>
+                    Register using your correct Free Fire UID.
+                </p>
+            </div>
+
+            <div>
+                <span>03</span>
+                <p>
+                    Be ready before the 8:00 PM start time.
+                </p>
+            </div>
+
+            <div>
+                <span>04</span>
+                <p>
+                    Do not share private room information.
+                </p>
+            </div>
+
+            <div>
+                <span>05</span>
+                <p>
+                    Follow the tournament host's instructions.
+                </p>
+            </div>
+
+            <div>
+                <span>06</span>
+                <p>
+                    Cheating or deliberate disruption can lead
+                    to disqualification.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            READY TO COMPETE?
+        </h2>
+
+        <p>
+            Register for the next Yung Gaming Hub tournament.
+        </p>
+
+        <a href="tournament-register.html">
+            REGISTER NOW
+        </a>
+
+    </div>
+
+</section>
+
+
+<footer class="footer">
+
+    <div class="footer-logo">
+        🔥 YUNG <span>GAMING HUB</span>
+    </div>
+
+    <p>
+        Free Fire tournaments, gaming community and events.
+    </p>
+
+    <p>
+        © 2026 Yung Gaming Hub
+    </p>
+
+</footer>
+
+
+<script>
+
+const dayNames = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+];
+
+const today = new Date();
+
+const day = today.getDay();
+
+const tournamentInfo = {
+
+    0: {
+        title: "Sunday Squad Clash",
+        description: "Weekend squad tournament with a ₦5,000 prize."
+    },
+
+    1: {
+        title: "Monday Solo Clash",
+        description: "Solo tournament with a ₦1,000 prize."
+    },
+
+    2: {
+        title: "Tuesday Duo Clash",
+        description: "Duo tournament with a ₦2,000 prize."
+    },
+
+    3: {
+        title: "Wednesday Solo Clash",
+        description: "Solo tournament with a ₦1,000 prize."
+    },
+
+    4: {
+        title: "Thursday Duo Clash",
+        description: "Duo tournament with a ₦2,000 prize."
+    },
+
+    5: {
+        title: "Friday Solo Clash",
+        description: "Solo tournament with a ₦1,000 prize."
+    },
+
+    6: {
+        title: "Saturday Squad Clash",
+        description: "Weekend squad tournament with a ₦5,000 prize."
+    }
+
+};
+
+document.getElementById("todayTitle").textContent =
+    tournamentInfo[day].title;
+
+document.getElementById("todayDescription").textContent =
+    tournamentInfo[day].description;
+
+</script>
 
 </body>
-
 </html>
