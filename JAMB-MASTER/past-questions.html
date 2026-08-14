@@ -1,87 +1,1531 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Past Questions | AceJAMB</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
 
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <header>
+    <title>JAMB Past Questions | AceJAMB</title>
 
-            <h2 class="logo">AceJAMB</h2>
+    <style>
 
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="past-questions.html">Past Questions</a>
-                <a href="cbt.html">CBT</a>
-                <a href="news.html">News</a>
-                <a href="login.html">Login</a>
+        /* ================================
+           RESET
+        ================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #172033;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* ================================
+           NAVBAR
+        ================================= */
+
+        .navbar {
+            background: white;
+            border-bottom: 1px solid #e6edf5;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            width: 92%;
+            max-width: 1250px;
+            min-height: 82px;
+
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+
+        /* LOGO */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+
+            border-radius: 14px;
+
+            background: linear-gradient(
+                135deg,
+                #087cf0,
+                #39b8f5
+            );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            font-size: 23px;
+        }
+
+        .logo-text h2 {
+            color: #087cf0;
+            font-size: 27px;
+            line-height: 1;
+        }
+
+        .logo-text h2 span {
+            color: #39b8f5;
+        }
+
+        .logo-text p {
+            color: #778397;
+            font-size: 11px;
+            margin-top: 4px;
+        }
+
+
+        /* NAV LINKS */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+        }
+
+        .nav-links a {
+            color: #263247;
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.25s;
+        }
+
+        .nav-links a:hover {
+            color: #087cf0;
+        }
+
+        .nav-links a.active {
+            color: #087cf0;
+        }
+
+        .premium-link {
+            color: #a87100 !important;
+        }
+
+        .login-btn {
+            background: #087cf0;
+            color: white !important;
+
+            padding: 11px 23px;
+
+            border-radius: 10px;
+        }
+
+        .login-btn:hover {
+            background: #066bd1 !important;
+        }
+
+
+        /* MOBILE MENU BUTTON */
+
+        .menu-btn {
+            display: none;
+
+            width: 44px;
+            height: 44px;
+
+            border: none;
+            border-radius: 10px;
+
+            background: #edf6ff;
+            color: #087cf0;
+
+            font-size: 22px;
+
+            cursor: pointer;
+        }
+
+
+        /* ================================
+           HERO
+        ================================= */
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(255,255,255,0.16),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    120deg,
+                    #087cf0,
+                    #26a9e8
+                );
+
+            color: white;
+
+            text-align: center;
+
+            padding: 75px 20px 85px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+
+            padding: 8px 16px;
+
+            border-radius: 50px;
+
+            background: rgba(255,255,255,0.14);
+
+            border: 1px solid rgba(255,255,255,0.25);
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 63px);
+
+            line-height: 1.1;
+
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #e8f8ff;
+        }
+
+        .hero p {
+            max-width: 700px;
+
+            margin: auto;
+
+            color: rgba(255,255,255,0.9);
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ================================
+           MAIN
+        ================================= */
+
+        .main {
+            width: 92%;
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 70px 0 90px;
+        }
+
+
+        /* ================================
+           INFO BOX
+        ================================= */
+
+        .info-box {
+            background: white;
+
+            border: 1px solid #e3ebf4;
+
+            border-radius: 20px;
+
+            padding: 25px 28px;
+
+            margin-bottom: 45px;
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 18px;
+
+            box-shadow:
+                0 8px 25px rgba(20,40,70,0.04);
+        }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+
+            flex-shrink: 0;
+
+            border-radius: 13px;
+
+            background: #eaf5ff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 23px;
+        }
+
+        .info-box h3 {
+            font-size: 18px;
+
+            margin-bottom: 5px;
+        }
+
+        .info-box p {
+            color: #788497;
+
+            font-size: 13px;
+        }
+
+
+        /* ================================
+           SECTION HEADING
+        ================================= */
+
+        .section-heading {
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+        .section-heading span {
+            color: #087cf0;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+        }
+
+        .section-heading h2 {
+            font-size: 34px;
+
+            margin-top: 8px;
+
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            color: #788497;
+
+            font-size: 14px;
+        }
+
+
+        /* ================================
+           FILTER / SEARCH
+        ================================= */
+
+        .filter-box {
+            background: white;
+
+            border: 1px solid #e3ebf4;
+
+            border-radius: 20px;
+
+            padding: 25px;
+
+            margin-bottom: 30px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr 1.4fr;
+
+            gap: 15px;
+
+            box-shadow:
+                0 8px 25px rgba(20,40,70,0.04);
+        }
+
+        .filter-group {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+        }
+
+        .filter-group label {
+            color: #556277;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.6px;
+        }
+
+        .filter-group select,
+        .filter-group input {
+            width: 100%;
+
+            height: 47px;
+
+            border: 1px solid #dbe4ee;
+
+            border-radius: 10px;
+
+            padding: 0 14px;
+
+            background: #fbfdff;
+
+            color: #27354a;
+
+            font-size: 13px;
+
+            outline: none;
+        }
+
+        .filter-group select:focus,
+        .filter-group input:focus {
+            border-color: #087cf0;
+        }
+
+
+        /* ================================
+           YEAR CARDS
+        ================================= */
+
+        .year-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+        .year-card {
+            background: white;
+
+            border: 1px solid #e1e9f2;
+
+            border-radius: 18px;
+
+            padding: 23px;
+
+            min-height: 190px;
+
+            box-shadow:
+                0 7px 22px rgba(20,40,70,0.04);
+
+            transition: 0.3s ease;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .year-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 18px 35px rgba(20,40,70,0.09);
+        }
+
+        .year-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 80px;
+            height: 80px;
+
+            right: -30px;
+            top: -30px;
+
+            border-radius: 50%;
+
+            background: #edf7ff;
+        }
+
+        .year-number {
+            position: relative;
+            z-index: 2;
+
+            font-size: 28px;
+
+            font-weight: 800;
+
+            color: #087cf0;
+
+            margin-bottom: 5px;
+        }
+
+        .year-card p {
+            position: relative;
+            z-index: 2;
+
+            color: #788497;
+
+            font-size: 12px;
+
+            margin-bottom: 17px;
+        }
+
+        .year-btn {
+            position: relative;
+            z-index: 2;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 9px 14px;
+
+            border-radius: 9px;
+
+            background: #edf6ff;
+
+            color: #087cf0;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            transition: 0.2s;
+        }
+
+        .year-btn:hover {
+            background: #087cf0;
+
+            color: white;
+        }
+
+
+        /* ================================
+           FUTURE CONTENT
+        ================================= */
+
+        .coming-section {
+            margin-top: 70px;
+        }
+
+        .coming-box {
+            background: #101d32;
+
+            border-radius: 25px;
+
+            padding: 45px;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 35px;
+        }
+
+        .coming-content {
+            max-width: 680px;
+        }
+
+        .coming-content span {
+            color: #40b8f4;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+        }
+
+        .coming-content h2 {
+            font-size: 30px;
+
+            margin: 9px 0;
+        }
+
+        .coming-content p {
+            color: #aab6c7;
+
+            font-size: 13px;
+        }
+
+        .coming-icon {
+            width: 75px;
+            height: 75px;
+
+            flex-shrink: 0;
+
+            border-radius: 20px;
+
+            background: rgba(255,255,255,0.08);
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 34px;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+            background: #091323;
+
+            color: white;
+
+            padding: 45px 5% 20px;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .footer-brand h2 {
+            color: #39b8f5;
+
+            font-size: 25px;
+        }
+
+        .footer-brand h2 span {
+            color: white;
+        }
+
+        .footer-brand p {
+            color: #8996a8;
+
+            font-size: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+
+            gap: 23px;
+
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #aab6c7;
+
+            font-size: 12px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            max-width: 1100px;
+
+            margin: 30px auto 0;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #1d2a3d;
+
+            text-align: center;
+
+            color: #657286;
+
+            font-size: 11px;
+        }
+
+
+        /* ================================
+           TABLET
+        ================================= */
+
+        @media (max-width: 1000px) {
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .year-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media screen and (max-width: 760px) {
+
+            html,
+            body {
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+
+            /* NAVBAR */
+
+            .nav-container {
+                width: 90%;
+
+                min-height: 70px;
+            }
+
+            .logo-icon {
+                width: 42px;
+                height: 42px;
+
+                font-size: 20px;
+            }
+
+            .logo-text h2 {
+                font-size: 22px;
+            }
+
+            .logo-text p {
+                font-size: 9px;
+            }
+
+            .menu-btn {
+                display: flex;
+
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: none;
+
+                position: absolute;
+
+                top: 70px;
+                left: 0;
+
+                width: 100%;
+
+                background: white;
+
+                padding: 15px 5% 20px;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 5px;
+
+                box-shadow:
+                    0 12px 25px rgba(0,0,0,0.08);
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 13px;
+
+                border-radius: 9px;
+
+                font-size: 14px;
+            }
+
+            .nav-links a:hover {
+                background: #f2f7fc;
+            }
+
+            .login-btn {
+                text-align: center;
+            }
+
+
+            /* HERO */
+
+            .hero {
+                padding: 55px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+
+            /* MAIN */
+
+            .main {
+                width: 90%;
+
+                padding: 55px 0 70px;
+            }
+
+
+            /* INFO */
+
+            .info-box {
+                padding: 20px;
+
+                gap: 13px;
+            }
+
+            .info-icon {
+                width: 42px;
+                height: 42px;
+
+                font-size: 19px;
+            }
+
+
+            /* HEADING */
+
+            .section-heading h2 {
+                font-size: 29px;
+            }
+
+
+            /* FILTER */
+
+            .filter-box {
+                grid-template-columns: 1fr;
+
+                padding: 20px;
+
+                gap: 13px;
+            }
+
+
+            /* YEAR CARDS */
+
+            .year-grid {
+                grid-template-columns: 1fr;
+
+                gap: 14px;
+            }
+
+            .year-card {
+                min-height: auto;
+
+                padding: 22px;
+            }
+
+
+            /* COMING BOX */
+
+            .coming-box {
+                padding: 30px 23px;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .coming-content h2 {
+                font-size: 26px;
+            }
+
+
+            /* FOOTER */
+
+            .footer-container {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+
+        }
+
+
+        /* ================================
+           SMALL PHONES
+        ================================= */
+
+        @media (max-width: 400px) {
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .section-heading h2 {
+                font-size: 26px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================
+         NAVBAR
+    ================================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+
+            <a href="home.html" class="logo">
+
+                <div class="logo-icon">
+                    🎓
+                </div>
+
+                <div class="logo-text">
+
+                    <h2>
+                        Ace<span>JAMB</span>
+                    </h2>
+
+                    <p>
+                        Excel in JAMB. Secure Your Future.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
+
+
+            <nav class="nav-links" id="navLinks">
+
+                <a href="home.html">
+                    Home
+                </a>
+
+                <a href="cbt.html">
+                    CBT Practice
+                </a>
+
+                <a href="past-question.html" class="active">
+                    Past Questions
+                </a>
+
+                <a href="subjects.html">
+                    Subjects
+                </a>
+
+                <a href="premium.html" class="premium-link">
+                    Premium
+                </a>
+
+                <a href="news.html">
+                    News
+                </a>
+
+                <a href="index.html" class="login-btn">
+                    Login
+                </a>
+
             </nav>
 
-        </header>
+        </div>
 
-        <section class="past">
+    </header>
 
-            <h1> JAMB Past Questions</h1>
 
-            <p> Choose a subject below.</p>
 
-            <div class="subjects">
+    <!-- ================================
+         HERO
+    ================================= -->
 
-                <div class="card">
-                    <h2>English</h2>
-                    <p>Past Questions & Answers</p>
-                    <a href="english.html"><button>Open</button></a>
+    <section class="hero">
+
+        <span class="hero-badge">
+            📚 JAMB PAST QUESTIONS
+        </span>
+
+        <h1>
+            Practice With <span>Past Questions</span>
+        </h1>
+
+        <p>
+            Build your confidence by preparing with
+            carefully organized JAMB past-question materials.
+            Select a year to continue.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================================
+         MAIN
+    ================================= -->
+
+    <main class="main">
+
+
+        <!-- INFORMATION -->
+
+        <div class="info-box">
+
+            <div class="info-icon">
+                💡
+            </div>
+
+            <div>
+
+                <h3>
+                    What are you looking for?
+                </h3>
+
+                <p>
+                    Choose a year below to explore the
+                    past-question section. The actual
+                    question database will be added and
+                    verified gradually.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SECTION TITLE -->
+
+        <div class="section-heading">
+
+            <span>
+                SELECT A YEAR
+            </span>
+
+            <h2>
+                JAMB Past Questions
+            </h2>
+
+            <p>
+                Pick a year to continue to the available
+                subject materials.
+            </p>
+
+        </div>
+
+
+
+        <!-- ================================
+             FILTER AREA
+        ================================= -->
+
+        <div class="filter-box">
+
+
+            <div class="filter-group">
+
+                <label for="subject">
+                    Subject
+                </label>
+
+                <select id="subject">
+
+                    <option value="">
+                        All Subjects
+                    </option>
+
+                    <option>
+                        Use of English
+                    </option>
+
+                    <option>
+                        Mathematics
+                    </option>
+
+                    <option>
+                        Physics
+                    </option>
+
+                    <option>
+                        Chemistry
+                    </option>
+
+                    <option>
+                        Biology
+                    </option>
+
+                    <option>
+                        Economics
+                    </option>
+
+                    <option>
+                        Government
+                    </option>
+
+                    <option>
+                        Literature in English
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <label for="year">
+                    Year
+                </label>
+
+                <select id="year">
+
+                    <option value="">
+                        All Years
+                    </option>
+
+                    <option>
+                        2026
+                    </option>
+
+                    <option>
+                        2025
+                    </option>
+
+                    <option>
+                        2024
+                    </option>
+
+                    <option>
+                        2023
+                    </option>
+
+                    <option>
+                        2022
+                    </option>
+
+                    <option>
+                        2021
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <label for="search">
+                    Search
+                </label>
+
+                <input
+                    type="search"
+                    id="search"
+                    placeholder="Search subject or year..."
+                >
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================
+             YEAR CARDS
+        ================================= -->
+
+        <section class="year-grid">
+
+
+            <div class="year-card">
+
+                <div class="year-number">
+                    2026
                 </div>
 
-                <div class="card">
-                    <h2>Mathematics</h2>
-                    <p>Past Questions & Answers</p>
-                    <a href="#"><button>Open</button></a>
+                <p>
+                    JAMB preparation materials
+                </p>
+
+                <span class="year-btn">
+                    Coming Soon →
+                </span>
+
+            </div>
+
+
+            <div class="year-card">
+
+                <div class="year-number">
+                    2025
                 </div>
 
-                <div class="card">
-                    <h2>Physics</h2>
-                    <p>Past Questions & Answers</p>
-                    <a href="#"><button>Open</button></a>
+                <p>
+                    Previous JAMB preparation materials
+                </p>
+
+                <span class="year-btn">
+                    Coming Soon →
+                </span>
+
+            </div>
+
+
+            <div class="year-card">
+
+                <div class="year-number">
+                    2024
                 </div>
 
-                <div class="card">
-                    <h2>Chemisty</h2>
-                    <p>Past Questions & Answers</p>
-                    <a href="#"><button>Open</button></a>
+                <p>
+                    Previous JAMB preparation materials
+                </p>
+
+                <span class="year-btn">
+                    Coming Soon →
+                </span>
+
+            </div>
+
+
+            <div class="year-card">
+
+                <div class="year-number">
+                    2023
                 </div>
 
-                <div class="card">
-                    <h2>Biology</h2>
-                    <p>Past Questions & Answers</p>
-                    <a  href="#"><button>Open</button></a>
+                <p>
+                    Previous JAMB preparation materials
+                </p>
+
+                <span class="year-btn">
+                    Coming Soon →
+                </span>
+
+            </div>
+
+
+            <div class="year-card">
+
+                <div class="year-number">
+                    2022
                 </div>
 
-                <div class="card">
-                    <h2>Government</h2>
-                    <p>Past Questions & Answers</p>
-                    <a href="#"><button>Open</button></a>
+                <p>
+                    Previous JAMB preparation materials
+                </p>
+
+                <span class="year-btn">
+                    Coming Soon →
+                </span>
+
+            </div>
+
+
+            <div class="year-card">
+
+                <div class="year-number">
+                    2021
                 </div>
 
-                <div class="card">
-                    <h2>Economics</h2>
-                    <p>Past Questions & Answers</p>
-                    <a href="#"><button>Open</button></a>
+                <p>
+                    Previous JAMB preparation materials
+                </p>
+
+                <span class="year-btn">
+                    Coming Soon →
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================
+             FUTURE CONTENT
+        ================================= -->
+
+        <section class="coming-section">
+
+            <div class="coming-box">
+
+                <div class="coming-content">
+
+                    <span>
+                        ACEJAMB DATABASE
+                    </span>
+
+                    <h2>
+                        More Questions Are Coming
+                    </h2>
+
+                    <p>
+                        We are building and organizing the
+                        question database carefully so that
+                        students can practice with reliable
+                        materials. More subjects, years and
+                        practice features will be added over time.
+                    </p>
+
                 </div>
 
-                <div class="card">
-                    <h2>Literature</h2>
-                    <p>Past Questions & Answers</p>
-                    <a href="#"><button>Open</button></a>
+                <div class="coming-icon">
+                    📚
                 </div>
 
             </div>
 
         </section>
 
-    </body>
+
+    </main>
+
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    Ace<span>JAMB</span>
+                </h2>
+
+                <p>
+                    Excel in JAMB. Secure Your Future.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="home.html">
+                    Home
+                </a>
+
+                <a href="cbt.html">
+                    CBT Practice
+                </a>
+
+                <a href="past-question.html">
+                    Past Questions
+                </a>
+
+                <a href="subjects.html">
+                    Subjects
+                </a>
+
+                <a href="premium.html">
+                    Premium
+                </a>
+
+                <a href="news.html">
+                    News
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 AceJAMB. All rights reserved.
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ================================
+         JAVASCRIPT
+    ================================= -->
+
+    <script>
+
+        /* ================================
+           MOBILE MENU
+        ================================= */
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuBtn.addEventListener("click", function () {
+
+            navLinks.classList.toggle("show");
+
+        });
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(function(link) {
+
+                link.addEventListener("click", function() {
+
+                    navLinks.classList.remove("show");
+
+                });
+
+            });
+
+
+
+        /* ================================
+           SEARCH / FILTER
+        ================================= */
+
+        const searchInput =
+            document.getElementById("search");
+
+        const subjectSelect =
+            document.getElementById("subject");
+
+        const yearSelect =
+            document.getElementById("year");
+
+
+        const yearCards =
+            document.querySelectorAll(".year-card");
+
+
+        function filterYears() {
+
+            const search =
+                searchInput.value.toLowerCase().trim();
+
+            const selectedYear =
+                yearSelect.value;
+
+
+            yearCards.forEach(function(card) {
+
+                const year =
+                    card
+                        .querySelector(".year-number")
+                        .textContent
+                        .trim();
+
+
+                let show = true;
+
+
+                /* YEAR FILTER */
+
+                if (
+                    selectedYear !== "" &&
+                    year !== selectedYear
+                ) {
+
+                    show = false;
+
+                }
+
+
+                /* SEARCH FILTER */
+
+                if (
+                    search !== "" &&
+                    !year.toLowerCase().includes(search)
+                ) {
+
+                    show = false;
+
+                }
+
+
+                card.style.display =
+                    show ? "" : "none";
+
+            });
+
+        }
+
+
+        searchInput.addEventListener(
+            "input",
+            filterYears
+        );
+
+
+        yearSelect.addEventListener(
+            "change",
+            filterYears
+        );
+
+    </script>
+
+
+</body>
+
 </html>

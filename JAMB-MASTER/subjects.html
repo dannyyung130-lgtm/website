@@ -7,208 +7,1398 @@
 
     <title>Subjects - AceJAMB</title>
 
-    <link rel="stylesheet" href="subjects.css">
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #172033;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            background: white;
+            border-bottom: 1px solid #e7edf4;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            width: 92%;
+            max-width: 1250px;
+            min-height: 82px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+
+        /* LOGO */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+
+            border-radius: 14px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: linear-gradient(
+                135deg,
+                #087cf0,
+                #39b8f5
+            );
+
+            color: white;
+            font-size: 23px;
+        }
+
+        .logo-text h2 {
+            font-size: 27px;
+            line-height: 1;
+            color: #087cf0;
+        }
+
+        .logo-text h2 span {
+            color: #39b8f5;
+        }
+
+        .logo-text p {
+            font-size: 11px;
+            color: #778397;
+            margin-top: 4px;
+        }
+
+
+        /* NAVIGATION */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 600;
+            color: #263247;
+            transition: 0.25s;
+        }
+
+        .nav-links a:hover {
+            color: #087cf0;
+        }
+
+        .nav-links a.active {
+            color: #087cf0;
+        }
+
+        .premium-link {
+            color: #ad7600 !important;
+        }
+
+        .login-btn {
+            background: #087cf0;
+            color: white !important;
+
+            padding: 11px 23px;
+
+            border-radius: 10px;
+        }
+
+        .login-btn:hover {
+            background: #066bd1 !important;
+        }
+
+
+        /* MOBILE MENU */
+
+        .menu-btn {
+            display: none;
+
+            width: 44px;
+            height: 44px;
+
+            border: none;
+            border-radius: 10px;
+
+            background: #edf6ff;
+            color: #087cf0;
+
+            font-size: 22px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           PAGE HERO
+        ========================= */
+
+        .page-hero {
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(255,255,255,0.16),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    120deg,
+                    #087cf0,
+                    #26a9e8
+                );
+
+            color: white;
+
+            padding: 75px 5% 85px;
+
+            text-align: center;
+        }
+
+        .page-hero .badge {
+            display: inline-block;
+
+            padding: 8px 15px;
+
+            background: rgba(255,255,255,0.14);
+
+            border: 1px solid rgba(255,255,255,0.25);
+
+            border-radius: 50px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            margin-bottom: 20px;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(40px, 6vw, 64px);
+            line-height: 1.1;
+
+            margin-bottom: 18px;
+        }
+
+        .page-hero h1 span {
+            color: #e9f8ff;
+        }
+
+        .page-hero p {
+            max-width: 680px;
+
+            margin: auto;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            color: rgba(255,255,255,0.9);
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .main-content {
+            width: 92%;
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 75px 0 90px;
+        }
+
+
+        /* =========================
+           SECTION HEADING
+        ========================= */
+
+        .section-heading {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 45px;
+        }
+
+        .section-heading span {
+            color: #087cf0;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+        }
+
+        .section-heading h2 {
+            font-size: 35px;
+
+            line-height: 1.2;
+
+            margin: 9px 0 12px;
+        }
+
+        .section-heading p {
+            color: #788497;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           SUBJECT GRID
+        ========================= */
+
+        .subject-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+
+        /* SUBJECT CARD */
+
+        .subject-card {
+            background: white;
+
+            border: 1px solid #e4ebf3;
+
+            border-radius: 20px;
+
+            padding: 27px;
+
+            min-height: 245px;
+
+            box-shadow:
+                0 8px 25px rgba(20,40,70,0.04);
+
+            transition: 0.3s ease;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 18px 40px rgba(20,40,70,0.09);
+        }
+
+
+        /* SUBJECT ICON */
+
+        .subject-icon {
+            width: 58px;
+            height: 58px;
+
+            border-radius: 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 27px;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* Different icon backgrounds */
+
+        .english .subject-icon {
+            background: #eaf4ff;
+        }
+
+        .mathematics .subject-icon {
+            background: #f0edff;
+        }
+
+        .physics .subject-icon {
+            background: #fff1e9;
+        }
+
+        .chemistry .subject-icon {
+            background: #eafaf1;
+        }
+
+        .biology .subject-icon {
+            background: #effbea;
+        }
+
+        .economics .subject-icon {
+            background: #fff7df;
+        }
+
+        .government .subject-icon {
+            background: #f4edff;
+        }
+
+        .literature .subject-icon {
+            background: #fff0f3;
+        }
+
+        .religion .subject-icon {
+            background: #edf7ff;
+        }
+
+
+        .subject-card h3 {
+            font-size: 21px;
+
+            margin-bottom: 7px;
+        }
+
+        .subject-card p {
+            color: #788497;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* STATUS */
+
+        .subject-bottom {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+        }
+
+        .status {
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 0.5px;
+
+            padding: 6px 10px;
+
+            border-radius: 30px;
+
+            background: #fff5d9;
+
+            color: #a06d00;
+        }
+
+        .explore {
+            font-size: 12px;
+
+            font-weight: 700;
+
+            color: #087cf0;
+        }
+
+
+        /* =========================
+           PREPARATION BOX
+        ========================= */
+
+        .prep-section {
+            margin-top: 80px;
+        }
+
+        .prep-box {
+            background: #101d32;
+
+            color: white;
+
+            border-radius: 25px;
+
+            padding: 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 40px;
+        }
+
+        .prep-content {
+            max-width: 650px;
+        }
+
+        .prep-content span {
+            color: #42b8f4;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+        }
+
+        .prep-content h2 {
+            font-size: 31px;
+
+            line-height: 1.25;
+
+            margin: 10px 0;
+        }
+
+        .prep-content p {
+            color: #aeb9c8;
+
+            font-size: 14px;
+        }
+
+        .prep-button {
+            background: #087cf0;
+
+            color: white;
+
+            padding: 14px 23px;
+
+            border-radius: 11px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            white-space: nowrap;
+
+            transition: 0.25s;
+        }
+
+        .prep-button:hover {
+            background: #066bd1;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #091323;
+
+            color: white;
+
+            padding: 45px 5% 20px;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .footer-brand h2 {
+            color: #39b8f5;
+
+            font-size: 25px;
+        }
+
+        .footer-brand h2 span {
+            color: white;
+        }
+
+        .footer-brand p {
+            color: #8996a8;
+
+            font-size: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+
+            gap: 23px;
+
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #aab6c7;
+
+            font-size: 12px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            max-width: 1100px;
+
+            margin: 30px auto 0;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #1d2a3d;
+
+            text-align: center;
+
+            color: #657286;
+
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .subject-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media screen and (max-width: 760px) {
+
+            html,
+            body {
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+
+            /* NAVBAR */
+
+            .nav-container {
+                width: 90%;
+
+                min-height: 70px;
+            }
+
+            .logo-icon {
+                width: 42px;
+                height: 42px;
+
+                font-size: 20px;
+            }
+
+            .logo-text h2 {
+                font-size: 22px;
+            }
+
+            .logo-text p {
+                font-size: 9px;
+            }
+
+            .menu-btn {
+                display: flex;
+
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: none;
+
+                position: absolute;
+
+                top: 70px;
+                left: 0;
+
+                width: 100%;
+
+                background: white;
+
+                padding: 15px 5% 20px;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 5px;
+
+                box-shadow:
+                    0 12px 25px rgba(0,0,0,0.08);
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 13px;
+
+                border-radius: 9px;
+
+                font-size: 14px;
+            }
+
+            .nav-links a:hover {
+                background: #f2f7fc;
+            }
+
+            .login-btn {
+                text-align: center;
+
+                margin-top: 5px;
+            }
+
+
+            /* HERO */
+
+            .page-hero {
+                padding: 55px 20px 60px;
+            }
+
+            .page-hero h1 {
+                font-size: 42px;
+            }
+
+            .page-hero p {
+                font-size: 15px;
+            }
+
+
+            /* MAIN */
+
+            .main-content {
+                width: 90%;
+
+                padding: 60px 0 70px;
+            }
+
+            .section-heading {
+                margin-bottom: 30px;
+            }
+
+            .section-heading h2 {
+                font-size: 29px;
+            }
+
+
+            /* SUBJECTS */
+
+            .subject-grid {
+                grid-template-columns: 1fr;
+
+                gap: 15px;
+            }
+
+            .subject-card {
+                min-height: auto;
+
+                padding: 23px;
+            }
+
+            .subject-icon {
+                margin-bottom: 17px;
+            }
+
+
+            /* PREPARATION */
+
+            .prep-section {
+                margin-top: 60px;
+            }
+
+            .prep-box {
+                padding: 30px 23px;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 25px;
+            }
+
+            .prep-content h2 {
+                font-size: 27px;
+            }
+
+            .prep-button {
+                width: 100%;
+
+                text-align: center;
+            }
+
+
+            /* FOOTER */
+
+            .footer-container {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+
+        }
+
+
+        /* =========================
+           SMALL PHONES
+        ========================= */
+
+        @media (max-width: 400px) {
+
+            .page-hero h1 {
+                font-size: 36px;
+            }
+
+            .subject-card h3 {
+                font-size: 19px;
+            }
+
+            .prep-content h2 {
+                font-size: 24px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <!-- NAVBAR -->
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
     <header class="navbar">
 
-        <div class="logo-area">
-            <img src="images/logo.png" alt="AceJAMB Logo">
+        <div class="nav-container">
 
-            <div>
-                <h1>AceJAMB</h1>
-                <p>Excel in JAMB. Secure Your Future.</p>
-            </div>
+
+            <a href="home.html" class="logo">
+
+                <div class="logo-icon">
+                    🎓
+                </div>
+
+                <div class="logo-text">
+
+                    <h2>
+                        Ace<span>JAMB</span>
+                    </h2>
+
+                    <p>
+                        Excel in JAMB. Secure Your Future.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
+
+
+            <nav class="nav-links" id="navLinks">
+
+                <a href="home.html">
+                    Home
+                </a>
+
+                <a href="cbt.html">
+                    CBT Practice
+                </a>
+
+                <a href="past-questions.html">
+                    Past Questions
+                </a>
+
+                <a href="subjects.html" class="active">
+                    Subjects
+                </a>
+
+                <a href="premium.html" class="premium-link">
+                    Premium
+                </a>
+
+                <a href="news.html">
+                    News
+                </a>
+
+                <a href="index.html" class="login-btn">
+                    Login
+                </a>
+
+            </nav>
+
         </div>
-
-        <nav>
-            <a href="home.html">Home</a>
-            <a href="cbt.html">CBT Practice</a>
-            <a href="past-questions.html">Past Questions</a>
-            <a href="subjects.html" class="active">Subjects</a>
-            <a href="news.html">News</a>
-            <a href="index.html" class="login-btn">Login</a>
-        </nav>
 
     </header>
 
 
-    <!-- HERO -->
-    <section class="hero">
 
-        <h2>Learn. Practice. Succeed.</h2>
+    <!-- =========================
+         PAGE HERO
+    ========================= -->
+
+    <section class="page-hero">
+
+        <span class="badge">
+            📚 JAMB SUBJECTS
+        </span>
+
+        <h1>
+            Know Your <span>Subjects</span>
+        </h1>
 
         <p>
-            Choose a subject and start learning JAMB topics,
-            explanations, formulas and practice questions.
+            Explore the subjects commonly used for JAMB preparation.
+            Choose a subject to organize your study and prepare smarter.
         </p>
 
     </section>
 
 
-    <!-- SUBJECTS -->
-    <main class="subjects-container">
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================= -->
+
+    <main class="main-content">
+
 
         <div class="section-heading">
-            <h2>Choose Your Subject</h2>
+
+            <span>
+                EXPLORE SUBJECTS
+            </span>
+
+            <h2>
+                Choose Your JAMB Subjects
+            </h2>
 
             <p>
-                Select a subject to explore topics and study materials.
+                Subject learning materials and practice content
+                will be added gradually as AceJAMB develops.
             </p>
+
         </div>
 
 
-        <div class="subject-grid">
+
+        <!-- =========================
+             SUBJECT CARDS
+        ========================= -->
+
+        <section class="subject-grid">
 
 
             <!-- ENGLISH -->
+
             <div class="subject-card english">
 
-                <div class="subject-icon">📖</div>
+                <div class="subject-icon">
+                    📖
+                </div>
 
-                <h3>English Language</h3>
+                <h3>
+                    Use of English
+                </h3>
 
                 <p>
-                    Improve your grammar, vocabulary,
-                    comprehension and JAMB English skills.
+                    Prepare for comprehension, grammar,
+                    vocabulary and other areas of Use of English.
                 </p>
 
-                <button onclick="openSubject('english')">
-                    Start Learning
-                </button>
+                <div class="subject-bottom">
+
+                    <span class="status">
+                        COMING SOON
+                    </span>
+
+                    <span class="explore">
+                        Preparing →
+                    </span>
+
+                </div>
 
             </div>
+
 
 
             <!-- MATHEMATICS -->
+
             <div class="subject-card mathematics">
 
-                <div class="subject-icon">➗</div>
+                <div class="subject-icon">
+                    ➗
+                </div>
 
-                <h3>Mathematics</h3>
+                <h3>
+                    Mathematics
+                </h3>
 
                 <p>
-                    Learn important formulas, solve problems
-                    and master JAMB Mathematics topics.
+                    Build your mathematical skills and prepare
+                    for the different areas tested in JAMB.
                 </p>
 
-                <button onclick="openSubject('mathematics')">
-                    Start Learning
-                </button>
+                <div class="subject-bottom">
+
+                    <span class="status">
+                        COMING SOON
+                    </span>
+
+                    <span class="explore">
+                        Preparing →
+                    </span>
+
+                </div>
 
             </div>
+
 
 
             <!-- PHYSICS -->
+
             <div class="subject-card physics">
 
-                <div class="subject-icon">⚛️</div>
+                <div class="subject-icon">
+                    ⚡
+                </div>
 
-                <h3>Physics</h3>
+                <h3>
+                    Physics
+                </h3>
 
                 <p>
-                    Study mechanics, electricity, waves,
-                    heat and other JAMB Physics topics.
+                    Prepare for important physics concepts
+                    and improve your problem-solving skills.
                 </p>
 
-                <button onclick="openSubject('physics')">
-                    Start Learning
-                </button>
+                <div class="subject-bottom">
+
+                    <span class="status">
+                        COMING SOON
+                    </span>
+
+                    <span class="explore">
+                        Preparing →
+                    </span>
+
+                </div>
 
             </div>
+
 
 
             <!-- CHEMISTRY -->
+
             <div class="subject-card chemistry">
 
-                <div class="subject-icon">🧪</div>
+                <div class="subject-icon">
+                    🧪
+                </div>
 
-                <h3>Chemistry</h3>
+                <h3>
+                    Chemistry
+                </h3>
 
                 <p>
-                    Learn atoms, reactions, organic chemistry,
-                    calculations and more.
+                    Organize your chemistry preparation and
+                    review important areas of the subject.
                 </p>
 
-                <button onclick="openSubject('chemistry')">
-                    Start Learning
-                </button>
+                <div class="subject-bottom">
+
+                    <span class="status">
+                        COMING SOON
+                    </span>
+
+                    <span class="explore">
+                        Preparing →
+                    </span>
+
+                </div>
 
             </div>
 
 
-        </div>
+
+            <!-- BIOLOGY -->
+
+            <div class="subject-card biology">
+
+                <div class="subject-icon">
+                    🧬
+                </div>
+
+                <h3>
+                    Biology
+                </h3>
+
+                <p>
+                    Prepare for biology topics and strengthen
+                    your understanding of life sciences.
+                </p>
+
+                <div class="subject-bottom">
+
+                    <span class="status">
+                        COMING SOON
+                    </span>
+
+                    <span class="explore">
+                        Preparing →
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ECONOMICS -->
+
+            <div class="subject-card economics">
+
+                <div class="subject-icon">
+                    📈
+                </div>
+
+                <h3>
+                    Economics
+                </h3>
+
+                <p>
+                    Review economics concepts and prepare
+                    yourself for JAMB-style questions.
+                </p>
+
+                <div class="subject-bottom">
+
+                    <span class="status">
+                        COMING SOON
+                    </span>
+
+                    <span class="explore">
+                        Preparing →
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- GOVERNMENT -->
+
+            <div class="subject-card government">
+
+                <div class="subject-icon">
+                    🏛️
+                </div>
+
+                <h3>
+                    Government
+                </h3>
+
+                <p>
+                    Study government and political concepts
+                    relevant to your JAMB preparation.
+                </p>
+
+                <div class="subject-bottom">
+
+                    <span class="status">
+                        COMING SOON
+                    </span>
+
+                    <span class="explore">
+                        Preparing →
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LITERATURE -->
+
+            <div class="subject-card literature">
+
+                <div class="subject-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Literature in English
+                </h3>
+
+                <p>
+                    Organize your literature preparation and
+                    explore important areas of the subject.
+                </p>
+
+                <div class="subject-bottom">
+
+                    <span class="status">
+                        COMING SOON
+                    </span>
+
+                    <span class="explore">
+                        Preparing →
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RELIGIOUS STUDIES -->
+
+            <div class="subject-card religion">
+
+                <div class="subject-icon">
+                    📝
+                </div>
+
+                <h3>
+                    CRS / IRS
+                </h3>
+
+                <p>
+                    Prepare for Religious Studies depending
+                    on the subject combination you choose.
+                </p>
+
+                <div class="subject-bottom">
+
+                    <span class="status">
+                        COMING SOON
+                    </span>
+
+                    <span class="explore">
+                        Preparing →
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             PREPARATION CTA
+        ========================= -->
+
+        <section class="prep-section">
+
+            <div class="prep-box">
+
+                <div class="prep-content">
+
+                    <span>
+                        READY TO PRACTICE?
+                    </span>
+
+                    <h2>
+                        Test What You Already Know
+                    </h2>
+
+                    <p>
+                        While we continue building the subject
+                        materials, you can use CBT Practice to
+                        test your preparation.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="cbt.html"
+                    class="prep-button"
+                >
+                    Start CBT Practice →
+                </a>
+
+            </div>
+
+        </section>
+
 
     </main>
 
 
-    <!-- LEARNING INFORMATION -->
-    <section class="learning-section">
 
-        <h2>What You Can Learn</h2>
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
-        <div class="learning-grid">
+    <footer>
 
-            <div class="learning-card">
-                <span>📚</span>
-                <h3>Topic Notes</h3>
+        <div class="footer-container">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    Ace<span>JAMB</span>
+                </h2>
+
                 <p>
-                    Simple explanations of important JAMB topics.
+                    Excel in JAMB. Secure Your Future.
                 </p>
+
             </div>
 
 
-            <div class="learning-card">
-                <span>🧠</span>
-                <h3>Examples</h3>
-                <p>
-                    Understand difficult topics through worked examples.
-                </p>
-            </div>
+            <div class="footer-links">
 
+                <a href="home.html">
+                    Home
+                </a>
 
-            <div class="learning-card">
-                <span>✏️</span>
-                <h3>Practice</h3>
-                <p>
-                    Test what you have learned with practice questions.
-                </p>
-            </div>
+                <a href="cbt.html">
+                    CBT Practice
+                </a>
 
+                <a href="past-questions.html">
+                    Past Questions
+                </a>
 
-            <div class="learning-card">
-                <span>🎯</span>
-                <h3>JAMB Preparation</h3>
-                <p>
-                    Prepare yourself for the real examination.
-                </p>
+                <a href="premium.html">
+                    Premium
+                </a>
+
+                <a href="news.html">
+                    News
+                </a>
+
             </div>
 
         </div>
 
-    </section>
 
+        <div class="copyright">
 
-    <!-- FOOTER -->
-    <footer>
+            © 2026 AceJAMB. All rights reserved.
 
-        <h2>AceJAMB</h2>
-
-        <p>
-            Your trusted platform for JAMB preparation.
-        </p>
-
-        <p class="copyright">
-            © 2026 AceJAMB. All Rights Reserved.
-        </p>
+        </div>
 
     </footer>
 
 
-    <script src="subjects.js"></script>
+
+    <!-- =========================
+         MOBILE MENU JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuBtn.addEventListener("click", function () {
+
+            navLinks.classList.toggle("show");
+
+        });
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(function(link) {
+
+                link.addEventListener("click", function() {
+
+                    navLinks.classList.remove("show");
+
+                });
+
+            });
+
+    </script>
+
 
 </body>
 
